@@ -1,6 +1,7 @@
 node_modules/
 dist/
 output/
+assets/classroom-originals/
 .vite.log
 .vite-error.log
 *.local
