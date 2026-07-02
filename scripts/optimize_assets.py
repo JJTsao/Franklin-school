@@ -5,7 +5,7 @@ from PIL import Image
 
 ROOT = Path(__file__).resolve().parent.parent
 SOURCE = ROOT / "public" / "images"
-GENERATED = SOURCE / "generated"
+GENERATED = ROOT / "source-assets" / "archive" / "generated"
 OUTPUT = SOURCE / "optimized"
 
 

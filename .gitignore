@@ -5,3 +5,4 @@ assets/classroom-originals/
 .vite.log
 .vite-error.log
 *.local
+__pycache__/
