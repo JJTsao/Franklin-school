@@ -6,3 +6,5 @@ assets/classroom-originals/
 .vite-error.log
 *.local
 __pycache__/
+.DS_Store
+.playwright-mcp/
