@@ -162,9 +162,9 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
 .programs { overflow: hidden; padding: 2rem 0 2rem; background: linear-gradient(var(--paper-soft), var(--paper)); }
 .program-grid { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 1.375rem; }
 .program-card { position: relative; overflow: hidden; display: grid; grid-template-columns: 41% 59%; height: 24.5rem; border-radius: var(--radius-lg); background: #fff; box-shadow: 0 .4375rem 1.375rem rgba(96, 66, 12, .11); border: .0625rem solid #f0e8d6; }
-.program-media { min-width: 0; min-height: 0; overflow: hidden; background: #edf3e6; }
-.program-media picture { display: block; width: 100%; height: 100%; }
-.program-photo { width: 100%; height: 100%; min-height: 24.5rem; object-fit: cover; object-position: 50% 50%; }
+.program-media { min-width: 0; min-height: 0; overflow: hidden; padding: .875rem; background: #fff; }
+.program-media picture { display: block; width: 100%; height: 100%; overflow: hidden; border-radius: .875rem; background: #edf3e6; }
+.program-photo { width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; }
 .program-content { position: relative; display: flex; flex-direction: column; min-width: 0; padding: 1.25rem 1.375rem 1.125rem; }
 .program-ribbon { position: relative; display: inline-flex; align-items: center; gap: .625rem; min-width: 13.75rem; margin-left: -1.875rem; padding: .5rem 2.125rem .5rem 1.875rem; color: #fff; background: var(--green-800); clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 100%, 6% 50%); }
 .program-ribbon-icon { flex: 0 0 auto; width: 1.75rem; height: 1.75rem; color: #fff; --icon-yellow: #fff0a6; --icon-green: #d9f0bd; --icon-blue: #dff5ff; }
@@ -205,10 +205,14 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
 
 .results { padding: 2.25rem 0 1.5rem; background: var(--paper-soft); }
 .gallery-shell { position: relative; }
-.gallery-track { display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - 4rem) / 5); gap: 1rem; overflow-x: auto; overscroll-behavior-inline: contain; scrollbar-width: none; scroll-snap-type: inline mandatory; padding: .25rem; }
+.gallery-track { display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - 4rem) / 5); gap: 1rem; overflow-x: auto; overscroll-behavior-inline: contain; scrollbar-width: none; scroll-snap-type: inline mandatory; padding: .625rem .25rem; }
 .gallery-track::-webkit-scrollbar { display: none; }
-.gallery-card { overflow: hidden; min-width: 0; border-radius: .875rem; background: #fff; border: .0625rem solid #efe7d5; box-shadow: 0 .3125rem 1rem rgba(96, 66, 12, .10); scroll-snap-align: start; }
-.gallery-photo { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; object-position: center; background: #e8efe8; }
+.gallery-card { overflow: hidden; min-width: 0; border-radius: .875rem; background: #fff; border: .0625rem solid #efe7d5; box-shadow: 0 .3125rem 1rem rgba(96, 66, 12, .10); scroll-snap-align: start; transition: transform .25s ease, box-shadow .25s ease; }
+.gallery-card:nth-child(odd) { transform: rotate(-1deg); }
+.gallery-card:nth-child(even) { transform: rotate(1deg); }
+.gallery-card:hover, .gallery-card:focus-within { transform: rotate(0deg) translateY(-.25rem); box-shadow: 0 .5rem 1.375rem rgba(96, 66, 12, .16); }
+.gallery-photo { width: calc(100% - .875rem); height: auto; aspect-ratio: 4 / 3; margin: .4375rem .4375rem 0; border-radius: .5rem; object-fit: cover; object-position: center; background: #e8efe8; }
+.gallery-card span { margin-top: .4375rem; }
 .gallery-card span { display: block; padding: .75rem .5rem; color: #fff; background: var(--green-800); text-align: center; font-size: .86rem; font-weight: 900; }
 .gallery-control { position: absolute; z-index: 2; top: 50%; width: 2.75rem; height: 2.75rem; display: grid; place-items: center; color: #fff; background: var(--green-800); border: .25rem solid #fff; border-radius: 50%; box-shadow: 0 .3125rem 1rem rgba(6, 76, 41, .22); cursor: pointer; transform: translateY(-50%); }
 .gallery-control svg { width: 1.375rem; height: 1.375rem; fill: none; stroke: currentColor; stroke-width: 2.8; stroke-linecap: round; stroke-linejoin: round; }
