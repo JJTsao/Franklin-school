@@ -103,32 +103,36 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
 .button--line svg { width: 1.5rem; height: 1.5rem; stroke-width: 3; }
 .button--large { min-width: 9.875rem; min-height: 3.375rem; }
 .nav-cta { min-height: 2.75rem; padding: .625rem 1.1875rem; border-radius: .8125rem; }
+.button-arrow { flex: 0 0 auto; width: 1.5rem; height: 1.5rem; display: grid; place-items: center; border-radius: 50%; font-size: .9rem; line-height: 1; }
+.button--green .button-arrow { background: rgba(255, 255, 255, .24); }
+.button--sun .button-arrow { background: rgba(63, 42, 0, .16); }
 
-.hero { position: relative; overflow: hidden; min-height: 33.125rem; display: flex; align-items: center; background: radial-gradient(circle at 18% 30%, rgba(255, 221, 82, .2) 0 14%, transparent 32%), linear-gradient(105deg, #fefaf0 0%, #fdf6e6 48%, #eef7e8 100%); }
-.hero-grid { position: relative; z-index: 2; display: grid; grid-template-columns: 42% 58%; align-items: center; min-height: 32.5rem; }
+.hero { position: relative; overflow: hidden; min-height: 34.5rem; display: flex; align-items: center; background: radial-gradient(36rem 28rem at -5% 6%, #fdf1d3 0 57%, transparent 60%), radial-gradient(30rem 24rem at 26% 110%, #fbeecb 0 54%, transparent 58%), radial-gradient(circle at 18% 30%, rgba(255, 221, 82, .22) 0 14%, transparent 32%), linear-gradient(105deg, #fefaf0 0%, #fdf6e6 48%, #eef7e8 100%); }
+.hero-grid { position: relative; z-index: 2; display: grid; grid-template-columns: 42% 58%; align-items: center; min-height: 34.5rem; }
 .hero-copy { padding: 1.5rem .625rem 3.375rem .5rem; transform: translateY(-2.125rem); }
 .hero-title-wrap { position: relative; display: inline-block; }
-.hero h1 { position: relative; display: inline-block; margin: 0; font-family: "JF Open Huninn Display", "Noto Sans TC Local", sans-serif; font-size: clamp(3.45rem, 4.8vw, 4.8rem); font-weight: 400; font-synthesis: none; line-height: 1.04; letter-spacing: .025em; }
+.hero h1 { position: relative; display: inline-block; margin: 0; font-family: "JF Open Huninn Display", "Noto Sans TC Local", sans-serif; font-size: clamp(3.6rem, 5vw, 5.2rem); font-weight: 400; font-synthesis: none; line-height: 1.04; letter-spacing: .025em; }
 .qa-font-noto .hero h1, .qa-font-noto .program-ribbon h3, .qa-font-noto .cta-highlight, .qa-font-noto .display-font, .qa-font-noto .section-heading h2, .qa-font-noto .contact-inner h2 { font-family: "Noto Sans TC Local", sans-serif; font-weight: 900; }
 .hero-title-line { display: inline-block; -webkit-text-stroke: .084375rem rgba(255, 253, 244, .94); paint-order: stroke fill; text-shadow: .1875rem .25rem 0 #fff4d5, 0 .4375rem .875rem rgba(36, 72, 47, .08); }
 .hero-title-line--green { color: var(--green-800); transform: rotate(-.35deg); }
 .hero-title-line--orange { color: var(--orange); transform: translateX(.875rem) rotate(.3deg); }
-.hero-title-accent { position: absolute; width: 4rem; height: auto; right: -4.25rem; top: -1.75rem; object-fit: contain; pointer-events: none; transform: rotate(8deg); }
+.hero-title-accent { position: absolute; width: 4.75rem; height: auto; right: -5rem; top: -2.375rem; object-fit: contain; pointer-events: none; transform: rotate(8deg); }
 .hero-decoration { position: absolute; z-index: -1; height: auto; object-fit: contain; pointer-events: none; }
-.hero-decoration--pencil { width: 4.125rem; left: -3.375rem; top: 2.625rem; transform: rotate(-13deg); }
-.hero-lead { max-width: 31.25rem; margin: 1.125rem 0 1.5rem; color: #213c30; font-size: 1.05rem; font-weight: 700; }
+.hero-decoration--pencil { width: 6rem; left: -4.75rem; top: 50%; transform: translateY(-52%) rotate(-14deg); }
+.hero-lead { max-width: 31.25rem; margin: 1.125rem 0 1.5rem; color: #213c30; font-size: 1.12rem; font-weight: 700; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: .875rem; }
 .hero-visual { align-self: stretch; position: relative; min-height: 29.6875rem; }
-.hero-picture { position: absolute; left: 0; top: 1.25rem; width: calc(100% + 6vw); aspect-ratio: 16 / 9; overflow: hidden; border-radius: 2.625rem 0 0 2.625rem; box-shadow: 0 .625rem 1.75rem rgba(5, 74, 40, .12); }
+.hero-picture { position: absolute; left: 0; top: 0; width: calc(100% + 6vw); height: calc(100% - 5.5rem); overflow: hidden; border-radius: 2.625rem 0 0 2.625rem; box-shadow: 0 .625rem 1.75rem rgba(74, 52, 5, .14); }
 .hero-photo { width: 100%; height: 100%; object-fit: cover; }
-.hero-mascot { position: absolute; z-index: 3; width: 8rem; height: auto; right: -.5rem; bottom: -.125rem; filter: drop-shadow(0 .4375rem .625rem rgba(0, 0, 0, .13)); }
-.hero-scatter { position: absolute; z-index: 1; width: 4.25rem; height: auto; left: 1.25%; top: 7.25rem; pointer-events: none; transform: rotate(-9deg); }
+.hero-mascot { position: absolute; z-index: 3; width: 8.5rem; height: auto; right: -.5rem; bottom: -.125rem; filter: drop-shadow(0 .4375rem .625rem rgba(0, 0, 0, .13)); }
+.hero-scatter { position: absolute; z-index: 1; width: 4.75rem; height: auto; left: 2%; top: 6rem; pointer-events: none; transform: rotate(-9deg); }
 .hero-doodle { position: absolute; z-index: 2; font-weight: 900; }
-.hero-doodle--abc { left: 3%; bottom: 4rem; color: #ec4b30; font-size: 1.7rem; transform: rotate(-7deg); }
+.hero-doodle--abc { left: 2%; bottom: 8.5rem; color: #ec4b30; font-size: 1.95rem; transform: rotate(-7deg); }
 .hero-doodle--abc span { color: #2e9d4e; }
-.hero-wave { position: absolute; left: -5%; right: 38%; bottom: -3.5rem; height: 8.125rem; border-radius: 50% 50% 0 0; background: var(--green-800); transform: rotate(2deg); }
+.hero-wave { position: absolute; z-index: 1; left: 0; right: 0; bottom: 0; height: 8rem; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 140' preserveAspectRatio='none'%3E%3Cpath d='M0 64 C 180 16 360 4 620 36 C 880 66 1150 84 1440 52 L1440 140 L0 140 Z' fill='%23087a42'/%3E%3C/svg%3E") center bottom / 100% 100% no-repeat; }
 
-.benefits { position: relative; z-index: 3; margin-top: -1.375rem; padding-bottom: .25rem; }
+.benefits { position: relative; z-index: 3; margin-top: -1.75rem; padding-bottom: 1.25rem; }
+.benefits::before { content: ""; position: absolute; left: 0; right: 0; top: 1.75rem; height: 1.375rem; background: var(--green-800); border-radius: 0 0 55% 45% / 0 0 1.25rem 1rem; }
 .benefits .container { position: relative; }
 .benefit-decoration { position: absolute; z-index: 4; width: 2.625rem; height: auto; pointer-events: none; }
 .benefit-decoration--left { left: -.875rem; top: -1.25rem; transform: rotate(-16deg); }
@@ -292,7 +296,8 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
   .hero-copy { transform: translateY(-1.25rem); }
   .hero-scatter, .hero-decoration--pencil { display: none; }
   .hero-visual { min-height: 30.3125rem; }
-  .hero-picture { top: 1.25rem; width: 100%; aspect-ratio: 5 / 3; }
+  .hero-picture { width: 100%; height: calc(100% - 6rem); }
+  .hero-wave { height: 6.5rem; }
   .hero-mascot { width: 7rem; right: .25rem; }
   .program-card { grid-template-columns: 39% 61%; }
   .program-content { padding: 1.125rem 1.125rem 1rem; }
@@ -323,11 +328,12 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
   .hero-lead { margin-inline: auto; }
   .hero-actions { justify-content: center; }
   .hero-visual { min-height: 0; aspect-ratio: 5 / 3; }
-  .hero-picture { inset: .5rem 0 auto; width: 100%; height: calc(100% - .5rem); aspect-ratio: auto; border-radius: 2.25rem 2.25rem 0 0; }
+  .hero-picture { inset: .5rem 0 auto; width: 100%; height: calc(100% - 3.25rem); aspect-ratio: auto; border-radius: 2.25rem 2.25rem 0 0; }
   .hero-mascot { width: 5.75rem; right: .25rem; bottom: 0; }
-  .hero-wave { right: 0; bottom: -5.3125rem; }
+  .hero-wave { height: 4.75rem; }
   .hero-doodle--abc { bottom: 2.125rem; }
-  .benefits { margin-top: 0; padding-top: 1.125rem; }
+  .benefits { margin-top: -1.25rem; padding-top: 0; }
+  .benefits::before { top: 1.25rem; height: 1.125rem; }
   .benefit-grid { grid-template-columns: 1fr; }
   .benefit-card { min-height: 7.75rem; }
   .benefit-decoration--left { left: -.375rem; top: -.625rem; }
@@ -357,8 +363,9 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
   .hero-scatter { width: 2.5rem; left: .125rem; top: 4.625rem; opacity: .9; }
   .hero-lead { font-size: .94rem; }
   .hero-actions .button { flex: 1 1 0; padding-inline: .625rem; }
-  .hero-visual { min-height: 0; aspect-ratio: 16 / 9; }
-  .hero-picture { inset-inline: 0; width: 100%; border-radius: 1.75rem 1.75rem 0 0; }
+  .hero-visual { min-height: 0; aspect-ratio: 16 / 10; }
+  .hero-picture { inset-inline: 0; width: 100%; height: calc(100% - 2.75rem); border-radius: 1.75rem 1.75rem 0 0; }
+  .hero-wave { height: 3.75rem; }
   .hero-mascot { width: 4.5rem; right: .3125rem; bottom: 0; }
   .benefits { padding-top: .875rem; }
   .benefit-grid { gap: .75rem; }
