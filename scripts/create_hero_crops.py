@@ -16,8 +16,8 @@ def save_crop(filename: str, box: tuple[int, int, int, int], size=None) -> None:
         crop.save(OUTPUT / filename, "WEBP", quality=86, method=6)
 
 
-# Frame tightly on the teacher-and-students action: drop the ceiling projector
-# and most of the empty whiteboard while keeping the flashcards in view.
-save_crop("classroom-hero-desktop.webp", (116, 215, 1440, 960))
-save_crop("classroom-hero-tablet.webp", (140, 170, 1440, 950))
-save_crop("classroom-hero-mobile.webp", (116, 215, 1440, 960), (1152, 648))
+# Keep the full-width original frame. The hero container is narrower than 16:9,
+# so pre-cropping to 16:9 causes object-fit to cut into the teacher a second time.
+save_crop("classroom-hero-desktop.webp", (0, 0, 1440, 960))
+save_crop("classroom-hero-tablet.webp", (0, 0, 1440, 960))
+save_crop("classroom-hero-mobile.webp", (0, 0, 1440, 960), (1152, 768))
