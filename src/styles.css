@@ -113,7 +113,7 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
 .hero-title-wrap { position: relative; width: min(100%, 34rem); }
 .hero-title-art { width: 100%; height: auto; filter: drop-shadow(0 .5rem .75rem rgba(55, 66, 27, .08)); }
 .qa-font-noto .program-ribbon h3, .qa-font-noto .cta-highlight, .qa-font-noto .display-font, .qa-font-noto .section-heading h2, .qa-font-noto .contact-inner h2 { font-family: "Noto Sans TC Local", sans-serif; font-weight: 900; }
-.hero-lead { max-width: 32rem; margin: .5rem 0 1.375rem 2.5rem; color: #213c30; font-size: 1.12rem; font-weight: 700; }
+.hero-lead { max-width: 32rem; margin: .5rem 0 1.375rem 2.5rem; color: #213c30; font-size: 1.12rem; font-weight: 700; text-wrap: balance; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: .875rem; margin-left: 2.5rem; }
 .hero-visual { align-self: stretch; position: relative; min-height: 29.6875rem; }
 .hero-picture { position: absolute; left: -4.5rem; top: -1rem; bottom: 0; width: calc(100% + 6vw + 4.5rem); height: auto; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, .35) 4%, #000 11%, #000 100%); mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, .35) 4%, #000 11%, #000 100%); }
@@ -401,7 +401,6 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
   .contact-inner > div { min-width: 0; }
   .contact-mascot { width: 6.375rem; margin-top: -1.25rem; }
   .contact-inner h2 { font-size: 1.44rem; line-height: 1.26; word-break: normal; text-wrap: balance; }
-  .contact-inner h2 br { display: none; }
   .contact-decoration { width: 1.75rem; margin-top: -.625rem; }
   .contact-actions { grid-template-columns: 1fr; width: 100%; }
   .contact-actions .button { width: 100%; height: 3.25rem; min-height: 3.25rem; padding-block: .5rem; }
