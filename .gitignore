@@ -2,6 +2,9 @@ node_modules/
 dist/
 output/
 assets/classroom-originals/
+assets/source-images/
+review/
+tmp/
 .vite.log
 .vite-error.log
 *.local
