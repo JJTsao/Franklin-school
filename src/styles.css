@@ -219,9 +219,9 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
 .testimonial-grid figcaption { display: flex; align-items: center; gap: .6875rem; padding-top: .75rem; border-top: .125rem solid #edf6ed; }
 .testimonial-grid figcaption div { display: flex; flex-direction: column; }
 .testimonial-grid figcaption strong { font-size: .9rem; }.testimonial-grid figcaption small { color: var(--muted); }
-.avatar { width: 3rem; height: 3rem; display: grid; place-items: center; border-radius: 50%; color: var(--icon-ink); border: .125rem solid #a9d67e; }
-.avatar svg { width: 2.375rem; height: 2.375rem; }
-.avatar--1 { background: #f8e7c5; }.avatar--2 { background: #dceef2; }.avatar--3 { background: #e7efd1; }
+.avatar { width: 3rem; height: 3rem; display: grid; place-items: center; border-radius: 50%; overflow: hidden; color: var(--icon-ink); }
+.avatar svg { width: 3rem; height: 3rem; display: block; }
+.avatar--1 { background: #e7ddf3; }.avatar--2 { background: #d9ecf7; }.avatar--3 { background: #fdeecb; }
 
 .contact-cta { position: relative; isolation: isolate; background: radial-gradient(ellipse 42% 135% at 97% 140%, rgba(3, 78, 43, .38) 0 60%, transparent 61%), var(--green-800); color: #fff; }
 .contact-inner { position: relative; z-index: 1; min-height: 10.75rem; display: grid; grid-template-columns: 9rem 1fr minmax(21.875rem, auto); align-items: center; gap: 1.5rem; }
