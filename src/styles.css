@@ -138,25 +138,65 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
 .section-heading h2 { margin: 0; color: var(--green-900); font-family: "JF Open Huninn Display", "Noto Sans TC Local", sans-serif; font-size: 1em; font-weight: 400; font-synthesis: none; line-height: 1.25; letter-spacing: .045em; }
 #tuition-title, #day-title, #teachers-title, #gallery-title, #testimonial-title, #branches-title { font-family: "Noto Sans TC Local", sans-serif; font-weight: 900; }
 .section-lead { max-width: 40rem; margin: .9375rem auto 0; color: #43544d; font-size: .96rem; line-height: 1.75; text-wrap: pretty; }
+
+/*
+  標題側翼：標題區寬 42.5rem、容器寬 73.75rem，兩側各留下約 15.6rem 的空白帶。
+  裝飾放在這裡填滿留白。z-index: -1 讓它永遠畫在文字底下（.section > .container
+  是 z-index:1 的堆疊環境，負值不會穿到 section 背景之外），pointer-events: none
+  確保不吃點擊。960px 以下空白帶被標題吃掉，整組隱藏。
+*/
+.heading-flourish { position: absolute; z-index: -1; height: auto; pointer-events: none; user-select: none; filter: drop-shadow(0 .1875rem .1875rem rgba(55, 44, 8, .07)); }
+.heading-flourish--left { left: -8rem; }
+.heading-flourish--right { right: -8rem; }
+/* 高低、角度、尺寸逐個錯開，否則六個 section 的側翼會排成一列制式徽章 */
+.flourish-trail { width: 3.9rem; }
+.flourish-cluster { width: 3.5rem; }
+.flourish-burst { width: 3.7rem; }
+.flourish-shooting { width: 4.5rem; }
+.flourish-pencil { width: 3.4rem; }
+.flourish-letter { width: 3.6rem; }
+.flourish-book { width: 4.2rem; }
+/*
+  top 以「標題列高度（約 3.56em ≈ 3.56rem × 字級比）」為基準做垂直置中，再加 ±.25rem 抖動。
+  往上不得超過 -.3rem，否則 .branches / .day 的側翼會戳進上緣撕紙邊；
+  往下不得超過標題列 + 下方 margin，否則會被卡片的不透明底蓋掉半截。
+*/
+.flourish-trail.heading-flourish--left { top: -.3rem; transform: rotate(-14deg); }
+.flourish-trail.heading-flourish--right { top: -.05rem; right: -8.75rem; transform: rotate(8deg); }
+.flourish-cluster.heading-flourish--left { top: .1rem; left: -8.5rem; transform: rotate(-7deg); }
+.flourish-cluster.heading-flourish--right { top: -.15rem; transform: rotate(12deg); }
+.flourish-burst.heading-flourish--left { top: .05rem; transform: rotate(-16deg); }
+.flourish-burst.heading-flourish--right { top: .45rem; right: -7.25rem; transform: rotate(14deg); }
+.flourish-shooting.heading-flourish--left { top: .3rem; left: -9rem; transform: rotate(-6deg); }
+.flourish-shooting.heading-flourish--right { top: -.05rem; transform: rotate(6deg) scaleX(-1); }
+.flourish-pencil.heading-flourish--left { top: -.1rem; transform: rotate(-24deg); }
+.flourish-letter.heading-flourish--right { top: .15rem; right: -7.5rem; transform: rotate(11deg); }
+.flourish-book.heading-flourish--left { top: .35rem; left: -8.75rem; transform: rotate(-9deg); }
 .section-heading--compact { margin-bottom: 1rem; }
-.heading-rays { position: relative; flex: 0 0 auto; width: .82em; height: .72em; }
-.heading-rays i { position: absolute; width: .46em; height: .055em; border-radius: 99rem; background: var(--sun); transform-origin: center; }
-.heading-rays i:nth-child(1) { left: .044em; top: .088em; transform: rotate(48deg); }
-.heading-rays i:nth-child(2) { left: 0; top: .285em; transform: rotate(8deg); }
-.heading-rays i:nth-child(3) { left: .088em; top: .482em; transform: rotate(-34deg); }
+/* 光芒線的內部用 % 定位，改動外框尺寸時三條線會自己跟著縮放 */
+.heading-rays { position: relative; flex: 0 0 auto; width: 1.08em; height: .95em; }
+.heading-rays i { position: absolute; width: 56.1%; height: 7.6%; border-radius: 99rem; background: var(--sun); transform-origin: center; }
+.heading-rays i:nth-child(1) { left: 5.4%; top: 12.2%; transform: rotate(48deg); }
+.heading-rays i:nth-child(2) { left: 0; top: 39.6%; transform: rotate(8deg); }
+.heading-rays i:nth-child(3) { left: 10.7%; top: 66.9%; transform: rotate(-34deg); }
 .heading-rays--right { transform: scaleX(-1); }
-.heading-star { flex: 0 0 auto; width: .58em; height: .58em; clip-path: polygon(50% 0, 61% 36%, 100% 38%, 69% 59%, 79% 100%, 50% 75%, 21% 100%, 31% 59%, 0 38%, 39% 36%); transform: rotate(-10deg); }
+.heading-star { flex: 0 0 auto; width: .78em; height: .78em; clip-path: polygon(50% 0, 61% 36%, 100% 38%, 69% 59%, 79% 100%, 50% 75%, 21% 100%, 31% 59%, 0 38%, 39% 36%); transform: rotate(-10deg); }
 .heading-star--green { background: var(--green-700); }
 /*
   標題裝飾必須是單一實心剪影：細碎散點的素材（如 sparkle-trail）在此尺寸會化成灰塵。
-  每張圖的透明留白量不同，em 值逐個微調到「看起來一樣重」，而非數字一致。
+
+  尺寸只給 height、寬度交給長寬比。不要用正方形框 + object-fit: contain ——
+  橫幅素材（書 1.44:1）會被寬度卡住，畫出來的高度只剩設定值的六成。
+  下面的 height 是「畫布」高度，已用 畫布高/內容高 補償素材四周的透明留白，
+  使實際畫出來的內容高度落在漢字字面（約 .88em）附近：書略高於字，其餘向它看齊。
 */
-.heading-image { flex: 0 0 auto; width: .84em; height: .84em; object-fit: contain; transform: rotate(9deg); }
-.heading-image--burst { width: .92em; height: .92em; transform: rotate(-8deg); }
-.heading-image--book { width: .98em; height: .98em; transform: rotate(-7deg); }
-.heading-image--shooting { width: 1.12em; height: 1.12em; transform: rotate(-4deg); }
-.heading-image--globe { width: .86em; height: .86em; transform: rotate(7deg); }
-.heading-heart { flex: 0 0 auto; width: .52em; height: .52em; fill: #ef765b; transform: rotate(9deg); }
+.heading-image { flex: 0 0 auto; width: auto; height: .95em; object-fit: contain; transform: rotate(9deg); }
+.heading-image--burst { height: 1.22em; transform: rotate(-8deg); }      /* 實畫 .95em */
+.heading-image--book { height: 1.3em; transform: rotate(-7deg); }        /* 實畫 1.00em */
+.heading-image--shooting { height: 1.25em; transform: rotate(-4deg); }   /* 星體約 .78em */
+.heading-image--globe { height: .98em; transform: rotate(7deg); }        /* 實畫 .98em */
+.heading-image--star { height: .93em; }                                  /* 實畫 .93em */
+.heading-heart { flex: 0 0 auto; width: .72em; height: .72em; fill: #ef765b; transform: rotate(9deg); }
 
 /*
   各 section 的自訂 padding 一律用 .x.section 提高權重。
@@ -261,8 +301,6 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
 
 .teachers { position: relative; overflow: hidden; background: var(--paper-soft); }
 .teachers.section { padding: 1.75rem 0 2rem; }
-/* sparkle-trail 的細節要到 ~3.4rem 才讀得出來，因此放在標題區旁而非標題列上 */
-.teachers-sparkle { position: absolute; z-index: 0; right: -.5rem; top: -1.25rem; width: 3.4rem; height: auto; pointer-events: none; transform: rotate(6deg); }
 .teacher-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.125rem; }
 .teacher-card { display: flex; flex-direction: column; gap: .9375rem; padding: 1rem 1rem 1.25rem; background: #fff; border: .0625rem solid #efe7d5; border-radius: 1.25rem; box-shadow: 0 .375rem 1.125rem rgba(96, 66, 12, .10); }
 .teacher-body { display: flex; flex-direction: column; gap: .1875rem; }
@@ -402,6 +440,7 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
   .program-tagline { text-align: left; }
   .program-card-decoration--letter { left: .125rem; top: 1.25rem; }
   .program-card-decoration--book { top: .875rem; }
+  .heading-flourish { display: none; }
   .tuition-grid { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); }
   .tuition-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .teacher-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
@@ -445,7 +484,6 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
   .timeline li:nth-child(3n)::after { display: none; }
   .gallery-track { grid-auto-columns: calc((100% - 2rem) / 3); }.gallery-control--prev { left: -.625rem; }.gallery-control--next { right: -.625rem; }
   .testimonial-grid { grid-template-columns: 1fr; }
-  .teachers-sparkle { display: none; }
   .tuition-grid { grid-template-columns: 1fr; gap: 1.25rem; }
   .tuition-card { width: min(100%, 34rem); margin-inline: auto; }
   .tuition-card--bonus { padding: 1.5rem 1.25rem; }
