@@ -43,10 +43,10 @@
 
         <nav class="site-nav" id="site-nav" aria-label="主要導覽">
           <a href="#about">關於我們</a>
-          <a href="#programs">芝蔴街美語</a>
-          <a href="#programs">安親課輔</a>
-          <a href="#environment">孩子的一天</a>
-          <a href="#results">學習成果</a>
+          <a href="#programs">課程與費用</a>
+          <a href="#teachers">師資團隊</a>
+          <a href="#gallery">學習現場</a>
+          <a href="#branches">分校據點</a>
           <a href="#contact">聯絡我們</a>
           <button class="button button--sun nav-cta display-font" type="button">加 LINE 詢問</button>
         </nav>
@@ -140,10 +140,55 @@
         </div>
       </section>
 
-      <section class="day section" id="environment" aria-labelledby="day-title">
+      <!-- 費用數字全部為佔位資料，待客戶提供後替換（搜尋 data-placeholder） -->
+      <section class="tuition section" id="tuition" aria-labelledby="tuition-title">
+        <div class="container">
+          <div class="section-heading">
+            <div class="section-title-row section-title-row--decorated"><img class="heading-image heading-image--burst" src="./public/images/generated/decorations/decor-starburst-v1.webp" alt="" aria-hidden="true" loading="lazy" decoding="async" /><h2 id="tuition-title">課程時數與費用</h2><span class="heading-star heading-star--green" aria-hidden="true"></span></div>
+            <img class="heading-flourish heading-flourish--left flourish-trail" src="./public/images/generated/decorations/decor-sparkle-trail-v1.webp" alt="" aria-hidden="true" loading="lazy" decoding="async" />
+            <img class="heading-flourish heading-flourish--right flourish-cluster" src="./public/images/generated/decorations/decor-sparkle-cluster-v1.webp" alt="" aria-hidden="true" loading="lazy" decoding="async" />
+            <p class="section-lead">芝蔴街美語只有一種方案，堂數比一般美語班多，所以總額看起來高一些；把時數攤開來算，每一堂反而更划算。而且報名美語，安親課輔免費附贈。</p>
+          </div>
+
+          <div class="tuition-grid">
+            <article class="tuition-card tuition-card--plan">
+              <h3>芝蔴街美語</h3>
+              <p class="tuition-kicker">全校只有這一種方案，不分級加價</p>
+              <dl class="tuition-facts">
+                <div><dt>每週堂數</dt><dd data-placeholder>X 堂</dd></div>
+                <div><dt>單堂時間</dt><dd>50 分鐘</dd></div>
+                <div><dt>一期堂數</dt><dd data-placeholder>XX 堂</dd></div>
+                <div><dt>一期時數</dt><dd data-placeholder>XX 小時</dd></div>
+              </dl>
+              <p class="tuition-total"><span class="tuition-total-label">一期學費<small data-placeholder>「一期」＝ 月／季／學期？待確認</small></span><strong data-placeholder>$XX,XXX</strong></p>
+              <p class="tuition-unit"><span class="tuition-unit-label">平均每堂 50 分鐘</span><mark class="tuition-highlight" data-placeholder>只要 $NNN</mark><img class="tuition-burst" src="./public/images/generated/decorations/decor-starburst-v1.webp" alt="" aria-hidden="true" loading="lazy" decoding="async" /></p>
+              <p class="tuition-extra" data-placeholder>其他費用：教材費 $X,XXX／註冊費 $XXX／無其他費用 —— 請客戶確認後刪去不適用者</p>
+              <img class="tuition-card-decoration" src="./public/images/generated/decorations/decor-pencil-v1.webp" alt="" aria-hidden="true" loading="lazy" decoding="async" />
+            </article>
+
+            <aside class="tuition-card tuition-card--bonus" aria-labelledby="bonus-title">
+              <h3 id="bonus-title">安親課輔</h3>
+              <p class="bonus-amount">$0</p>
+              <p class="bonus-tag">報名美語即附贈</p>
+              <ul class="bonus-list">
+                <li>下課後留下來寫作業</li>
+                <li>老師陪伴到家長接回</li>
+              </ul>
+              <p class="bonus-note">安親不另外收費，其時數也不計入左側的每堂單價。</p>
+              <img class="tuition-card-decoration" src="./public/images/generated/decorations/decor-open-book-v1.webp" alt="" aria-hidden="true" loading="lazy" decoding="async" />
+            </aside>
+          </div>
+
+          <p class="tuition-note" data-placeholder>以上皆為實際授課時數，不含課間休息。實際費用以各分校公告為準。</p>
+        </div>
+      </section>
+
+      <section class="day section" id="schedule" aria-labelledby="day-title">
         <div class="container">
           <div class="section-heading section-heading--compact">
             <div class="section-title-row section-title-row--decorated"><span class="heading-rays heading-rays--left" aria-hidden="true"><i></i><i></i><i></i></span><h2 id="day-title">孩子在這裡的一天</h2><span class="heading-rays heading-rays--right" aria-hidden="true"><i></i><i></i><i></i></span></div>
+            <img class="heading-flourish heading-flourish--left flourish-burst" src="./public/images/generated/decorations/decor-starburst-v1.webp" alt="" aria-hidden="true" loading="lazy" decoding="async" />
+            <img class="heading-flourish heading-flourish--right flourish-shooting" src="./public/images/generated/decorations/decor-shooting-star-v1.webp" alt="" aria-hidden="true" loading="lazy" decoding="async" />
           </div>
           <ol class="timeline">
             <li><div class="timeline-icon"><img src="./public/icons/optimized/daily/daily-bus.webp" width="240" height="208" alt="" aria-hidden="true" loading="lazy" decoding="async" /></div><time>13:30 – 14:00</time><strong>接送／點心</strong></li>
@@ -156,15 +201,67 @@
           <img class="day-decoration day-decoration--left" src="./public/images/generated/decorations/decor-outline-star-v1.webp" alt="" aria-hidden="true" loading="lazy" decoding="async" />
           <img class="day-decoration day-decoration--right" src="./public/images/generated/decorations/decor-outline-star-v1.webp" alt="" aria-hidden="true" loading="lazy" decoding="async" />
         </div>
+        <div class="day-edge" aria-hidden="true"></div>
       </section>
 
-      <section class="results section" id="results" aria-labelledby="results-title">
+      <!--
+        師資照片待確認肖像授權。未授權的老師保留手繪相框佔位，不使用 AI 生成人臉。
+        取得授權後，將 .photo-frame 內的吉祥物與說明文字換成 <img class="photo-frame-photo">。
+      -->
+      <section class="teachers section" id="teachers" aria-labelledby="teachers-title" data-placeholder>
+        <div class="container">
+          <div class="section-heading section-heading--compact">
+            <div class="section-title-row section-title-row--decorated"><img class="heading-image heading-image--book" src="./public/images/generated/decorations/decor-open-book-v1.webp" alt="" aria-hidden="true" loading="lazy" decoding="async" /><h2 id="teachers-title">陪孩子長大的老師</h2><img class="heading-image heading-image--star" src="./public/images/generated/decorations/decor-outline-star-v1.webp" alt="" aria-hidden="true" loading="lazy" decoding="async" /></div>
+            <img class="heading-flourish heading-flourish--left flourish-pencil" src="./public/images/generated/decorations/decor-pencil-v1.webp" alt="" aria-hidden="true" loading="lazy" decoding="async" />
+            <img class="heading-flourish heading-flourish--right flourish-trail" src="./public/images/generated/decorations/decor-sparkle-trail-v1.webp" alt="" aria-hidden="true" loading="lazy" decoding="async" />
+          </div>
+          <div class="teacher-grid">
+            <article class="teacher-card">
+              <div class="photo-frame"><img class="photo-frame-mascot" src="./public/images/optimized/mascot-point.webp" alt="" aria-hidden="true" loading="lazy" decoding="async" /><span class="photo-frame-label">照片準備中</span></div>
+              <div class="teacher-body">
+                <strong data-placeholder>OOO 老師</strong>
+                <span class="teacher-role" data-placeholder>職稱待補</span>
+                <ul class="teacher-notes"><li data-placeholder>學經歷待補</li><li data-placeholder>教學專長待補</li></ul>
+              </div>
+            </article>
+            <article class="teacher-card">
+              <div class="photo-frame"><img class="photo-frame-mascot" src="./public/images/optimized/mascot-point.webp" alt="" aria-hidden="true" loading="lazy" decoding="async" /><span class="photo-frame-label">照片準備中</span></div>
+              <div class="teacher-body">
+                <strong data-placeholder>OOO 老師</strong>
+                <span class="teacher-role" data-placeholder>職稱待補</span>
+                <ul class="teacher-notes"><li data-placeholder>學經歷待補</li><li data-placeholder>教學專長待補</li></ul>
+              </div>
+            </article>
+            <article class="teacher-card">
+              <div class="photo-frame"><img class="photo-frame-mascot" src="./public/images/optimized/mascot-point.webp" alt="" aria-hidden="true" loading="lazy" decoding="async" /><span class="photo-frame-label">照片準備中</span></div>
+              <div class="teacher-body">
+                <strong data-placeholder>OOO 老師</strong>
+                <span class="teacher-role" data-placeholder>職稱待補</span>
+                <ul class="teacher-notes"><li data-placeholder>學經歷待補</li><li data-placeholder>教學專長待補</li></ul>
+              </div>
+            </article>
+            <article class="teacher-card">
+              <div class="photo-frame"><img class="photo-frame-mascot" src="./public/images/optimized/mascot-point.webp" alt="" aria-hidden="true" loading="lazy" decoding="async" /><span class="photo-frame-label">照片準備中</span></div>
+              <div class="teacher-body">
+                <strong data-placeholder>OOO 老師</strong>
+                <span class="teacher-role" data-placeholder>職稱待補</span>
+                <ul class="teacher-notes"><li data-placeholder>學經歷待補</li><li data-placeholder>教學專長待補</li></ul>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="gallery section" id="gallery" aria-labelledby="gallery-title">
         <div class="container">
           <div class="section-heading">
-            <div class="section-title-row section-title-row--decorated"><span class="heading-star heading-star--green" aria-hidden="true"></span><h2 id="results-title">學習成果看得見</h2><img class="heading-image heading-image--star" src="./public/images/generated/decorations/decor-outline-star-v1.webp" alt="" aria-hidden="true" loading="lazy" decoding="async" /></div>
+            <div class="section-title-row section-title-row--decorated"><img class="heading-image heading-image--shooting" src="./public/images/generated/decorations/decor-shooting-star-v1.webp" alt="" aria-hidden="true" loading="lazy" decoding="async" /><h2 id="gallery-title">孩子的學習現場</h2><span class="heading-star heading-star--green" aria-hidden="true"></span></div>
+            <img class="heading-flourish heading-flourish--left flourish-cluster" src="./public/images/generated/decorations/decor-sparkle-cluster-v1.webp" alt="" aria-hidden="true" loading="lazy" decoding="async" />
+            <img class="heading-flourish heading-flourish--right flourish-letter" src="./public/images/generated/decorations/decor-letter-a-v1.webp" alt="" aria-hidden="true" loading="lazy" decoding="async" />
           </div>
           <div class="gallery-shell">
             <button class="gallery-control gallery-control--prev" type="button" aria-label="上一張課堂照片"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5-7 7 7 7" /></svg></button>
+            <!-- 教室環境照片到位後，在此追加 .gallery-card 即可，版位已可容納 -->
             <div class="gallery-track" aria-live="polite">
               <article class="gallery-card"><img class="gallery-photo" src="./public/images/optimized/classroom-gallery-brave.webp" width="640" height="480" alt="孩子在老師鼓勵下勇敢站起來練習英語" loading="lazy" decoding="async" /><span>勇於嘗試</span></article>
               <article class="gallery-card"><img class="gallery-photo" src="./public/images/optimized/classroom-gallery-hands-up.webp" width="640" height="480" alt="孩子們在課堂中主動舉手參與問答" loading="lazy" decoding="async" /><span>主動舉手</span></article>
@@ -181,11 +278,51 @@
         <div class="container">
           <div class="section-heading section-heading--compact">
             <div class="section-title-row section-title-row--decorated"><img class="heading-image heading-image--star" src="./public/images/generated/decorations/decor-outline-star-v1.webp" alt="" aria-hidden="true" loading="lazy" decoding="async" /><h2 id="testimonial-title">家長怎麼說</h2><svg class="heading-heart" viewBox="0 0 32 30" aria-hidden="true"><path d="M16 27S3 19.5 3 10.5C3 5.7 8.7 3 12.3 6.2L16 9.8l3.7-3.6C23.3 3 29 5.7 29 10.5 29 19.5 16 27 16 27Z" /></svg></div>
+            <img class="heading-flourish heading-flourish--left flourish-book" src="./public/images/generated/decorations/decor-open-book-v1.webp" alt="" aria-hidden="true" loading="lazy" decoding="async" />
+            <img class="heading-flourish heading-flourish--right flourish-burst" src="./public/images/generated/decorations/decor-starburst-v1.webp" alt="" aria-hidden="true" loading="lazy" decoding="async" />
           </div>
           <div class="testimonial-grid">
             <figure><blockquote>孩子在這裡不只英文進步，也變得更有自信，每天都期待來上課！</blockquote><figcaption><span class="avatar avatar--1"><svg aria-hidden="true"><use href="#icon-avatar-a"></use></svg></span><div><strong>林媽媽</strong><small>小二家長</small></div></figcaption></figure>
             <figure><blockquote>老師很有耐心，會隨時回饋孩子學習狀況，讓我們很放心。</blockquote><figcaption><span class="avatar avatar--2"><svg aria-hidden="true"><use href="#icon-avatar-c"></use></svg></span><div><strong>陳爸爸</strong><small>小三家長</small></div></figcaption></figure>
             <figure><blockquote>在這裡養成了按時完成作業和複習的習慣，成績和態度都進步很多。</blockquote><figcaption><span class="avatar avatar--3"><svg aria-hidden="true"><use href="#icon-avatar-b"></use></svg></span><div><strong>黃媽媽</strong><small>小四家長</small></div></figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- 兩校地址、電話、時間皆為佔位資料，待客戶提供後替換 -->
+      <section class="branches section" id="branches" aria-labelledby="branches-title">
+        <div class="container">
+          <div class="section-heading section-heading--compact">
+            <div class="section-title-row section-title-row--decorated"><span class="heading-star heading-star--green" aria-hidden="true"></span><h2 id="branches-title">兩間分校，同一份用心</h2><img class="heading-image heading-image--globe" src="./public/images/generated/decorations/decor-globe-v1.webp" alt="" aria-hidden="true" loading="lazy" decoding="async" /></div>
+            <img class="heading-flourish heading-flourish--left flourish-shooting" src="./public/images/generated/decorations/decor-shooting-star-v1.webp" alt="" aria-hidden="true" loading="lazy" decoding="async" />
+            <img class="heading-flourish heading-flourish--right flourish-cluster" src="./public/images/generated/decorations/decor-sparkle-cluster-v1.webp" alt="" aria-hidden="true" loading="lazy" decoding="async" />
+          </div>
+          <div class="branch-grid">
+            <article class="branch-card branch-card--green">
+              <div class="branch-ribbon">
+                <img class="branch-ribbon-art" src="./public/images/generated/ribbons/program-ribbon-green-v1.webp" width="1350" height="317" alt="" aria-hidden="true" loading="lazy" decoding="async" />
+                <h3>斗六分校</h3>
+              </div>
+              <div class="photo-frame photo-frame--wide"><img class="photo-frame-mascot" src="./public/images/optimized/mascot-point.webp" alt="" aria-hidden="true" loading="lazy" decoding="async" /><span class="photo-frame-label">校舍照片準備中</span></div>
+              <address class="branch-info">
+                <p class="branch-info-item"><svg aria-hidden="true"><use href="#icon-location"></use></svg><span data-placeholder>雲林縣斗六市XXX路XX號</span></p>
+                <p class="branch-info-item"><svg aria-hidden="true"><use href="#icon-phone"></use></svg><a href="tel:+88655555555" data-placeholder>05-XXX-XXXX</a></p>
+                <p class="branch-info-item"><svg aria-hidden="true"><use href="#icon-clock"></use></svg><span data-placeholder>週一至週五 13:00 – 20:00<br />週六 09:00 – 17:00</span></p>
+              </address>
+            </article>
+
+            <article class="branch-card branch-card--orange">
+              <div class="branch-ribbon">
+                <img class="branch-ribbon-art" src="./public/images/generated/ribbons/program-ribbon-orange-v1.webp" width="1351" height="318" alt="" aria-hidden="true" loading="lazy" decoding="async" />
+                <h3>斗南分校</h3>
+              </div>
+              <div class="photo-frame photo-frame--wide"><img class="photo-frame-mascot" src="./public/images/optimized/mascot-point.webp" alt="" aria-hidden="true" loading="lazy" decoding="async" /><span class="photo-frame-label">校舍照片準備中</span></div>
+              <address class="branch-info">
+                <p class="branch-info-item"><svg aria-hidden="true"><use href="#icon-location"></use></svg><span data-placeholder>雲林縣斗南鎮OOO路OO號</span></p>
+                <p class="branch-info-item"><svg aria-hidden="true"><use href="#icon-phone"></use></svg><a href="tel:+88655555555" data-placeholder>05-OOO-OOOO</a></p>
+                <p class="branch-info-item"><svg aria-hidden="true"><use href="#icon-clock"></use></svg><span data-placeholder>週一至週五 13:00 – 20:00<br />週六 09:00 – 17:00</span></p>
+              </address>
+            </article>
           </div>
         </div>
       </section>
@@ -209,8 +346,16 @@
       <div class="container footer-grid">
         <div class="footer-brand"><img src="./public/images/optimized/logo-circle.webp" width="192" height="192" alt="" loading="lazy" decoding="async" /><div><strong>富蘭克林教育機構</strong><span>芝蔴街美語 × 安親課輔中心</span><small>快樂學習・自信成長・成就未來</small></div></div>
         <address>
-          <p class="footer-info-item"><svg aria-hidden="true"><use href="#icon-location"></use></svg><span>新北市中和區中山路二段123號<br />（近捷運景安站）</span></p>
-          <p class="footer-info-item"><svg aria-hidden="true"><use href="#icon-phone"></use></svg><a href="tel:+886221345678">02-1234-5678</a></p>
+          <div class="footer-branch">
+            <strong>斗六分校</strong>
+            <p class="footer-info-item"><svg aria-hidden="true"><use href="#icon-location"></use></svg><span data-placeholder>雲林縣斗六市XXX路XX號</span></p>
+            <p class="footer-info-item"><svg aria-hidden="true"><use href="#icon-phone"></use></svg><a href="tel:+88655555555" data-placeholder>05-XXX-XXXX</a></p>
+          </div>
+          <div class="footer-branch">
+            <strong>斗南分校</strong>
+            <p class="footer-info-item"><svg aria-hidden="true"><use href="#icon-location"></use></svg><span data-placeholder>雲林縣斗南鎮OOO路OO號</span></p>
+            <p class="footer-info-item"><svg aria-hidden="true"><use href="#icon-phone"></use></svg><a href="tel:+88655555555" data-placeholder>05-OOO-OOOO</a></p>
+          </div>
         </address>
         <div class="footer-contact"><p class="footer-info-item"><svg aria-hidden="true"><use href="#icon-mail"></use></svg><a href="mailto:service@franklin-edu.tw">service@franklin-edu.tw</a></p><p class="footer-info-item"><svg aria-hidden="true"><use href="#icon-clock"></use></svg><span>週一至週五 13:00 – 20:00<br />週六 09:00 – 17:00</span></p></div>
         <div class="footer-social"><strong>追蹤我們</strong><div><a href="#" aria-label="Facebook"><svg><use href="#icon-facebook"></use></svg></a><a href="#" aria-label="Instagram"><svg><use href="#icon-instagram"></use></svg></a><a href="#" aria-label="LINE"><svg><use href="#icon-line"></use></svg></a><a href="#" aria-label="YouTube"><svg><use href="#icon-youtube"></use></svg></a></div></div>
@@ -297,6 +442,54 @@
 
       previousGalleryButton.addEventListener('click', () => scrollGallery(-1));
       nextGalleryButton.addEventListener('click', () => scrollGallery(1));
+
+      // 滑鼠拖曳捲動。觸控與觸控板交給瀏覽器原生處理，只接管 pointerType === 'mouse'。
+      const dragThreshold = 5;
+      let dragPointerId = null;
+      let dragOriginX = 0;
+      let dragOriginScroll = 0;
+      let dragged = false;
+
+      track.addEventListener('pointerdown', (event) => {
+        if (event.pointerType !== 'mouse' || event.button !== 0) return;
+        dragPointerId = event.pointerId;
+        dragOriginX = event.clientX;
+        dragOriginScroll = track.scrollLeft;
+        dragged = false;
+      });
+
+      track.addEventListener('pointermove', (event) => {
+        if (event.pointerId !== dragPointerId) return;
+        const distance = event.clientX - dragOriginX;
+        if (!dragged) {
+          if (Math.abs(distance) < dragThreshold) return;
+          dragged = true;
+          track.setPointerCapture(dragPointerId);
+          track.classList.add('is-dragging');
+        }
+        event.preventDefault();
+        track.scrollLeft = dragOriginScroll - distance;
+      });
+
+      const endDrag = (event) => {
+        if (event.pointerId !== dragPointerId) return;
+        if (track.hasPointerCapture(dragPointerId)) track.releasePointerCapture(dragPointerId);
+        dragPointerId = null;
+        // 移除 is-dragging 會恢復 scroll-snap，瀏覽器自動吸附到最近的卡片
+        track.classList.remove('is-dragging');
+        updateGalleryControls();
+      };
+
+      track.addEventListener('pointerup', endDrag);
+      track.addEventListener('pointercancel', endDrag);
+      // 拖曳結束後緊接著的 click 不該觸發卡片
+      track.addEventListener('click', (event) => {
+        if (!dragged) return;
+        event.preventDefault();
+        event.stopPropagation();
+      }, true);
+      track.addEventListener('dragstart', (event) => event.preventDefault());
+
       track.addEventListener('scroll', updateGalleryControls, { passive: true });
       window.addEventListener('resize', updateGalleryControls);
       window.addEventListener('load', updateGalleryControls);
@@ -311,7 +504,7 @@
         });
       }, { threshold: 0.12 });
 
-      document.querySelectorAll('.benefit-card, .program-card, .timeline li, .gallery-card, .testimonial-grid figure').forEach((element) => {
+      document.querySelectorAll('.benefit-card, .program-card, .tuition-card, .timeline li, .teacher-card, .gallery-card, .testimonial-grid figure, .branch-card').forEach((element) => {
         element.classList.add('reveal');
         revealObserver.observe(element);
       });
