@@ -132,29 +132,33 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
 .icon-bubble img { width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 .1875rem .125rem rgba(70, 57, 14, .08)); }
 
 .section-heading { position: relative; max-width: 42.5rem; margin: 0 auto 1.75rem; text-align: center; }
-.section-title-row { position: relative; width: fit-content; margin-inline: auto; }
-.section-title-row--decorated { display: flex; align-items: center; justify-content: center; gap: .625rem; }
-.section-heading h2 { margin: 0; color: var(--green-900); font-family: "JF Open Huninn Display", "Noto Sans TC Local", sans-serif; font-size: clamp(2.05rem, 3.4vw, 2.85rem); font-weight: 400; font-synthesis: none; line-height: 1.25; letter-spacing: .045em; }
+/* 標題列自己扛字級，h2 與裝飾一律用 em 相對它 —— 比例在任何寬度下都鎖死，不必逐斷點手調 */
+.section-title-row { position: relative; width: fit-content; margin-inline: auto; font-size: clamp(2.05rem, 3.4vw, 2.85rem); }
+.section-title-row--decorated { display: flex; align-items: center; justify-content: center; gap: .24em; }
+.section-heading h2 { margin: 0; color: var(--green-900); font-family: "JF Open Huninn Display", "Noto Sans TC Local", sans-serif; font-size: 1em; font-weight: 400; font-synthesis: none; line-height: 1.25; letter-spacing: .045em; }
 #tuition-title, #day-title, #teachers-title, #gallery-title, #testimonial-title, #branches-title { font-family: "Noto Sans TC Local", sans-serif; font-weight: 900; }
 .section-lead { max-width: 40rem; margin: .9375rem auto 0; color: #43544d; font-size: .96rem; line-height: 1.75; text-wrap: pretty; }
 .section-heading--compact { margin-bottom: 1.5rem; }
-.heading-rays { position: relative; flex: 0 0 auto; width: 2rem; height: 1.75rem; }
-.heading-rays i { position: absolute; width: 1.125rem; height: .15625rem; border-radius: 99rem; background: var(--sun); transform-origin: center; }
-.heading-rays i:nth-child(1) { left: .125rem; top: .25rem; transform: rotate(48deg); }
-.heading-rays i:nth-child(2) { left: 0; top: .8125rem; transform: rotate(8deg); }
-.heading-rays i:nth-child(3) { left: .25rem; top: 1.375rem; transform: rotate(-34deg); }
+.heading-rays { position: relative; flex: 0 0 auto; width: .82em; height: .72em; }
+.heading-rays i { position: absolute; width: .46em; height: .055em; border-radius: 99rem; background: var(--sun); transform-origin: center; }
+.heading-rays i:nth-child(1) { left: .044em; top: .088em; transform: rotate(48deg); }
+.heading-rays i:nth-child(2) { left: 0; top: .285em; transform: rotate(8deg); }
+.heading-rays i:nth-child(3) { left: .088em; top: .482em; transform: rotate(-34deg); }
 .heading-rays--right { transform: scaleX(-1); }
-.heading-star { flex: 0 0 auto; width: 1.375rem; height: 1.375rem; clip-path: polygon(50% 0, 61% 36%, 100% 38%, 69% 59%, 79% 100%, 50% 75%, 21% 100%, 31% 59%, 0 38%, 39% 36%); transform: rotate(-10deg); }
+.heading-star { flex: 0 0 auto; width: .58em; height: .58em; clip-path: polygon(50% 0, 61% 36%, 100% 38%, 69% 59%, 79% 100%, 50% 75%, 21% 100%, 31% 59%, 0 38%, 39% 36%); transform: rotate(-10deg); }
 .heading-star--green { background: var(--green-700); }
-.heading-image { flex: 0 0 auto; width: 1.65rem; height: 1.65rem; object-fit: contain; transform: rotate(9deg); }
-/* 標題裝飾必須是單一實心剪影：細碎散點的素材（如 sparkle-trail）在此尺寸會化成灰塵 */
-.heading-image--burst { width: 1.85rem; transform: rotate(-8deg); }
-.heading-image--book { width: 2rem; transform: rotate(-7deg); }
-.heading-image--shooting { width: 2.15rem; transform: rotate(-4deg); }
-.heading-image--globe { width: 1.5rem; transform: rotate(7deg); }
-.heading-heart { flex: 0 0 auto; width: 1.25rem; height: 1.25rem; fill: #ef765b; transform: rotate(9deg); }
+/*
+  標題裝飾必須是單一實心剪影：細碎散點的素材（如 sparkle-trail）在此尺寸會化成灰塵。
+  每張圖的透明留白量不同，em 值逐個微調到「看起來一樣重」，而非數字一致。
+*/
+.heading-image { flex: 0 0 auto; width: .84em; height: .84em; object-fit: contain; transform: rotate(9deg); }
+.heading-image--burst { width: .92em; height: .92em; transform: rotate(-8deg); }
+.heading-image--book { width: .98em; height: .98em; transform: rotate(-7deg); }
+.heading-image--shooting { width: 1.12em; height: 1.12em; transform: rotate(-4deg); }
+.heading-image--globe { width: .86em; height: .86em; transform: rotate(7deg); }
+.heading-heart { flex: 0 0 auto; width: .52em; height: .52em; fill: #ef765b; transform: rotate(9deg); }
 
-.programs { overflow: hidden; padding: 3rem 0 3.25rem; background: linear-gradient(var(--paper-soft), var(--paper)); }
+.programs { overflow: hidden; padding: 3rem 0 1.5rem; background: linear-gradient(var(--paper-soft), var(--paper)); }
 .program-grid { position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; padding: 1.25rem; background: #fff3c9; border-radius: 2rem; }
 .program-card { position: relative; overflow: hidden; isolation: isolate; display: grid; grid-template-columns: minmax(0, 42%) minmax(0, 58%); min-height: 25rem; padding: 5.75rem 1.25rem 1.25rem; background: #fffdf7; border: .0625rem solid #cfe3bb; border-radius: 1.5rem; box-shadow: 0 .5rem 1.375rem rgba(74, 54, 7, .11); }
 .program-card--orange { border-color: #f1d49a; }
@@ -185,27 +189,40 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
 .program-card-decoration--pencil { width: 3.75rem; right: -.4rem; bottom: -.6rem; transform: rotate(13deg); }
 
 .tuition { background: var(--paper); }
-.tuition-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.125rem; align-items: start; }
+.tuition.section { padding-top: 1.25rem; }
+.tuition-grid { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); gap: 1.125rem; align-items: stretch; }
 .tuition-card { position: relative; overflow: hidden; isolation: isolate; display: flex; flex-direction: column; padding: 1.375rem 1.375rem 1.5rem; background: #fff; border: .0625rem solid #efe7d5; border-radius: 1.25rem; box-shadow: 0 .5rem 1.375rem rgba(74, 54, 7, .11); }
 .tuition-card::before { content: ""; position: absolute; z-index: -1; width: 9.5rem; height: 7rem; right: -3.25rem; top: -3.25rem; border-radius: 50%; background: #eff6dc; transform: rotate(-14deg); }
-.tuition-card--care { border-color: #f1d49a; }
-.tuition-card--care::before { background: #fff0c6; }
-.tuition-card h3 { margin: 0 0 .9375rem; color: var(--green-900); font-size: 1.22rem; letter-spacing: .02em; }
-.tuition-facts { margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .5rem; }
+.tuition-card--bonus { border-color: #f1d49a; }
+.tuition-card--bonus::before { background: #fff0c6; }
+.tuition-card h3 { margin: 0 0 .3125rem; color: var(--green-900); font-size: 1.35rem; letter-spacing: .02em; }
+.tuition-card--bonus h3 { color: #9c4a10; }
+.tuition-kicker { margin: 0 0 1rem; color: var(--muted); font-size: .8rem; font-weight: 700; letter-spacing: .03em; }
+.tuition-facts { margin: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .5rem; }
 .tuition-facts > div { display: flex; flex-direction: column; gap: .1rem; padding: .5rem .6875rem .5625rem; background: var(--green-50); border-radius: .625rem; }
-.tuition-card--care .tuition-facts > div { background: #fdf6e3; }
 .tuition-facts dt { color: var(--muted); font-size: .72rem; font-weight: 700; letter-spacing: .04em; }
 .tuition-facts dd { margin: 0; color: #285438; font-size: 1rem; font-weight: 900; }
 .tuition-total { display: flex; align-items: baseline; justify-content: space-between; gap: .5rem; margin: 1.0625rem 0 0; padding-top: .9375rem; border-top: .125rem dashed #e5eadc; color: var(--muted); font-size: .85rem; font-weight: 700; }
-.tuition-card--care .tuition-total { border-color: #f1e3c4; }
-.tuition-total strong { color: var(--ink); font-size: 1.3rem; font-weight: 900; letter-spacing: .01em; }
+.tuition-total-label { display: flex; flex-direction: column; gap: .1rem; text-align: left; }
+.tuition-total-label small { color: #93a49b; font-size: .68rem; font-weight: 600; letter-spacing: .02em; }
+.tuition-total strong { flex: 0 0 auto; color: var(--ink); font-size: 1.3rem; font-weight: 900; letter-spacing: .01em; }
 .tuition-unit { display: flex; flex-wrap: wrap; align-items: center; gap: .375rem .5rem; margin: .9375rem 0 0; }
 .tuition-unit-label { color: #43544d; font-size: .9rem; font-weight: 800; }
+.tuition-extra { margin: 1.0625rem 0 0; padding: .5625rem .75rem; color: #6b7c73; background: #f7f4ea; border-radius: .625rem; font-size: .74rem; line-height: 1.6; }
+
+/* 免費附加卡：$0 是唯一的視覺主角，其餘一律讓位 */
+.tuition-card--bonus { align-items: center; justify-content: center; padding: 1.75rem 1.25rem; text-align: center; }
+.bonus-amount { display: block; margin: .375rem 0 0; color: var(--orange); font-size: clamp(3.25rem, 5vw, 4.25rem); font-weight: 900; line-height: 1; letter-spacing: -.01em; text-shadow: 0 .1875rem 0 rgba(156, 74, 16, .16); }
+.bonus-tag { display: inline-flex; align-items: center; margin: .875rem 0 0; padding: .4375rem 1rem; color: #fff; background: var(--green-800); border-radius: 99rem; font-size: .84rem; font-weight: 900; letter-spacing: .03em; }
+.bonus-list { list-style: none; display: grid; gap: .4375rem; margin: 1.125rem 0 0; padding: 0; text-align: left; }
+.bonus-list li { position: relative; padding-left: 1.5rem; color: #43544d; font-size: .88rem; line-height: 1.6; }
+.bonus-list li::before { content: "✓"; position: absolute; left: 0; top: .05rem; width: 1.0625rem; height: 1.0625rem; display: grid; place-items: center; color: #fff; background: #edb52b; border-radius: 50%; font-size: .62rem; font-weight: 900; }
+.bonus-note { margin: 1.125rem 0 0; color: #93877a; font-size: .72rem; line-height: 1.6; }
 /* 手繪螢光筆痕跡：必須跟著文字寬度伸縮，因此用可拉伸的 SVG 而非生成點陣圖 */
 .tuition-highlight { position: relative; padding: .15rem .5rem .3rem; color: var(--green-950); background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 26' preserveAspectRatio='none'%3E%3Cpath d='M3 9C40 3 78 11 118 6C148 2 172 8 197 4L195 20C158 25 120 17 82 22C52 26 26 20 5 23Z' fill='%23ffd44a'/%3E%3Cpath d='M6 19C46 24 96 15 140 19C164 21 180 18 194 16L195 20C158 25 120 17 82 22C52 26 26 20 5 23Z' fill='%23f2b92c' opacity='.55'/%3E%3C/svg%3E") center / 100% 100% no-repeat; font-size: 1.28rem; font-weight: 900; line-height: 1.4; }
 .tuition-burst { width: 2.1rem; height: auto; pointer-events: none; transform: rotate(12deg); filter: drop-shadow(0 .1875rem .1875rem rgba(55, 44, 8, .08)); }
 .tuition-card-decoration { position: absolute; z-index: 1; width: 3.5rem; height: auto; right: -.4rem; bottom: -.55rem; object-fit: contain; pointer-events: none; transform: rotate(13deg); filter: drop-shadow(0 .1875rem .1875rem rgba(55, 44, 8, .08)); }
-.tuition-card--care .tuition-card-decoration { width: 3.9rem; right: -.5rem; bottom: -.4rem; transform: rotate(8deg); }
+.tuition-card--bonus .tuition-card-decoration { width: 4rem; right: -.55rem; bottom: -.45rem; transform: rotate(8deg); }
 .tuition-note { margin: 1.375rem 0 0; color: var(--muted); font-size: .78rem; line-height: 1.7; text-align: center; }
 
 .day { position: relative; overflow: hidden; padding: 2.75rem 0 4rem; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 44' preserveAspectRatio='none'%3E%3Cpath d='M0 0 H1440 V14 C1370 36 1290 40 1210 27 C1130 14 1050 12 970 25 C890 38 810 40 730 27 C650 14 570 12 490 25 C410 38 330 40 250 27 C170 14 90 13 0 30 Z' fill='%23fdf6e8'/%3E%3C/svg%3E") top center / 100% 2.75rem no-repeat, linear-gradient(180deg, #f2fafe, #e7f4fd); }
@@ -372,7 +389,8 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
   .program-tagline { text-align: left; }
   .program-card-decoration--letter { left: .125rem; top: 1.25rem; }
   .program-card-decoration--book { top: .875rem; }
-  .tuition-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .tuition-grid { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); }
+  .tuition-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .teacher-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
   .contact-inner { grid-template-columns: 8.4375rem 1fr; }
   .contact-mascot { width: 8.4375rem; }
@@ -413,8 +431,9 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
   .gallery-track { grid-auto-columns: calc((100% - 2rem) / 3); }.gallery-control--prev { left: -.625rem; }.gallery-control--next { right: -.625rem; }
   .testimonial-grid { grid-template-columns: 1fr; }
   .teachers-sparkle { display: none; }
-  .tuition-grid { grid-template-columns: 1fr; }
+  .tuition-grid { grid-template-columns: 1fr; gap: 1.25rem; }
   .tuition-card { width: min(100%, 34rem); margin-inline: auto; }
+  .tuition-card--bonus { padding: 1.5rem 1.25rem; }
   .branch-grid { grid-template-columns: 1fr; gap: 1.5rem; padding: 1.375rem; }
   .branch-card { width: min(100%, 34rem); justify-self: center; }
   .contact-inner { min-height: 15.5rem; }
@@ -422,7 +441,7 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
 }
 
 @media (max-width: 680px) {
-  .programs { padding: 2.5rem 0 2.75rem; }
+  .programs { padding: 2.5rem 0 1.25rem; }
   .program-grid { gap: 1.5rem; padding: 1rem .875rem; border-radius: 1.5rem; }
   .program-card { display: block; width: 100%; min-height: 0; padding: 4.75rem 1rem 1rem; border-radius: 1.25rem; }
   .program-ribbon { left: 50%; top: .625rem; width: min(82%, 19.5rem); }
@@ -459,13 +478,9 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
   .benefit-card { min-height: 6.75rem; padding: .9375rem .9375rem; gap: .75rem; }
   .icon-bubble { width: 4.5rem; height: 4.125rem; }
   .benefit-card h3 { font-size: 1.06rem; }.benefit-card p { font-size: .8rem; }
-  .section-heading { margin-bottom: 1.125rem; }.section-heading h2 { font-size: 1.9rem; }
-  .section-title-row--decorated { gap: .4375rem; }
-  .heading-rays { width: 1.375rem; transform: scale(.82); }
-  .heading-rays--right { transform: scale(-.82, .82); }
-  .heading-star { width: 1.05rem; height: 1.05rem; }
-  .heading-image { width: 1.25rem; height: 1.25rem; }
-  .heading-heart { width: 1rem; height: 1rem; }
+  /* 只需調字級，裝飾是 em，會自己跟著縮 */
+  .section-heading { margin-bottom: 1.125rem; }
+  .section-title-row { font-size: 1.9rem; }
   .testimonials .section-title-row::before, .testimonials .section-title-row::after { width: 2rem; }
   .testimonials .section-title-row::before { right: calc(100% + .625rem); }
   .testimonials .section-title-row::after { left: calc(100% + .625rem); }
