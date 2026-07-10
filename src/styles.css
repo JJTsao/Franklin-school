@@ -59,7 +59,7 @@ a { color: inherit; text-decoration: none; }
 button { font: inherit; }
 button, a { -webkit-tap-highlight-color: transparent; }
 .container { width: min(calc(100% - 2.5rem), var(--container)); margin-inline: auto; }
-.section { position: relative; padding: 2.75rem 0; }
+.section { position: relative; padding: 2.25rem 0; }
 .section[id], .benefits[id], .contact-cta[id] { scroll-margin-top: 5.5rem; }
 .svg-sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
 .footer-social svg, .button--line svg, .avatar svg {
@@ -121,7 +121,7 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
 .hero-mascot { position: absolute; z-index: 1; width: 9rem; height: auto; right: clamp(1rem, 4vw, 4rem); top: -9.5rem; filter: drop-shadow(0 .4375rem .625rem rgba(0, 0, 0, .13)); }
 .hero-wave { position: absolute; z-index: 1; left: 0; right: 0; bottom: 0; height: 9.25rem; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 160' preserveAspectRatio='none'%3E%3Cpath d='M0 12 C104 28 166 52 252 68 C364 90 470 78 590 76 C752 72 842 100 1002 120 C1162 140 1304 136 1440 116 L1440 160 L0 160 Z' fill='%2358ad67'/%3E%3Cpath d='M0 48 C128 60 232 78 360 84 C498 92 610 76 730 82 C880 90 968 116 1112 132 C1246 146 1350 140 1440 130 L1440 160 L0 160 Z' fill='%23087a42'/%3E%3C/svg%3E") center bottom / 100% 100% no-repeat; }
 
-.benefits { position: relative; z-index: 3; isolation: isolate; margin-top: -1.75rem; padding-bottom: 1.25rem; background: #fffdf8; }
+.benefits { position: relative; z-index: 3; isolation: isolate; margin-top: -1.75rem; padding-bottom: .875rem; background: #fffdf8; }
 .benefits::after { content: ""; position: absolute; z-index: -1; left: 0; right: 0; top: -2.5rem; height: 2.5625rem; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 72' preserveAspectRatio='none'%3E%3Cpath d='M0 72 C0 31 29 11 78 8 C330 2 529 10 742 7 C978 3 1192 2 1364 11 C1412 14 1440 36 1440 72 L1440 72 L0 72 Z' fill='%23fffdf8'/%3E%3C/svg%3E") center bottom / 100% 100% no-repeat; pointer-events: none; }
 .benefits .container { position: relative; z-index: 2; }
 .benefit-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.125rem; }
@@ -131,14 +131,14 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
 .icon-bubble { flex: 0 0 auto; width: 5.25rem; height: 4.75rem; display: grid; place-items: center; transform: rotate(-2deg); }
 .icon-bubble img { width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 .1875rem .125rem rgba(70, 57, 14, .08)); }
 
-.section-heading { position: relative; max-width: 42.5rem; margin: 0 auto 1.5rem; text-align: center; }
+.section-heading { position: relative; max-width: 42.5rem; margin: 0 auto 1.25rem; text-align: center; }
 /* 標題列自己扛字級，h2 與裝飾一律用 em 相對它 —— 比例在任何寬度下都鎖死，不必逐斷點手調 */
 .section-title-row { position: relative; width: fit-content; margin-inline: auto; font-size: clamp(2.05rem, 3.4vw, 2.85rem); }
 .section-title-row--decorated { display: flex; align-items: center; justify-content: center; gap: .24em; }
 .section-heading h2 { margin: 0; color: var(--green-900); font-family: "JF Open Huninn Display", "Noto Sans TC Local", sans-serif; font-size: 1em; font-weight: 400; font-synthesis: none; line-height: 1.25; letter-spacing: .045em; }
 #tuition-title, #day-title, #teachers-title, #gallery-title, #testimonial-title, #branches-title { font-family: "Noto Sans TC Local", sans-serif; font-weight: 900; }
 .section-lead { max-width: 40rem; margin: .9375rem auto 0; color: #43544d; font-size: .96rem; line-height: 1.75; text-wrap: pretty; }
-.section-heading--compact { margin-bottom: 1.25rem; }
+.section-heading--compact { margin-bottom: 1rem; }
 .heading-rays { position: relative; flex: 0 0 auto; width: .82em; height: .72em; }
 .heading-rays i { position: absolute; width: .46em; height: .055em; border-radius: 99rem; background: var(--sun); transform-origin: center; }
 .heading-rays i:nth-child(1) { left: .044em; top: .088em; transform: rotate(48deg); }
@@ -164,7 +164,7 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
   對有撕紙邊的 .day / .branches 來說那是直接壓到內容上。
 */
 .programs { overflow: hidden; background: linear-gradient(var(--paper-soft), var(--paper)); }
-.programs.section { padding: 2.5rem 0 1.5rem; }
+.programs.section { padding: 2rem 0 1.25rem; }
 .program-grid { position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; padding: 1.25rem; background: #fff3c9; border-radius: 2rem; }
 .program-card { position: relative; overflow: hidden; isolation: isolate; display: grid; grid-template-columns: minmax(0, 42%) minmax(0, 58%); min-height: 25rem; padding: 5.75rem 1.25rem 1.25rem; background: #fffdf7; border: .0625rem solid #cfe3bb; border-radius: 1.5rem; box-shadow: 0 .5rem 1.375rem rgba(74, 54, 7, .11); }
 .program-card--orange { border-color: #f1d49a; }
@@ -195,7 +195,7 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
 .program-card-decoration--pencil { width: 3.75rem; right: -.4rem; bottom: -.6rem; transform: rotate(13deg); }
 
 .tuition { background: var(--paper); }
-.tuition.section { padding: 1.25rem 0 2.5rem; }
+.tuition.section { padding: 1rem 0 2rem; }
 .tuition-grid { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); gap: 1.125rem; align-items: stretch; }
 .tuition-card { position: relative; overflow: hidden; isolation: isolate; display: flex; flex-direction: column; padding: 1.375rem 1.375rem 1.5rem; background: #fff; border: .0625rem solid #efe7d5; border-radius: 1.25rem; box-shadow: 0 .5rem 1.375rem rgba(74, 54, 7, .11); }
 .tuition-card::before { content: ""; position: absolute; z-index: -1; width: 9.5rem; height: 7rem; right: -3.25rem; top: -3.25rem; border-radius: 50%; background: #eff6dc; transform: rotate(-14deg); }
@@ -229,11 +229,11 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
 .tuition-burst { width: 2.1rem; height: auto; pointer-events: none; transform: rotate(12deg); filter: drop-shadow(0 .1875rem .1875rem rgba(55, 44, 8, .08)); }
 .tuition-card-decoration { position: absolute; z-index: 1; width: 3.5rem; height: auto; right: -.4rem; bottom: -.55rem; object-fit: contain; pointer-events: none; transform: rotate(13deg); filter: drop-shadow(0 .1875rem .1875rem rgba(55, 44, 8, .08)); }
 .tuition-card--bonus .tuition-card-decoration { width: 4rem; right: -.55rem; bottom: -.45rem; transform: rotate(8deg); }
-.tuition-note { margin: 1.375rem 0 0; color: var(--muted); font-size: .78rem; line-height: 1.7; text-align: center; }
+.tuition-note { margin: 1rem 0 0; color: var(--muted); font-size: .78rem; line-height: 1.7; text-align: center; }
 
 .day { position: relative; overflow: hidden; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 44' preserveAspectRatio='none'%3E%3Cpath d='M0 0 H1440 V14 C1370 36 1290 40 1210 27 C1130 14 1050 12 970 25 C890 38 810 40 730 27 C650 14 570 12 490 25 C410 38 330 40 250 27 C170 14 90 13 0 30 Z' fill='%23fdf6e8'/%3E%3C/svg%3E") top center / 100% 2.75rem no-repeat, linear-gradient(180deg, #f2fafe, #e7f4fd); }
 /* padding 需容納上下兩道撕紙邊（上 2.75rem、下 2.25rem），否則內容會壓在撕紙邊上 */
-.day.section { padding: 2.75rem 0 3.5rem; }
+.day.section { padding: 2.75rem 0 3.125rem; }
 /* 下緣撕紙邊：獨立元素而非背景層，才能疊在雲朵之上（與 .hero-wave 同一手法） */
 .day-edge { position: absolute; z-index: 2; left: 0; right: 0; bottom: 0; height: 2.25rem; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 44' preserveAspectRatio='none'%3E%3Cpath d='M0 44 H1440 V30 C1370 8 1290 4 1210 17 C1130 30 1050 32 970 19 C890 6 810 4 730 17 C650 30 570 32 490 19 C410 6 330 4 250 17 C170 30 90 31 0 14 Z' fill='%23fffdf6'/%3E%3C/svg%3E") center bottom / 100% 100% no-repeat; pointer-events: none; }
 .day::before, .day::after { content: ""; position: absolute; bottom: -4.75rem; width: 13rem; height: 9rem; border-radius: 52% 48% 0 0; background: rgba(115, 201, 240, .3); box-shadow: 4.25rem 1.25rem 0 rgba(115, 201, 240, .22), 8rem .375rem 0 rgba(115, 201, 240, .16); }
@@ -260,7 +260,7 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
 .photo-frame-label { color: #8b9a92; font-size: .72rem; font-weight: 700; letter-spacing: .06em; }
 
 .teachers { position: relative; overflow: hidden; background: var(--paper-soft); }
-.teachers.section { padding: 2.25rem 0 2.5rem; }
+.teachers.section { padding: 1.75rem 0 2rem; }
 /* sparkle-trail 的細節要到 ~3.4rem 才讀得出來，因此放在標題區旁而非標題列上 */
 .teachers-sparkle { position: absolute; z-index: 0; right: -.5rem; top: -1.25rem; width: 3.4rem; height: auto; pointer-events: none; transform: rotate(6deg); }
 .teacher-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.125rem; }
@@ -273,7 +273,7 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
 .teacher-notes li::before { content: ""; position: absolute; left: 0; top: .5625rem; width: .375rem; height: .375rem; border-radius: 50%; background: var(--icon-green); }
 
 .gallery { background: linear-gradient(180deg, var(--paper-soft), var(--paper)); }
-.gallery.section { padding: 1.75rem 0 1.25rem; }
+.gallery.section { padding: 1.5rem 0 1rem; }
 .gallery-shell { position: relative; }
 .gallery-track { display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - 3rem) / 4); gap: 1rem; overflow-x: auto; overscroll-behavior-inline: contain; scrollbar-width: none; scroll-snap-type: inline mandatory; padding: .625rem .25rem; cursor: grab; }
 .gallery-track::-webkit-scrollbar { display: none; }
@@ -293,7 +293,7 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
 .gallery-control:disabled { cursor: default; opacity: .45; }
 
 .testimonials { background: var(--paper); }
-.testimonials.section { padding: 1.5rem 0 2rem; }
+.testimonials.section { padding: 1.25rem 0 1.5rem; }
 .testimonials .section-title-row::before, .testimonials .section-title-row::after { content: ""; position: absolute; top: 50%; width: clamp(3rem, 9vw, 8.75rem); height: .0625rem; background: #dfe8df; }
 .testimonials .section-title-row::before { right: calc(100% + 1.25rem); }
 .testimonials .section-title-row::after { left: calc(100% + 1.25rem); }
@@ -311,7 +311,7 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
 /* 頁面下半部的冷色呼吸點，呼應 .day；上緣撕紙邊填 --paper，撕開上一段的暖紙 */
 .branches { position: relative; overflow: hidden; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 44' preserveAspectRatio='none'%3E%3Cpath d='M0 0 H1440 V14 C1370 36 1290 40 1210 27 C1130 14 1050 12 970 25 C890 38 810 40 730 27 C650 14 570 12 490 25 C410 38 330 40 250 27 C170 14 90 13 0 30 Z' fill='%23fdf6e8'/%3E%3C/svg%3E") top center / 100% 2.75rem no-repeat, linear-gradient(180deg, #eef7fd, #e1effa); }
 /* 上緣撕紙邊 2.75rem，padding-top 必須大於它 */
-.branches.section { padding: 4rem 0 2.5rem; }
+.branches.section { padding: 3.5rem 0 2rem; }
 .branch-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; padding: 1.25rem; background: #d7e9f6; border-radius: 2rem; }
 .branch-card { position: relative; display: flex; flex-direction: column; gap: 1.125rem; padding: 5.25rem 1.25rem 1.375rem; background: #fffdf7; border: .0625rem solid #cfe3bb; border-radius: 1.5rem; box-shadow: 0 .5rem 1.375rem rgba(74, 54, 7, .11); }
 .branch-card--orange { border-color: #f1d49a; }
@@ -434,9 +434,9 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
 
 @media (max-width: 820px) {
   .container { width: min(calc(100% - 1.875rem), var(--container)); }
-  .section { padding: 2.25rem 0; }
-  .day.section { padding: 3rem 0 3.25rem; }
-  .branches.section { padding: 3.75rem 0 2.25rem; }
+  .section { padding: 1.875rem 0; }
+  .day.section { padding: 3rem 0 3rem; }
+  .branches.section { padding: 3.5rem 0 1.875rem; }
   .brand strong { font-size: .96rem; }
   .benefits { padding-top: 0; }
   .benefit-grid { grid-template-columns: 1fr; }
@@ -456,7 +456,7 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
 }
 
 @media (max-width: 680px) {
-  .programs.section { padding: 2.25rem 0 1.25rem; }
+  .programs.section { padding: 2rem 0 1rem; }
   .program-grid { gap: 1.5rem; padding: 1rem .875rem; border-radius: 1.5rem; }
   .program-card { display: block; width: 100%; min-height: 0; padding: 4.75rem 1rem 1rem; border-radius: 1.25rem; }
   .program-ribbon { left: 50%; top: .625rem; width: min(82%, 19.5rem); }
@@ -479,9 +479,9 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
 
 @media (max-width: 560px) {
   .container { width: min(calc(100% - 1.5rem), var(--container)); }
-  .section { padding: 1.75rem 0; }
-  .day.section { padding: 2.75rem 0 2.75rem; }
-  .branches.section { padding: 3.5rem 0 2rem; }
+  .section { padding: 1.5rem 0; }
+  .day.section { padding: 2.75rem 0 2.5rem; }
+  .branches.section { padding: 3.25rem 0 1.75rem; }
   .brand small { display: none; }.brand img { width: 2.75rem; height: 2.75rem; }
   .hero-copy { padding: 2rem .125rem 1.25rem; }
   .hero-title-wrap { width: 100%; }
@@ -523,7 +523,7 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
   .branch-grid { padding: 1rem .875rem; border-radius: 1.5rem; }
   .branch-card { padding: 4.5rem 1rem 1.125rem; border-radius: 1.25rem; }
   .branch-ribbon { width: min(84%, 17rem); top: .625rem; }
-  .testimonials.section { padding: 1.25rem 0 1.75rem; }
+  .testimonials.section { padding: 1rem 0 1.5rem; }
   .testimonial-grid { gap: .625rem; }
   .testimonial-grid figure { min-height: 10.375rem; padding: 2.5rem 1.25rem 1.125rem; }
   .contact-inner { grid-template-columns: 6.5625rem minmax(0, 1fr); gap: 1.125rem; padding-top: 1.125rem; }
