@@ -53,7 +53,9 @@ npm run build
 - **師資區**：老師姓名、職稱、資歷為佔位；照片位是刻意設計的手繪相框。**照片上線前必須取得每位老師的肖像授權**；未授權者保留相框即可，不要用 AI 生成人臉。
 - **分校區與 footer**：斗六／斗南兩校的地址、電話、營業時間為佔位；`tel:` 連結也是假號碼。
 - **學習現場輪播**：目前只有課堂互動照，教室環境照到位後直接追加 `.gallery-card` 即可。
-- Email、社群連結仍是 mockup 示意內容。
+- Email 仍是 mockup 示意內容。
+- footer 的四個社群圖示是**停用狀態**（`<a>` 沒有 `href`，帶 `aria-disabled`）。拿到真實網址後補上 `href`、移除 `aria-disabled` 與 `title` 即可。先前它們是 `href="#"`，點下去會跳回頁首。
+- 導覽列右側與 hero、CTA 的三顆「加 LINE 詢問」按鈕**目前點了沒有反應**，等 LINE 官方帳號連結。
 - CTA 區的「加入 LINE 詢問」按鈕暫以 `hidden` 隱藏（`index.html` 內附註解），補上 LINE 官方帳號連結後移除 hidden 並改回連結即可。
 
 另：`JFOpenHuninn-Display-Subset.woff2` 目前被 preload 但實際上沒有任何元素渲染得到它（所有套用它的規則都被 id／類別選擇器覆寫回 Noto 900）。若確定不用，移除 `@font-face`、preload 與 `.display-font` 可省下約 90KB。

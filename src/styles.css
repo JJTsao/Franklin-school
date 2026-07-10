@@ -399,6 +399,8 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
 .footer-social > strong { color: #b8e0c3; }
 .footer-social div { display: flex; gap: .5rem; margin-top: .75rem; }
 .footer-social a { width: 2.75rem; height: 2.75rem; display: grid; place-items: center; border-radius: 50%; color: #fff; background: rgba(255, 255, 255, .2); box-shadow: inset 0 0 0 .0625rem rgba(255, 255, 255, .14); }
+/* 連結待補：沒有 href 的 <a> 不是連結、也不可聚焦，點下去不會跳回頁首 */
+.footer-social a:not([href]) { cursor: default; opacity: .55; }
 .footer-social a:nth-child(1) { background: #4267b2; }
 .footer-social a:nth-child(2) { background: #c13584; }
 .footer-social a:nth-child(3) { background: #18a84b; }
