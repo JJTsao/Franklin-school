@@ -46,6 +46,11 @@ function verifySite(siteDir) {
 
 fs.mkdirSync(distDir, { recursive: true });
 fs.copyFileSync(path.join(rootDir, 'index.html'), path.join(distDir, 'index.html'));
+// 自包含的預覽頁（若存在）：讓合作夥伴在同一網址預覽新版，首頁維持現況。
+const previewSrc = path.join(rootDir, 'index-preview.html');
+if (fs.existsSync(previewSrc)) {
+  fs.copyFileSync(previewSrc, path.join(distDir, 'index-preview.html'));
+}
 copyTree(path.join(rootDir, 'src'), path.join(distDir, 'src'));
 copyTree(path.join(rootDir, 'public'), path.join(distDir, 'public'));
 
