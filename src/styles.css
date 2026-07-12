@@ -292,7 +292,8 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
 
 /* 手繪相框：照片未到位時的刻意佔位，照片到位後保留外框、換掉內容 */
 .photo-frame { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .3125rem; aspect-ratio: 4 / 5; padding: 1rem; background: #fdf7e9; border: .1875rem solid var(--green-950); border-radius: .875rem; box-shadow: inset 0 0 0 .375rem #fffdf7; }
-.photo-frame--wide { aspect-ratio: 4 / 3; }
+.photo-frame--portrait { aspect-ratio: 3 / 4; }
+.photo-frame-photo { position: absolute; inset: .375rem; width: calc(100% - .75rem); height: calc(100% - .75rem); object-fit: cover; border-radius: .5rem; }
 .photo-frame::before, .photo-frame::after { content: ""; position: absolute; z-index: 2; width: 3.25rem; height: 1.125rem; background: rgba(255, 232, 158, .7); box-shadow: 0 .0625rem .1875rem rgba(76, 58, 12, .14); transform: rotate(-38deg); }
 .photo-frame::before { left: -.8125rem; top: 1rem; }
 .photo-frame::after { right: -.8125rem; bottom: 1rem; }

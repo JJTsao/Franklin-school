@@ -5,7 +5,9 @@ from PIL import Image
 
 ROOT = Path(__file__).resolve().parent.parent
 BRAND_SOURCE = ROOT / "source-assets" / "brand"
+BRANCH_SOURCE = ROOT / "source-assets" / "branch"
 OUTPUT = ROOT / "public" / "images" / "optimized" / "brand"
+BRANCH_OUTPUT = ROOT / "public" / "images" / "optimized" / "branch"
 
 
 def resize_to_width(image: Image.Image, width: int) -> Image.Image:
@@ -13,10 +15,22 @@ def resize_to_width(image: Image.Image, width: int) -> Image.Image:
     return image.resize((width, height), Image.Resampling.LANCZOS)
 
 
-def save_webp(image: Image.Image, name: str, *, quality: int = 82) -> None:
-    OUTPUT.mkdir(parents=True, exist_ok=True)
+def crop_to_ratio(image: Image.Image, ratio_w: int, ratio_h: int) -> Image.Image:
+    target = ratio_w / ratio_h
+    current = image.width / image.height
+    if current > target:
+        new_width = round(image.height * target)
+        left = (image.width - new_width) // 2
+        return image.crop((left, 0, left + new_width, image.height))
+    new_height = round(image.width / target)
+    top = (image.height - new_height) // 2
+    return image.crop((0, top, image.width, top + new_height))
+
+
+def save_webp(image: Image.Image, name: str, *, quality: int = 82, output: Path = OUTPUT) -> None:
+    output.mkdir(parents=True, exist_ok=True)
     image.save(
-        OUTPUT / name,
+        output / name,
         "WEBP",
         quality=quality,
         method=6,
@@ -34,5 +48,19 @@ def optimize_brand_assets() -> None:
         save_webp(mascot, "mascot-point.webp", quality=88)
 
 
+def optimize_branch_assets() -> None:
+    # 分校門面照：裁成 3:4 直式（對齊卡片相框 .photo-frame--portrait），寬 800px。
+    sources = {
+        "branch-douliu.jpg": "branch-douliu.webp",
+        "branch-dounan.jpg": "branch-dounan.webp",
+    }
+    for src_name, out_name in sources.items():
+        with Image.open(BRANCH_SOURCE / src_name) as image:
+            photo = crop_to_ratio(image.convert("RGB"), 3, 4)
+            photo = resize_to_width(photo, 800)
+            save_webp(photo, out_name, quality=82, output=BRANCH_OUTPUT)
+
+
 if __name__ == "__main__":
     optimize_brand_assets()
+    optimize_branch_assets()
