@@ -25,7 +25,7 @@ from pathlib import Path
 from PIL import Image, ImageChops, ImageEnhance, ImageFilter
 
 ROOT = Path(__file__).resolve().parents[1]
-OPTIMIZED = ROOT / "public" / "images" / "optimized"
+OPTIMIZED = ROOT / "public" / "images" / "optimized" / "classroom"
 PREGRADE = ROOT / "source-assets" / "classroom-pregrade"
 
 FILES = [

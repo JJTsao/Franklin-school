@@ -1,8 +1,7 @@
 node_modules/
 dist/
 output/
-assets/classroom-originals/
-assets/source-images/
+source-assets/source-images/
 review/
 tmp/
 .vite.log
@@ -11,3 +10,8 @@ tmp/
 __pycache__/
 .DS_Store
 .playwright-mcp/
+
+# 未優化的素材原檔（本機保留備份；網站實際載入 public/icons/optimized/ 的 webp）
+public/icons/daily/
+public/icons/features/
+mockup/*.png

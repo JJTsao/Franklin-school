@@ -4,7 +4,7 @@ from PIL import Image
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE = ROOT / "public/images/optimized/classroom-hero.webp"
+SOURCE = ROOT / "public/images/optimized/classroom/classroom-hero.webp"
 OUTPUT = SOURCE.parent
 
 
