@@ -117,7 +117,7 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: .875rem; margin-left: 2.5rem; }
 .hero-visual { align-self: stretch; position: relative; min-height: 29.6875rem; }
 .hero-picture { position: absolute; left: -4.5rem; top: -1rem; bottom: 0; width: calc(100% + 6vw + 4.5rem); height: auto; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, .6) 1.2%, #000 3%, #000 100%); mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, .6) 1.2%, #000 3%, #000 100%); }
-.hero-photo { width: 100%; height: 100%; object-fit: cover; object-position: 50% 52%; transform: scale(1.01); }
+.hero-photo { width: 100%; height: 100%; object-fit: cover; object-position: 50% 52%; }
 .hero-mascot { position: absolute; z-index: 1; width: 9rem; height: auto; right: clamp(1rem, 4vw, 4rem); top: -9.5rem; filter: drop-shadow(0 .4375rem .625rem rgba(0, 0, 0, .13)); }
 .hero-wave { position: absolute; z-index: 1; left: 0; right: 0; bottom: 0; height: 9.25rem; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 160' preserveAspectRatio='none'%3E%3Cpath d='M0 12 C104 28 166 52 252 68 C364 90 470 78 590 76 C752 72 842 100 1002 120 C1162 140 1304 136 1440 116 L1440 160 L0 160 Z' fill='%2358ad67'/%3E%3Cpath d='M0 48 C128 60 232 78 360 84 C498 92 610 76 730 82 C880 90 968 116 1112 132 C1246 146 1350 140 1440 130 L1440 160 L0 160 Z' fill='%23087a42'/%3E%3C/svg%3E") center bottom / 100% 100% no-repeat; }
 
@@ -462,7 +462,9 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
   .footer-grid > :nth-child(even) { padding-right: 0; border-left: .0625rem solid rgba(255, 255, 255, .2); }
 }
 
-@media (max-width: 960px) {
+/* The classroom group spans nearly the whole source frame.  Recompose before
+   the right-hand photo panel gets narrow enough for cover to crop faces. */
+@media (max-width: 1120px) {
   .hero { min-height: auto; }
   .hero-grid { grid-template-columns: 1fr; min-height: auto; }
   .hero-copy { padding: clamp(1.75rem, 4vw, 2.5rem) .25rem clamp(1.25rem, 3vw, 2rem); text-align: center; transform: translateY(-.75rem); }
@@ -471,7 +473,7 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
   .hero-actions { justify-content: center; margin-inline: 0; }
   .hero-visual { align-self: auto; min-height: 0; height: clamp(15rem, 48vw, 21rem); }
   .hero-picture { left: 50%; right: auto; top: 0; bottom: 0; width: 100vw; height: 100%; transform: translateX(-50%); -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 3%, #000 78%, rgba(0, 0, 0, .7) 89%, transparent 100%); mask-image: linear-gradient(180deg, transparent 0%, #000 3%, #000 78%, rgba(0, 0, 0, .7) 89%, transparent 100%); }
-  .hero-photo { object-position: 50% 100%; transform: scale(1.32); transform-origin: 25% 100%; }
+  .hero-photo { object-position: 50% 44%; }
   .hero-mascot { width: 5.75rem; right: .5rem; top: -5.75rem; }
   .hero-wave { z-index: 3; height: 6rem; }
   .benefits { margin-top: -1.25rem; }
