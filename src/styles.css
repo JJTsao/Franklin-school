@@ -138,6 +138,8 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
 .section-heading h2 { margin: 0; color: var(--green-900); font-family: "JF Open Huninn Display", "Noto Sans TC Local", sans-serif; font-size: 1em; font-weight: 400; font-synthesis: none; line-height: 1.25; letter-spacing: .045em; }
 #tuition-title, #day-title, #teachers-title, #gallery-title, #testimonial-title, #branches-title { font-family: "Noto Sans TC Local", sans-serif; font-weight: 900; }
 .section-lead { max-width: 40rem; margin: .9375rem auto 0; color: #43544d; font-size: .96rem; line-height: 1.75; text-wrap: pretty; }
+.tuition-promo { display: inline-block; margin: 0 auto 1rem; padding: .55rem 1.5rem; background: var(--sun); color: var(--green-950); font-family: "Noto Sans TC Local", sans-serif; font-size: 1.75rem; font-weight: 900; letter-spacing: .03em; line-height: 1.25; border-radius: 1rem; box-shadow: 0 .5rem 0 rgba(210, 150, 20, .32); transform: rotate(-1.8deg); }
+.programs-lead { max-width: 46rem; margin: 0 auto 1.75rem; color: var(--green-900); font-family: "Noto Sans TC Local", sans-serif; font-size: 1.7rem; font-weight: 900; line-height: 1.5; letter-spacing: .02em; text-align: center; text-wrap: balance; }
 
 /*
   標題側翼：標題區寬 42.5rem、容器寬 73.75rem，兩側各留下約 15.6rem 的空白帶。
@@ -306,7 +308,9 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
 .teacher-card { display: flex; flex-direction: column; gap: .9375rem; padding: 1rem 1rem 1.25rem; background: #fff; border: .0625rem solid #efe7d5; border-radius: 1.25rem; box-shadow: 0 .375rem 1.125rem rgba(96, 66, 12, .10); }
 .teacher-body { display: flex; flex-direction: column; gap: .1875rem; }
 .teacher-body > strong { color: var(--green-900); font-size: 1.12rem; }
+.teacher-en-name { color: var(--muted); font-size: .82rem; font-weight: 700; font-style: italic; letter-spacing: .03em; }
 .teacher-role { color: #b3450f; font-size: .8rem; font-weight: 800; letter-spacing: .04em; }
+.teacher-school { color: var(--green-800); font-size: .82rem; font-weight: 700; line-height: 1.5; }
 .teacher-notes { list-style: none; display: grid; gap: .3125rem; margin: .4375rem 0 0; padding: 0; }
 .teacher-notes li { position: relative; padding-left: .875rem; color: var(--muted); font-size: .82rem; line-height: 1.65; }
 .teacher-notes li::before { content: ""; position: absolute; left: 0; top: .5625rem; width: .375rem; height: .375rem; border-radius: 50%; background: var(--icon-green); }
@@ -498,6 +502,8 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
 
 @media (max-width: 680px) {
   .programs.section { padding: 2rem 0 1rem; }
+  .tuition-promo { padding: .45rem 1.1rem; font-size: 1.2rem; border-radius: .75rem; }
+  .programs-lead { font-size: 1.28rem; line-height: 1.45; }
   .program-grid { gap: 1.5rem; padding: 1rem .875rem; border-radius: 1.5rem; }
   .program-card { display: block; width: 100%; min-height: 0; padding: 4.75rem 1rem 1rem; border-radius: 1.25rem; }
   .program-ribbon { left: 50%; top: .625rem; width: min(82%, 19.5rem); }
