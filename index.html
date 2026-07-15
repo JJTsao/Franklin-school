@@ -8,8 +8,10 @@
     <title>富蘭克林教育機構｜快樂學英文・放心學課業</title>
     <link rel="icon" href="./public/images/optimized/brand/logo-circle.webp" />
     <link rel="preload" href="./public/fonts/NotoSansTC-Subset.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="./public/fonts/JFOpenHuninn-Display-Subset.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="./public/images/optimized/classroom/classroom-hero-desktop.webp" as="image" type="image/webp" fetchpriority="high" />
+    <link rel="preload" href="./public/images/optimized/titles/hero-title-1200.webp" as="image" type="image/webp" imagesrcset="./public/images/optimized/titles/hero-title-720.webp 720w, ./public/images/optimized/titles/hero-title-1200.webp 1200w, ./public/images/optimized/titles/hero-title-1672.webp 1672w" imagesizes="(max-width: 560px) calc(100vw - 24px), (max-width: 1120px) 496px, (max-width: 2399px) 42.5vw, 1008px" fetchpriority="high" />
+    <link rel="preload" href="./public/images/optimized/classroom/classroom-hero-mobile.webp" as="image" type="image/webp" media="(max-width: 560px)" fetchpriority="high" />
+    <link rel="preload" href="./public/images/optimized/classroom/classroom-hero-tablet.webp" as="image" type="image/webp" media="(min-width: 561px) and (max-width: 1080px)" fetchpriority="high" />
+    <link rel="preload" href="./public/images/optimized/classroom/classroom-hero-desktop.webp" as="image" type="image/webp" media="(min-width: 1081px)" fetchpriority="high" />
     <link rel="stylesheet" href="./src/styles.css" />
   </head>
   <body>
@@ -57,7 +59,7 @@
           <div class="hero-copy">
             <div class="hero-title-wrap">
               <h1 class="sr-only" id="hero-title">快樂學美語，學習更安心</h1>
-              <img class="hero-title-art" src="./public/images/generated/titles/franklin-english-learning-peace-of-mind-white-outline-transparent.png" width="1672" height="941" alt="" aria-hidden="true" decoding="async" fetchpriority="high" />
+              <img class="hero-title-art" src="./public/images/optimized/titles/hero-title-1200.webp" srcset="./public/images/optimized/titles/hero-title-720.webp 720w, ./public/images/optimized/titles/hero-title-1200.webp 1200w, ./public/images/optimized/titles/hero-title-1672.webp 1672w" sizes="(max-width: 560px) calc(100vw - 24px), (max-width: 1120px) 496px, (max-width: 2399px) 42.5vw, 1008px" width="1672" height="941" alt="" aria-hidden="true" decoding="async" fetchpriority="high" />
             </div>
             <p class="hero-lead">芝蔴街美語 × 安親課輔，陪孩子自信成長的第二個家</p>
             <div class="hero-actions">
@@ -302,7 +304,7 @@
               <div class="photo-frame photo-frame--portrait"><img class="photo-frame-photo" src="./public/images/optimized/branch/branch-douliu.webp" width="800" height="1066" alt="斗六分校校舍門面" loading="lazy" decoding="async" /></div>
               <address class="branch-info">
                 <p class="branch-info-item"><svg aria-hidden="true"><use href="#icon-location"></use></svg><span data-placeholder>雲林縣斗六市XXX路XX號</span></p>
-                <p class="branch-info-item"><svg aria-hidden="true"><use href="#icon-phone"></use></svg><a href="tel:+88655555555" data-placeholder>05-XXX-XXXX</a></p>
+                <a class="branch-info-item branch-info-item--phone" href="tel:+88655555555" data-placeholder><svg aria-hidden="true"><use href="#icon-phone"></use></svg><span>05-XXX-XXXX</span></a>
                 <p class="branch-info-item"><svg aria-hidden="true"><use href="#icon-clock"></use></svg><span data-placeholder>週一至週五 13:00 – 20:00<br />週六 09:00 – 17:00</span></p>
               </address>
             </article>
@@ -315,7 +317,7 @@
               <div class="photo-frame photo-frame--portrait"><img class="photo-frame-photo" src="./public/images/optimized/branch/branch-dounan.webp" width="800" height="1067" alt="斗南分校校舍門面" loading="lazy" decoding="async" /></div>
               <address class="branch-info">
                 <p class="branch-info-item"><svg aria-hidden="true"><use href="#icon-location"></use></svg><span data-placeholder>雲林縣斗南鎮OOO路OO號</span></p>
-                <p class="branch-info-item"><svg aria-hidden="true"><use href="#icon-phone"></use></svg><a href="tel:+88655555555" data-placeholder>05-OOO-OOOO</a></p>
+                <a class="branch-info-item branch-info-item--phone" href="tel:+88655555555" data-placeholder><svg aria-hidden="true"><use href="#icon-phone"></use></svg><span>05-OOO-OOOO</span></a>
                 <p class="branch-info-item"><svg aria-hidden="true"><use href="#icon-clock"></use></svg><span data-placeholder>週一至週五 13:00 – 20:00<br />週六 09:00 – 17:00</span></p>
               </address>
             </article>
@@ -364,6 +366,7 @@
       const header = document.querySelector('.site-header');
       const menuToggle = document.querySelector('.menu-toggle');
       const nav = document.querySelector('.site-nav');
+      const mobileMenuQuery = window.matchMedia('(max-width: 1080px)');
 
       const qaParams = new URLSearchParams(window.location.search);
       if (qaParams.has('qa-screenshot')) {
@@ -384,11 +387,19 @@
 
       document.querySelector('#copyright-year').textContent = new Date().getFullYear();
 
+      const syncMenuAccessibility = () => {
+        const isClosedMobileMenu = mobileMenuQuery.matches && menuToggle.getAttribute('aria-expanded') !== 'true';
+        nav.toggleAttribute('inert', isClosedMobileMenu);
+        if (isClosedMobileMenu) nav.setAttribute('aria-hidden', 'true');
+        else nav.removeAttribute('aria-hidden');
+      };
+
       const closeMenu = () => {
         menuToggle.setAttribute('aria-expanded', 'false');
         menuToggle.setAttribute('aria-label', '開啟導覽選單');
         nav.classList.remove('is-open');
         document.body.classList.remove('menu-open');
+        syncMenuAccessibility();
       };
 
       menuToggle.addEventListener('click', () => {
@@ -397,7 +408,15 @@
         menuToggle.setAttribute('aria-label', isOpen ? '開啟導覽選單' : '關閉導覽選單');
         nav.classList.toggle('is-open', !isOpen);
         document.body.classList.toggle('menu-open', !isOpen);
+        syncMenuAccessibility();
       });
+
+      if (typeof mobileMenuQuery.addEventListener === 'function') {
+        mobileMenuQuery.addEventListener('change', closeMenu);
+      } else {
+        mobileMenuQuery.addListener(closeMenu);
+      }
+      closeMenu();
 
       nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
       document.addEventListener('keydown', (event) => {

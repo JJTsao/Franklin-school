@@ -57,4 +57,4 @@ npm run build
 - 導覽列右側與 hero、CTA 的三顆「加 LINE 詢問」按鈕**目前點了沒有反應**，等 LINE 官方帳號連結。
 - CTA 區的「加入 LINE 詢問」按鈕暫以 `hidden` 隱藏（`index.html` 內附註解），補上 LINE 官方帳號連結後移除 hidden 並改回連結即可。
 
-另：`JFOpenHuninn-Display-Subset.woff2` 目前被 preload 但實際上沒有任何元素渲染得到它（所有套用它的規則都被 id／類別選擇器覆寫回 Noto 900）。若確定不用，移除 `@font-face`、preload 與 `.display-font` 可省下約 90KB。
+Hero 標題提供 720／1200／1672px 三種 WebP，瀏覽器會依 viewport 與像素密度選擇；Hero 課堂照的 preload 也必須維持與 `<picture>` 相同的 media 條件，避免手機重複下載桌機圖。

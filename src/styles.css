@@ -8,14 +8,6 @@
   font-display: swap;
 }
 
-@font-face {
-  font-family: "JF Open Huninn Display";
-  src: url("../public/fonts/JFOpenHuninn-Display-Subset.woff2") format("woff2");
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-}
-
 :root {
   --green-950: #034e2b;
   --green-900: #056337;
@@ -256,7 +248,7 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
 .tuition-total strong { flex: 0 0 auto; color: var(--ink); font-size: 1.3rem; font-weight: 900; letter-spacing: .01em; }
 .tuition-unit { display: flex; flex-wrap: wrap; align-items: center; gap: .375rem .5rem; margin: .9375rem 0 0; }
 .tuition-unit-label { color: #43544d; font-size: .9rem; font-weight: 800; }
-.tuition-extra { margin: 1.0625rem 0 0; padding: .5625rem .75rem; color: #6b7c73; background: #f7f4ea; border-radius: .625rem; font-size: .74rem; line-height: 1.6; }
+.tuition-extra { margin: 1.0625rem 0 0; padding: .5625rem .75rem; color: var(--muted); background: #f7f4ea; border-radius: .625rem; font-size: .74rem; line-height: 1.6; }
 
 /* 免費附加卡：$0 是唯一的視覺主角，其餘一律讓位 */
 .tuition-card--bonus { align-items: center; justify-content: center; padding: 1.75rem 1.25rem; text-align: center; }
@@ -366,7 +358,10 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
 .branch-info-item { display: flex; align-items: flex-start; gap: .625rem; margin: 0; color: #43544d; font-size: .88rem; line-height: 1.6; }
 .branch-info-item svg { flex: 0 0 auto; width: 1.1875rem; height: 1.1875rem; margin-top: .1875rem; fill: none; stroke: var(--green-800); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 .branch-card--orange .branch-info-item svg { stroke: #c86a12; }
-.branch-info-item a:hover, .branch-info-item a:focus-visible { text-decoration: underline; }
+.branch-info-item--phone { min-height: 2.75rem; align-items: center; margin-inline: -.375rem; padding-inline: .375rem; border-radius: .625rem; transition: background .18s ease; }
+.branch-info-item--phone:hover, .branch-info-item--phone:focus-visible { background: rgba(8, 122, 66, .08); }
+.branch-card--orange .branch-info-item--phone:hover, .branch-card--orange .branch-info-item--phone:focus-visible { background: rgba(239, 91, 34, .08); }
+.branch-info-item--phone:hover span, .branch-info-item--phone:focus-visible span { text-decoration: underline; }
 
 .contact-cta { position: relative; isolation: isolate; background: radial-gradient(ellipse 42% 135% at 97% 140%, rgba(3, 78, 43, .38) 0 60%, transparent 61%), var(--green-800); color: #fff; }
 .contact-inner { position: relative; z-index: 1; min-height: 10.75rem; display: grid; grid-template-columns: 9rem 1fr minmax(21.875rem, auto); align-items: center; gap: 1.5rem; }
@@ -414,7 +409,7 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
 .footer-social a:nth-child(3) { background: #18a84b; }
 .footer-social a:nth-child(4) { background: #e12b2b; }
 .footer-social svg { width: 1.5rem; height: 1.5rem; stroke-width: 3; }
-.copyright { margin-top: 1.25rem; padding-top: .75rem; border-top: .0625rem solid rgba(255, 255, 255, .15); text-align: center; color: rgba(255, 255, 255, .55); font-size: .72rem; }
+.copyright { margin-top: 1.25rem; padding-top: .75rem; border-top: .0625rem solid rgba(255, 255, 255, .15); text-align: center; color: rgba(255, 255, 255, .7); font-size: .72rem; }
 
 .reveal { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition-duration: .01ms !important; } .reveal { opacity: 1; transform: none; } }
@@ -427,8 +422,34 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
   .menu-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(.5rem) rotate(45deg); }
   .menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
   .menu-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-.5rem) rotate(-45deg); }
-  .site-nav { position: absolute; top: calc(100% + .5rem); right: 0; width: min(60vw, 17rem); display: flex; flex-direction: column; align-items: stretch; gap: 0; padding: .625rem 1rem 1rem; background: var(--paper-soft); border: .0625rem solid rgba(3, 78, 43, .1); border-radius: 1rem; box-shadow: 0 1rem 2.5rem rgba(2, 54, 29, .18); opacity: 0; pointer-events: none; transform: translateY(-.5rem) scale(.97); transform-origin: top right; transition: opacity .18s ease, transform .18s ease; z-index: 60; }
-  .site-nav.is-open { opacity: 1; pointer-events: auto; transform: none; }
+  .site-nav {
+    position: absolute;
+    z-index: 60;
+    top: calc(100% + .5rem);
+    right: 0;
+    width: min(60vw, 17rem);
+    max-height: calc(100vh - 5rem);
+    max-height: calc(100dvh - 5rem);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: .625rem 1rem max(1rem, env(safe-area-inset-bottom));
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    background: var(--paper-soft);
+    border: .0625rem solid rgba(3, 78, 43, .1);
+    border-radius: 1rem;
+    box-shadow: 0 1rem 2.5rem rgba(2, 54, 29, .18);
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-.5rem) scale(.97);
+    transform-origin: top right;
+    transition: opacity .18s ease, transform .18s ease, visibility 0s linear .18s;
+  }
+  .site-nav.is-open { visibility: visible; opacity: 1; pointer-events: auto; transform: none; transition-delay: 0s; }
   .site-nav > a:not(.nav-cta) { padding: .75rem .25rem; font-size: 1rem; border-bottom: .0625rem solid #edf2ed; }
   .site-nav > a:not(.nav-cta)::after { display: none; }
   .site-nav .nav-cta { display: inline-flex; justify-content: center; margin-top: .875rem; }
@@ -623,5 +644,15 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
 }
 
 @media (min-width: 1280px) {
-  html { font-size: 1.25vw; }
+  :root { --container: 92vw; }
+  html { font-size: clamp(1rem, 1.25vw, 1.5rem); }
+}
+
+@media (min-width: 2400px) {
+  .hero-copy { transform: none; }
+  .hero-title-wrap { width: min(100%, 42rem); }
+  .hero-lead { max-width: 38rem; }
+  .branch-card { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(18rem, .8fr); align-items: center; }
+  .branch-card .photo-frame--portrait { aspect-ratio: 1; }
+  .branch-ribbon { left: 30%; }
 }
