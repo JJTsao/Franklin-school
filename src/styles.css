@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: "Noto Sans TC Local";
-  src: url("/fonts/NotoSansTC-Subset.woff2") format("woff2");
+  src: url("../public/fonts/NotoSansTC-Subset.woff2") format("woff2");
   font-style: normal;
   font-weight: 100 900;
   font-display: swap;
@@ -10,7 +10,7 @@
 
 @font-face {
   font-family: "JF Open Huninn Display";
-  src: url("/fonts/JFOpenHuninn-Display-Subset.woff2") format("woff2");
+  src: url("../public/fonts/JFOpenHuninn-Display-Subset.woff2") format("woff2");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -502,6 +502,23 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
   .day-decoration--left { left: 0; }.day-decoration--right { right: 0; }
 }
 
+/* 平板沿用手機的緊湊蛇形比例，所有轉折都留在內容區中央。 */
+@media (min-width: 561px) and (max-width: 820px) {
+  .timeline { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: .5rem; row-gap: 2.25rem; width: min(100%, 34rem); margin-inline: auto; }
+  .timeline li { min-height: 0; padding: 0 .25rem; text-align: center; }
+  .timeline li:nth-child(1) { grid-column: 1; grid-row: 1; }
+  .timeline li:nth-child(2) { grid-column: 2; grid-row: 1; }
+  .timeline li:nth-child(3) { grid-column: 2; grid-row: 2; }
+  .timeline li:nth-child(4) { grid-column: 1; grid-row: 2; }
+  .timeline li:nth-child(5) { grid-column: 1; grid-row: 3; }
+  .timeline li:nth-child(6) { grid-column: 2; grid-row: 3; }
+  .timeline li:nth-child(1)::after, .timeline li:nth-child(5)::after { display: block; z-index: 0; top: 1.75rem; right: auto; bottom: auto; left: calc(50% + 3rem); width: calc(100% - 6rem); height: 2.25rem; transform: none; }
+  .timeline li:nth-child(3)::after { display: block; z-index: 0; top: 1.75rem; right: calc(50% + 3rem); bottom: auto; left: auto; width: calc(100% - 6rem); height: 2.25rem; transform: scaleX(-1); }
+  .timeline li:nth-child(2)::after, .timeline li:nth-child(4)::after { display: block; z-index: 0; top: auto; right: auto; bottom: -2.05rem; left: calc(50% - .875rem); width: 1.75rem; height: 1.8rem; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 56' preserveAspectRatio='none'%3E%3Cpath d='M14 3 C9 16 19 28 14 42' fill='none' stroke='%234f9a58' stroke-width='3.5' stroke-linecap='round' stroke-dasharray='6 7'/%3E%3Cpath d='M8 41 L14 51 L20 41' fill='none' stroke='%234f9a58' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 100% 100% no-repeat; transform: none; }
+  .timeline li:nth-child(6)::after { display: none; }
+  .timeline-icon { position: relative; z-index: 1; width: 5rem; height: 4.625rem; margin: 0 auto .5rem; }
+}
+
 @media (max-width: 680px) {
   .programs.section { padding: 2rem 0 1rem; }
   .tuition-promo { padding: .45rem 1.1rem; font-size: 1.2rem; border-radius: .75rem; }
@@ -550,10 +567,20 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
   .testimonials .section-title-row::before, .testimonials .section-title-row::after { width: 2rem; }
   .testimonials .section-title-row::before { right: calc(100% + .625rem); }
   .testimonials .section-title-row::after { left: calc(100% + .625rem); }
-  .timeline { grid-template-columns: repeat(2, 1fr); }
-  .timeline li:nth-child(3n)::after { display: block; }
-  .timeline li:nth-child(2n)::after { display: none; }
-  .timeline-icon { width: 5rem; height: 4.625rem; }
+  /* 手機也採蛇形，讓每一次換排都有明確、短距離的轉折箭頭。 */
+  .timeline { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: .25rem; row-gap: 2.25rem; width: min(100%, 24rem); margin-inline: auto; }
+  .timeline li { min-height: 0; padding: 0 .25rem; text-align: center; }
+  .timeline li:nth-child(1) { grid-column: 1; grid-row: 1; }
+  .timeline li:nth-child(2) { grid-column: 2; grid-row: 1; }
+  .timeline li:nth-child(3) { grid-column: 2; grid-row: 2; }
+  .timeline li:nth-child(4) { grid-column: 1; grid-row: 2; }
+  .timeline li:nth-child(5) { grid-column: 1; grid-row: 3; }
+  .timeline li:nth-child(6) { grid-column: 2; grid-row: 3; }
+  .timeline li:nth-child(1)::after, .timeline li:nth-child(5)::after { display: block; z-index: 0; top: 1.75rem; right: auto; bottom: auto; left: calc(50% + 3rem); width: calc(100% - 6rem); height: 2.25rem; transform: none; }
+  .timeline li:nth-child(3)::after { display: block; z-index: 0; top: 1.75rem; right: calc(50% + 3rem); bottom: auto; left: auto; width: calc(100% - 6rem); height: 2.25rem; transform: scaleX(-1); }
+  .timeline li:nth-child(2)::after, .timeline li:nth-child(4)::after { display: block; z-index: 0; top: auto; right: auto; bottom: -2.05rem; left: calc(50% - .875rem); width: 1.75rem; height: 1.8rem; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 56' preserveAspectRatio='none'%3E%3Cpath d='M14 3 C9 16 19 28 14 42' fill='none' stroke='%234f9a58' stroke-width='3.5' stroke-linecap='round' stroke-dasharray='6 7'/%3E%3Cpath d='M8 41 L14 51 L20 41' fill='none' stroke='%234f9a58' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 100% 100% no-repeat; transform: none; }
+  .timeline li:nth-child(6)::after { display: none; }
+  .timeline-icon { position: relative; z-index: 1; width: 5rem; height: 4.625rem; margin: 0 auto .5rem; }
   .gallery-track { grid-auto-columns: 82%; }
   .gallery-control { display: none; }
   .section-lead { font-size: .9rem; }

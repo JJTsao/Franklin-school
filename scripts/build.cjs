@@ -19,28 +19,78 @@ function copyTree(sourceDir, targetDir) {
   }
 }
 
+function extractHtmlReferences(html) {
+  const references = [];
+
+  for (const match of html.matchAll(/\b(src|href|srcset)\s*=\s*(["'])(.*?)\2/g)) {
+    const [, attribute, , value] = match;
+
+    if (attribute === 'srcset') {
+      for (const candidate of value.split(',')) {
+        const [reference] = candidate.trim().split(/\s+/);
+        if (reference) references.push(reference);
+      }
+    } else {
+      references.push(value);
+    }
+  }
+
+  return references;
+}
+
+function extractCssReferences(css) {
+  return [...css.matchAll(/url\(\s*(["']?)(.*?)\1\s*\)/g)].map((match) => match[2]);
+}
+
+function verifyReferences(references, sourcePath, siteDir, problems) {
+  const sourceLabel = path.relative(siteDir, sourcePath);
+
+  for (const reference of references) {
+    if (!reference || reference.startsWith('#') || /^(?:[a-z][a-z0-9+.-]*:|\/\/)/i.test(reference)) continue;
+
+    const cleanReference = reference.split(/[?#]/)[0];
+    if (!cleanReference) continue;
+
+    if (cleanReference.startsWith('/')) {
+      problems.push(`${sourceLabel}: root-relative reference is not offline-safe: ${reference}`);
+      continue;
+    }
+
+    let decodedReference;
+    try {
+      decodedReference = decodeURIComponent(cleanReference);
+    } catch {
+      problems.push(`${sourceLabel}: invalid URL encoding: ${reference}`);
+      continue;
+    }
+
+    const targetPath = path.resolve(path.dirname(sourcePath), decodedReference);
+    const relativeTarget = path.relative(siteDir, targetPath);
+    const escapesSite = relativeTarget === '..' || relativeTarget.startsWith(`..${path.sep}`) || path.isAbsolute(relativeTarget);
+
+    if (escapesSite) {
+      problems.push(`${sourceLabel}: reference escapes the site directory: ${reference}`);
+    } else if (!fs.existsSync(targetPath)) {
+      problems.push(`${sourceLabel}: missing local asset: ${reference}`);
+    }
+  }
+}
+
 function verifySite(siteDir) {
   const htmlPath = path.join(siteDir, 'index.html');
   const cssPath = path.join(siteDir, 'src', 'styles.css');
   const html = fs.readFileSync(htmlPath, 'utf8');
   const css = fs.readFileSync(cssPath, 'utf8');
-  const missing = [];
+  const problems = [];
 
-  for (const match of html.matchAll(/(?:src|href)="(\.\/[^"#]+)"/g)) {
-    const targetPath = path.resolve(siteDir, match[1]);
-    if (!fs.existsSync(targetPath)) missing.push(targetPath);
-  }
-
-  for (const match of css.matchAll(/url\(['"]?(\.\.\/[^'")]+)['"]?\)/g)) {
-    const targetPath = path.resolve(path.dirname(cssPath), match[1]);
-    if (!fs.existsSync(targetPath)) missing.push(targetPath);
-  }
+  verifyReferences(extractHtmlReferences(html), htmlPath, siteDir, problems);
+  verifyReferences(extractCssReferences(css), cssPath, siteDir, problems);
 
   const inlineScripts = [...html.matchAll(/<script>([\s\S]*?)<\/script>/g)];
   for (const [, source] of inlineScripts) new Function(source);
 
-  if (missing.length) {
-    throw new Error(`Missing static assets:\n${missing.join('\n')}`);
+  if (problems.length) {
+    throw new Error(`Static site verification failed:\n${[...new Set(problems)].join('\n')}`);
   }
 }
 
