@@ -6,8 +6,10 @@ from PIL import Image
 ROOT = Path(__file__).resolve().parent.parent
 BRAND_SOURCE = ROOT / "source-assets" / "brand"
 BRANCH_SOURCE = ROOT / "source-assets" / "branch"
+TEACHER_SOURCE = ROOT / "source-assets" / "teachers"
 OUTPUT = ROOT / "public" / "images" / "optimized" / "brand"
 BRANCH_OUTPUT = ROOT / "public" / "images" / "optimized" / "branch"
+TEACHER_OUTPUT = ROOT / "public" / "images" / "optimized" / "teachers"
 
 
 def resize_to_width(image: Image.Image, width: int) -> Image.Image:
@@ -61,6 +63,15 @@ def optimize_branch_assets() -> None:
             save_webp(photo, out_name, quality=82, output=BRANCH_OUTPUT)
 
 
+def optimize_teacher_assets() -> None:
+    # 師資大頭照：裁成 4:5 直式（對齊師資卡片 .photo-frame）。
+    for source in sorted(TEACHER_SOURCE.glob("*.jpg")):
+        with Image.open(source) as image:
+            photo = crop_to_ratio(image.convert("RGB"), 4, 5)
+            save_webp(photo, f"{source.stem}.webp", quality=84, output=TEACHER_OUTPUT)
+
+
 if __name__ == "__main__":
     optimize_brand_assets()
     optimize_branch_assets()
+    optimize_teacher_assets()
