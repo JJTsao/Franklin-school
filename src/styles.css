@@ -380,7 +380,7 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
 .contact-accent--sparkles { right: clamp(10.5rem, 18vw, 17rem); bottom: .45rem; width: clamp(2.5rem, 3.25vw, 3.5rem); opacity: .78; transform: rotate(-8deg); }
 
 .site-footer { padding: 1.5rem 0 .75rem; color: rgba(255, 255, 255, .85); background: var(--green-950); font-size: .82rem; }
-.footer-grid { display: grid; grid-template-columns: 1.35fr 1.2fr 1.05fr .8fr; gap: 0; align-items: stretch; }
+.footer-grid { display: grid; grid-template-columns: 1.35fr 1.2fr 1.05fr; gap: 0; align-items: stretch; }
 .footer-grid > * { min-width: 0; padding-inline: 1.5rem; }
 .footer-grid > :first-child { padding-left: 0; }
 .footer-grid > :last-child { padding-right: 0; }
@@ -398,6 +398,9 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
 .footer-info-item--address svg { margin-top: 0; }
 .footer-info-item--address span { line-height: 1.25rem; }
 .footer-phone-number { padding-left: 1.875rem; }
+.footer-details { display: flex; flex-direction: column; gap: .875rem; }
+.footer-details .footer-contact { padding-bottom: .875rem; border-bottom: .0625rem solid rgba(255, 255, 255, .14); }
+.footer-details .footer-contact p { margin-bottom: 0; }
 .site-footer a:hover { color: #fff; text-decoration: underline; }
 .footer-social > strong { color: #b8e0c3; }
 .footer-social div { display: flex; gap: .5rem; margin-top: .75rem; }
@@ -484,6 +487,8 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
   .footer-grid > * { padding-inline: 1.5rem; border-left: 0; }
   .footer-grid > :nth-child(odd) { padding-left: 0; }
   .footer-grid > :nth-child(even) { padding-right: 0; border-left: .0625rem solid rgba(255, 255, 255, .2); }
+  .footer-grid > address { grid-column: 2; grid-row: 1 / span 2; }
+  .footer-details { grid-column: 1; grid-row: 2; }
 }
 
 /* The classroom group spans nearly the whole source frame.  Recompose before
@@ -638,6 +643,7 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
   .footer-grid { grid-template-columns: 1fr; gap: .875rem; }
   .footer-grid > *, .footer-grid > :nth-child(odd), .footer-grid > :nth-child(even) { padding: 0 0 .875rem; border-left: 0; border-bottom: .0625rem solid rgba(255, 255, 255, .14); }
   .footer-grid > :last-child { padding-bottom: 0; border-bottom: 0; }
+  .footer-grid > address, .footer-details { grid-column: auto; grid-row: auto; }
   .footer-social div { margin-top: .5rem; }
   .site-footer p { margin-bottom: .375rem; }
   .copyright { margin-top: 1.125rem; padding-top: .75rem; }
