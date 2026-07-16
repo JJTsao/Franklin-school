@@ -31,7 +31,8 @@ npm run build
 ## 素材管線
 
 - `scripts/grade_classroom_photos.py`：教室照片批次調色（暖化白平衡、提亮、壓低紅色椅子飽和度），從 `source-assets/classroom-pregrade/` 的未調色快照重跑，不會重複疊加；完成後自動重產 hero 裁切。
-- `scripts/create_hero_crops.py`：從 `classroom-hero.webp` 產出桌機／平板／手機三種 hero 裁切。
+- `scripts/create_hero_crops.py`：從 `classroom-hero.webp` 產出桌機／平板／手機三種 hero 裁切；手機版另提供 800px 響應式檔案，供一般 DPR 1–2 裝置優先載入。
+- `public/images/generated/decorations/*.webp` 是供網頁使用的 320px 壓縮版本；重新生成裝飾圖時要再次縮圖壓縮。分校照另有 `*-640.webp` 手機版本，Hero／CTA 吉祥物共用 `mascot-point-240.webp`。
 - `scripts/subset_display_font.py`：掃描 `index.html` 全部字元，從 `source-assets/fonts/jf-openhuninn-2.1.ttf` 重產標題字型子集（需 `pip install fonttools brotli`）。標題文案改字後需重跑，否則新字會 fallback 成黑體。
 - `scripts/subset_noto_font.py`：同樣掃描 `index.html`，重產內文字型子集。**任何中文文案增刪後兩支都要重跑。**
 

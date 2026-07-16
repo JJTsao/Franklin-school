@@ -6,9 +6,6 @@ weight 900, ribbons, contact titles, body copy — renders without per-glyph
 fallback to a system font. The wght axis (100-900) is preserved as a variable
 font so both the light body weight and the 900 display weight keep working.
 
-The previously shipped subset's characters are unioned in as a safety net so a
-regeneration can never drop a glyph that some code path still renders.
-
 Requires: pip install fonttools brotli
 Usage:    python scripts/subset_noto_font.py
 """
@@ -32,9 +29,6 @@ def collect_characters() -> str:
     characters = {char for char in content if char.isprintable() and not char.isspace()}
     characters.update(string.digits + string.ascii_letters + string.punctuation)
     characters.update(EXTRA_CHARACTERS)
-    # Safety net: keep every glyph the currently shipped subset already covers.
-    if OUTPUT.exists():
-        characters.update(chr(cp) for cp in TTFont(OUTPUT).getBestCmap())
     return "".join(sorted(characters))
 
 
