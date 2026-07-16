@@ -380,14 +380,14 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
 .contact-accent--sparkles { right: clamp(10.5rem, 18vw, 17rem); bottom: .45rem; width: clamp(2.5rem, 3.25vw, 3.5rem); opacity: .78; transform: rotate(-8deg); }
 
 .site-footer { padding: 1.5rem 0 .75rem; color: rgba(255, 255, 255, .85); background: var(--green-950); font-size: .82rem; }
-.footer-grid { display: grid; grid-template-columns: 1.35fr 1.2fr 1.05fr; gap: 0; align-items: stretch; }
+.footer-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; align-items: stretch; }
 .footer-grid > * { min-width: 0; padding-inline: 1.5rem; }
 .footer-grid > :first-child { padding-left: 0; }
 .footer-grid > :last-child { padding-right: 0; }
 .footer-grid > * + * { border-left: .0625rem solid rgba(255, 255, 255, .2); }
-.footer-brand { display: flex; gap: .75rem; align-items: center; }
-.footer-brand img { width: 3.625rem; height: 3.625rem; }
-.footer-brand div { display: flex; flex-direction: column; }
+.footer-brand { display: flex; flex-direction: column; justify-content: center; gap: .75rem; align-items: center; text-align: center; }
+.footer-brand img { width: 4rem; height: 4rem; }
+.footer-brand div { display: flex; flex-direction: column; align-items: center; }
 .footer-brand strong { color: #fff; font-size: 1rem; }.footer-brand span { font-size: .73rem; }.footer-brand small { color: #9dd7b1; margin-top: .25rem; }
 .site-footer address { font-style: normal; }.site-footer p { margin: 0 0 .625rem; }
 .footer-branch + .footer-branch { margin-top: .875rem; }
@@ -489,6 +489,8 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
   .footer-grid > :nth-child(even) { padding-right: 0; border-left: .0625rem solid rgba(255, 255, 255, .2); }
   .footer-grid > address { grid-column: 2; grid-row: 1 / span 2; }
   .footer-details { grid-column: 1; grid-row: 2; }
+  .footer-brand { flex-direction: row; text-align: left; }
+  .footer-brand div { align-items: flex-start; }
 }
 
 /* The classroom group spans nearly the whole source frame.  Recompose before
@@ -644,6 +646,7 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
   .footer-grid > *, .footer-grid > :nth-child(odd), .footer-grid > :nth-child(even) { padding: 0 0 .875rem; border-left: 0; border-bottom: .0625rem solid rgba(255, 255, 255, .14); }
   .footer-grid > :last-child { padding-bottom: 0; border-bottom: 0; }
   .footer-grid > address, .footer-details { grid-column: auto; grid-row: auto; }
+  .footer-brand { justify-content: flex-start; }
   .footer-social div { margin-top: .5rem; }
   .site-footer p { margin-bottom: .375rem; }
   .copyright { margin-top: 1.125rem; padding-top: .75rem; }
