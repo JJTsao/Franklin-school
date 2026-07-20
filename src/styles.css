@@ -127,8 +127,9 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
 .hero-campus picture { display: block; }
 .hero-campus img { object-fit: cover; transition: transform .5s cubic-bezier(.22, 1, .36, 1); }
 .hero-campus:hover img, .hero-campus:focus-visible img { transform: scale(1.025); }
-.hero-campus--douliu img,
-.hero-campus--dounan img { object-position: 50% 50%; }
+.hero-campus--douliu img { object-position: 50% 50%; }
+.hero-campus--dounan img { object-position: 78% 50%; transform: translateY(-2.5%) scale(1.05); }
+.hero-campus--dounan:hover img, .hero-campus--dounan:focus-visible img { transform: translateY(-2.5%) scale(1.075); }
 .hero-campus-label { position: absolute; z-index: 3; left: .65rem; right: .65rem; bottom: .65rem; display: grid; gap: .05rem; padding: .5rem .55rem .55rem; color: #fffdf5; background: rgba(3, 78, 43, .93); border-radius: .35rem .8rem .35rem .8rem; text-align: center; box-shadow: 0 .35rem .8rem rgba(0, 0, 0, .17); }
 .hero-campus-label strong { font-size: .92rem; letter-spacing: .08em; }
 .hero-campus-label small { font-size: .57rem; font-weight: 700; letter-spacing: .03em; opacity: .9; }
@@ -143,8 +144,8 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
 @media (min-width: 1121px) {
   .hero-stage { grid-template-columns: minmax(11rem, 1fr) minmax(30rem, 1.29fr) minmax(11rem, 1fr); }
   .hero-campus { align-self: center; aspect-ratio: 2 / 3; margin-block: 0; }
-  .hero-campus--douliu img,
-  .hero-campus--dounan img { object-position: 50% 50%; }
+  .hero-campus--douliu img { object-position: 50% 50%; }
+  .hero-campus--dounan img { object-position: 78% 50%; }
 }
 
 .benefits { position: relative; z-index: 5; isolation: isolate; margin-top: 0; padding: 1.25rem 0 .875rem; background: #fffdf8; }
@@ -165,8 +166,6 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
 #tuition-title, #day-title, #teachers-title, #gallery-title, #testimonial-title, #branches-title { font-family: "Noto Sans TC Local", sans-serif; font-weight: 900; }
 .section-lead { max-width: 40rem; margin: .9375rem auto 0; color: #43544d; font-size: .96rem; line-height: 1.75; text-wrap: pretty; }
 .tuition-promo { display: inline-block; margin: 0 auto 1rem; padding: .55rem 1.5rem; background: var(--sun); color: var(--green-950); font-family: "Noto Sans TC Local", sans-serif; font-size: 1.75rem; font-weight: 900; letter-spacing: .03em; line-height: 1.25; border-radius: 1rem; box-shadow: 0 .5rem 0 rgba(210, 150, 20, .32); transform: rotate(-1.8deg); }
-.programs-lead { max-width: 46rem; margin: 0 auto 1.75rem; color: var(--green-900); font-family: "Noto Sans TC Local", sans-serif; font-size: 1.7rem; font-weight: 900; line-height: 1.5; letter-spacing: .02em; text-align: center; text-wrap: balance; }
-
 /*
   標題側翼：標題區寬 42.5rem、容器寬 73.75rem，兩側各留下約 15.6rem 的空白帶。
   裝飾放在這裡填滿留白。z-index: -1 讓它永遠畫在文字底下（.section > .container
@@ -233,39 +232,41 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
 */
 .programs { overflow: hidden; background: linear-gradient(var(--paper-soft), var(--paper)); }
 .programs.section { padding: 2rem 0 1.25rem; }
-.program-grid { position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; padding: 1.25rem; background: #fff3c9; border-radius: 2rem; }
-.program-card { position: relative; overflow: hidden; isolation: isolate; display: grid; grid-template-columns: minmax(0, 42%) minmax(0, 58%); min-height: 25rem; padding: 5.75rem 1.25rem 1.25rem; background: #fffdf7; border: .0625rem solid #cfe3bb; border-radius: 1.5rem; box-shadow: 0 .5rem 1.375rem rgba(74, 54, 7, .11); }
-.program-card--orange { border-color: #f1d49a; }
-.program-card::before { content: ""; position: absolute; z-index: -1; width: 11rem; height: 8rem; right: -3.5rem; bottom: -3.5rem; border-radius: 50%; background: #eff6dc; transform: rotate(-14deg); }
-.program-card--orange::before { background: #fff0c6; }
-.program-ribbon { position: absolute; z-index: 4; left: 50%; top: .75rem; width: min(72%, 23rem); aspect-ratio: 1350 / 317; display: grid; place-items: center; color: #fff; transform: translateX(-50%); pointer-events: none; }
+.program-grid { position: relative; padding: clamp(1rem, 2.2vw, 1.5rem); background: #fff3c9; border-radius: 2rem; }
+/* 編輯式構圖：左側說明課程方法，右側由真實課堂照承擔信任感。 */
+.program-editorial { position: relative; overflow: hidden; display: grid; grid-template-columns: minmax(0, 1.02fr) minmax(22rem, .98fr); grid-template-rows: auto 1fr; column-gap: clamp(1.5rem, 3.5vw, 3.5rem); min-height: 39rem; padding: clamp(1.5rem, 3.2vw, 3rem); background: #fffdf7; border: .0625rem solid #cfe3bb; border-radius: 1.5rem; box-shadow: 0 .5rem 1.375rem rgba(74, 54, 7, .11); }
+.program-editorial::before { content: ""; position: absolute; z-index: 0; width: 15rem; height: 11rem; right: -6.5rem; bottom: -5rem; border-radius: 50%; background: #eff6dc; transform: rotate(-14deg); }
+.program-editorial-intro, .program-editorial-details, .program-editorial-media { min-width: 0; position: relative; z-index: 1; }
+.program-editorial-intro { align-self: start; }
+.program-ribbon { position: relative; width: 80%; aspect-ratio: 1350 / 317; display: grid; place-items: center; margin: -.15rem auto 1.25rem; color: #fff; transform: rotate(-2deg); pointer-events: none; }
 .program-ribbon-art { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 .25rem .25rem rgba(54, 45, 6, .13)); }
-.program-ribbon h3 { position: relative; z-index: 1; margin: 0 0 .08em; font-family: "Noto Sans TC Local", sans-serif; font-size: clamp(1.75rem, 2.6vw, 2.125rem); font-weight: 900; font-synthesis: none; line-height: 1.1; letter-spacing: .055em; text-shadow: 0 .125rem 0 rgba(3, 67, 36, .42); white-space: nowrap; }
-.program-card--orange .program-ribbon h3 { text-shadow: 0 .125rem 0 rgba(128, 47, 0, .38); }
-.program-media { position: relative; z-index: 1; min-width: 0; min-height: 18rem; overflow: hidden; }
-.program-media picture { display: block; width: 100%; height: 100%; overflow: hidden; border: .25rem solid rgba(255, 255, 255, .88); border-radius: 1rem; background: #edf3e6; box-shadow: 0 .3125rem .875rem rgba(68, 52, 10, .11); }
+.program-ribbon h3 { position: relative; z-index: 1; margin: 0 0 .08em; font-family: "Noto Sans TC Local", sans-serif; font-size: clamp(1.65rem, 2.45vw, 2.2rem); font-weight: 900; font-synthesis: none; line-height: 1.1; letter-spacing: .055em; text-shadow: 0 .125rem 0 rgba(3, 67, 36, .42); white-space: nowrap; }
+.program-editorial-title { margin: 0; color: var(--green-950); font-family: "Noto Sans TC Local", sans-serif; font-size: clamp(2rem, 2.65vw, 2.45rem); font-weight: 900; line-height: 1.28; letter-spacing: .025em; text-wrap: balance; }
+.program-editorial-title span { display: block; white-space: nowrap; }
+.program-editorial-title-result { color: var(--orange); }
+.program-editorial-lead { max-width: 33rem; margin: 1rem 0 0; color: #4d5c54; font-size: 1rem; font-weight: 600; line-height: 1.8; text-wrap: pretty; }
+.program-editorial-media { grid-column: 2; grid-row: 1 / span 2; min-height: 33rem; overflow: hidden; border: .25rem solid rgba(255, 255, 255, .92); border-radius: 1.25rem; background: #edf3e6; box-shadow: 0 .5rem 1.25rem rgba(68, 52, 10, .14); }
+.program-editorial-media picture { display: block; width: 100%; height: 100%; }
 .program-photo { width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; }
-.program-content { position: relative; z-index: 2; min-width: 0; display: flex; flex-direction: column; justify-content: center; padding: .5rem .625rem .5rem 1.25rem; }
-.program-tagline { margin: 0 0 .8rem; color: #385646; font-size: 1.125rem; font-weight: 800; line-height: 1.5; text-align: center; }
-.check-list { list-style: none; margin: 0; padding: 0; display: grid; }
-.check-list li { display: flex; gap: .75rem; align-items: flex-start; padding: .7rem 0; }
-.check-list li + li { border-top: .0625rem solid #e5eadc; }
-.program-card--orange .check-list li + li { border-color: #f1e3c4; }
-.check-list li > span { flex: 0 0 auto; width: 1.625rem; height: 1.625rem; display: grid; place-items: center; margin-top: .05rem; color: #fff; background: #76b844; border-radius: 50%; font-size: .78rem; font-weight: 900; }
-.program-card--orange .check-list li > span { background: #edb52b; }
-.check-list div { min-width: 0; display: flex; flex-direction: column; }
-.check-list strong { color: #285438; font-size: 1.125rem; line-height: 1.4; }
-.check-list small { color: var(--muted); font-size: 1rem; font-weight: 500; line-height: 1.5; }
-.program-card-decoration { position: absolute; z-index: 3; height: auto; object-fit: contain; pointer-events: none; filter: drop-shadow(0 .1875rem .1875rem rgba(55, 44, 8, .08)); }
-.program-card-decoration--letter { width: 2.6rem; left: .25rem; top: 7.25rem; transform: rotate(-9deg); }
-.program-card-decoration--globe { width: 3.15rem; right: -.15rem; bottom: -.3rem; transform: rotate(7deg); }
-.program-card-decoration--book { width: 4rem; right: -.35rem; top: 5.5rem; transform: rotate(7deg); }
-.program-card-decoration--pencil { width: 3.75rem; right: -.4rem; bottom: -.6rem; transform: rotate(13deg); }
+.program-photo-label { position: absolute; left: 1rem; bottom: 1rem; margin: 0; padding: .48rem .8rem; color: #fff; background: rgba(3, 78, 43, .9); border-radius: .5rem; font-size: .74rem; font-weight: 800; letter-spacing: .03em; }
+.program-editorial-details { align-self: stretch; display: flex; min-height: 0; flex-direction: column; margin-top: clamp(.75rem, 1.3vw, 1.125rem); }
+.learning-steps { list-style: none; display: grid; flex: 1; align-content: space-between; gap: .625rem; margin: 0; padding: 0; }
+.learning-steps li { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); align-items: stretch; min-width: 0; background: rgba(245, 242, 232, .75); border: .0625rem solid rgba(214, 207, 187, .7); border-radius: .75rem; overflow: hidden; box-shadow: 0 .25rem .625rem rgba(72, 57, 18, .06); }
+.learning-step-number { display: grid; place-items: center; min-height: 4.6rem; color: #fffdf7; background: var(--green-950); font-family: "Noto Sans TC Local", sans-serif; font-size: 1.25rem; font-weight: 900; letter-spacing: .04em; }
+.learning-steps li > div { min-width: 0; padding: .75rem .9rem; }
+.learning-steps strong { display: block; color: var(--green-900); font-size: 1.02rem; line-height: 1.35; }
+.learning-steps p { margin: .25rem 0 0; color: #647068; font-size: .8rem; font-weight: 600; line-height: 1.55; }
+/* 安親只保留為美語方案的課後安心註記。 */
+.aftercare-note { display: flex; flex-wrap: wrap; align-items: baseline; gap: .15rem .55rem; margin: .875rem 0 0; padding: .75rem .9rem; color: #6c6a59; background: #fbf5df; border-left: .1875rem solid #d4b757; border-radius: .5rem; }
+.aftercare-note span { color: #8b7842; font-size: .68rem; font-weight: 800; letter-spacing: .06em; }
+.aftercare-note strong { color: #50633f; font-size: .88rem; }
+.aftercare-note p { margin: 0; color: #777567; font-size: .76rem; font-weight: 700; line-height: 1.5; }
 
 .tuition { background: var(--paper); }
 .tuition.section { padding: 1rem 0 2rem; }
-.tuition-grid { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); gap: 1.125rem; align-items: stretch; }
+.tuition-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.125rem; align-items: stretch; }
 .tuition-card { position: relative; overflow: hidden; isolation: isolate; display: flex; flex-direction: column; padding: 1.375rem 1.375rem 1.5rem; background: #fff; border: .0625rem solid #efe7d5; border-radius: 1.25rem; box-shadow: 0 .5rem 1.375rem rgba(74, 54, 7, .11); }
+.tuition-card--plan { width: min(100%, 52rem); justify-self: center; }
 .tuition-card::before { content: ""; position: absolute; z-index: -1; width: 9.5rem; height: 7rem; right: -3.25rem; top: -3.25rem; border-radius: 50%; background: #eff6dc; transform: rotate(-14deg); }
 .tuition-card--bonus { border-color: #f1d49a; }
 .tuition-card--bonus::before { background: #fff0c6; }
@@ -276,10 +277,25 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
 .tuition-facts > div { display: flex; flex-direction: column; gap: .1rem; padding: .5rem .6875rem .5625rem; background: var(--green-50); border-radius: .625rem; }
 .tuition-facts dt { color: var(--muted); font-size: .72rem; font-weight: 700; letter-spacing: .04em; }
 .tuition-facts dd { margin: 0; color: #285438; font-size: 1rem; font-weight: 900; }
-.tuition-total { display: flex; align-items: baseline; justify-content: space-between; gap: .5rem; margin: 1.0625rem 0 0; padding-top: .9375rem; border-top: .125rem dashed #e5eadc; color: var(--muted); font-size: .85rem; font-weight: 700; }
+.tuition-breakdown { margin-top: 1.125rem; }
+.tuition-breakdown-title { margin: 0 0 .4375rem; color: #7a877f; font-size: .72rem; font-weight: 800; letter-spacing: .08em; }
+.tuition-price-list { display: grid; gap: .375rem; margin: 0; }
+.tuition-price-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 1rem; padding: .5rem .75rem; color: #43544d; }
+.tuition-price-row dt { font-size: .84rem; font-weight: 800; }
+.tuition-price-row dd { margin: 0; color: var(--ink); font-size: 1rem; font-weight: 900; white-space: nowrap; }
+.tuition-price-row--included { padding-block: .625rem; background: #f5f7ed; border: .0625rem solid #e4e9d5; border-radius: .625rem; }
+.tuition-price-row--included dt, .tuition-price-row--included dd { display: flex; flex-direction: column; align-items: flex-start; }
+.tuition-price-row--included dt { gap: .0625rem; }
+.tuition-price-row--included dt span { color: #7f8d62; font-size: .65rem; font-weight: 800; letter-spacing: .06em; }
+.tuition-price-row--included dt strong { color: #50633f; font-size: .88rem; }
+.tuition-price-row--included dt small { color: #777d6e; font-size: .72rem; font-weight: 650; line-height: 1.5; }
+.tuition-price-row--included dd { align-items: flex-end; }
+.tuition-price-row--included dd strong { color: var(--green-800); font-size: 1.28rem; line-height: 1.1; }
+.tuition-price-row--included dd small { margin-top: .125rem; color: #7f8d73; font-size: .64rem; font-weight: 700; }
+.tuition-total { display: flex; align-items: baseline; justify-content: space-between; gap: .5rem; margin: .625rem 0 0; padding-top: .9375rem; border-top: .125rem dashed #e5eadc; color: var(--muted); font-size: .85rem; font-weight: 700; }
 .tuition-total-label { display: flex; flex-direction: column; gap: .1rem; text-align: left; }
 .tuition-total-label small { color: #93a49b; font-size: .68rem; font-weight: 600; letter-spacing: .02em; }
-.tuition-total strong { flex: 0 0 auto; color: var(--ink); font-size: 1.3rem; font-weight: 900; letter-spacing: .01em; }
+.tuition-total strong { flex: 0 0 auto; color: var(--ink); font-size: 1.5rem; font-weight: 900; letter-spacing: .01em; }
 .tuition-unit { display: flex; flex-wrap: wrap; align-items: center; gap: .375rem .5rem; margin: .9375rem 0 0; }
 .tuition-unit-label { color: #43544d; font-size: .9rem; font-weight: 800; }
 .tuition-extra { margin: 1.0625rem 0 0; padding: .5625rem .75rem; color: var(--muted); background: #f7f4ea; border-radius: .625rem; font-size: .74rem; line-height: 1.6; }
@@ -491,16 +507,13 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
   .site-nav > a:not(.nav-cta) { padding: .75rem .25rem; font-size: 1rem; border-bottom: .0625rem solid #edf2ed; }
   .site-nav > a:not(.nav-cta)::after { display: none; }
   .site-nav .nav-cta { display: inline-flex; justify-content: center; margin-top: .875rem; }
-  .program-grid { grid-template-columns: 1fr; gap: 1.5rem; padding: 1.375rem; }
-  .program-card { grid-template-columns: minmax(0, 43%) minmax(0, 57%); width: min(100%, 52rem); min-height: 22rem; padding: 1.25rem; justify-self: center; }
-  .program-ribbon { left: 71.5%; top: .875rem; width: min(42%, 20.5rem); }
-  .program-media { min-height: 19.5rem; }
-  .program-content { padding: 5rem 2.25rem 1.25rem; }
-  .program-tagline { text-align: left; }
-  .program-card-decoration--letter { left: .125rem; top: 1.25rem; }
-  .program-card-decoration--book { top: .875rem; }
+  .program-grid { padding: 1.375rem; }
+  .program-editorial { grid-template-columns: minmax(0, .98fr) minmax(20rem, 1.02fr); column-gap: 1.75rem; min-height: 34rem; padding: 2rem; }
+  .program-editorial-media { min-height: 30rem; }
+  .program-ribbon { width: 80%; }
+  .program-editorial-title { font-size: clamp(1.9rem, 3.5vw, 2.35rem); }
   .heading-flourish { display: none; }
-  .tuition-grid { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); }
+  .tuition-grid { grid-template-columns: 1fr; }
   .tuition-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .teacher-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
   .contact-inner { grid-template-columns: 8.4375rem 1fr; }
@@ -557,6 +570,11 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
   .tuition-grid { grid-template-columns: 1fr; gap: 1.25rem; }
   .tuition-card { width: min(100%, 34rem); margin-inline: auto; }
   .tuition-card--bonus { padding: 1.5rem 1.25rem; }
+  .program-editorial { grid-template-columns: 1fr; grid-template-rows: auto auto auto; row-gap: 1.25rem; min-height: 0; padding: 1.5rem; }
+  .program-editorial-media { grid-column: 1; grid-row: 2; min-height: 0; aspect-ratio: 4 / 3; }
+  .program-editorial-details { grid-column: 1; grid-row: 3; margin-top: 0; }
+  .program-ribbon { width: min(70%, 26rem); }
+  .program-editorial-title { font-size: clamp(2rem, 5vw, 2.6rem); }
   .teacher-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
   .branch-grid { grid-template-columns: 1fr; gap: 1.5rem; padding: 1.375rem; }
   .branch-card { width: min(100%, 34rem); justify-self: center; }
@@ -593,32 +611,31 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
   .hero-campus { grid-row: 3; min-height: 0; aspect-ratio: 3 / 4; align-self: start; border-width: .2rem; transform: none; }
   .hero-campus--douliu { grid-column: 1; border-radius: 1.25rem .55rem .9rem .55rem; }
   .hero-campus--dounan { grid-column: 2; border-radius: .55rem 1.25rem .55rem .9rem; }
-  .hero-campus--douliu img,
-  .hero-campus--dounan img { object-position: 50% 50%; }
+  .hero-campus--douliu img { object-position: 50% 50%; }
+  .hero-campus--dounan img { object-position: 78% 50%; }
   .hero-campus-label strong { font-size: .78rem; }
   .hero-classroom-label { font-size: .6rem; }
   .hero-wave { height: 5rem; }
   .programs.section { padding: 2rem 0 1rem; }
   .tuition-promo { padding: .45rem 1.1rem; font-size: 1.2rem; border-radius: .75rem; }
-  .programs-lead { font-size: 1.28rem; line-height: 1.45; }
-  .program-grid { gap: 1.5rem; padding: 1rem .875rem; border-radius: 1.5rem; }
-  .program-card { display: block; width: 100%; min-height: 0; padding: 4.75rem 1rem 1rem; border-radius: 1.25rem; }
-  .program-ribbon { left: 50%; top: .625rem; width: min(82%, 19.5rem); }
-  .program-ribbon h3 { font-size: clamp(1.22rem, 6vw, 1.45rem); }
-  .program-media { width: 100%; min-height: 0; aspect-ratio: 4 / 3; }
+  .program-grid { gap: .875rem; padding: 1rem .875rem; border-radius: 1.5rem; }
+  .program-editorial { row-gap: 1rem; padding: 1.125rem; border-radius: 1.25rem; }
+  .program-ribbon { width: min(80%, 18rem); margin: 0 auto .875rem; }
+  .program-ribbon h3 { font-size: 1.22rem; }
+  .program-editorial-title { font-size: clamp(1.25rem, 5.6vw, 1.75rem); line-height: 1.35; }
+  .program-editorial-lead { margin-top: .75rem; font-size: .88rem; line-height: 1.7; }
+  .program-editorial-media { min-height: 0; aspect-ratio: 4 / 3; border-width: .2rem; border-radius: 1rem; }
   .program-photo { min-height: 0; object-fit: cover; }
-  .program-card--green .program-photo { object-position: 50% 25%; }
-  .program-card--orange .program-photo { object-position: 50% 34%; }
-  .program-content { padding: .9rem .25rem 0; }
-  .program-tagline { margin: 0 0 .5rem; font-size: .91rem; text-align: center; }
-  .check-list li { padding: .65rem 0; }
-  .check-list li > span { width: 1.5rem; height: 1.5rem; }
-  .check-list strong { font-size: .94rem; }
-  .check-list small { font-size: .79rem; }
-  .program-card-decoration--letter { width: 2.25rem; left: .1rem; top: 4.85rem; }
-  .program-card-decoration--globe { width: 2.7rem; right: .1rem; top: 4.85rem; bottom: auto; }
-  .program-card-decoration--book { width: 3.15rem; right: .1rem; top: 4.8rem; }
-  .program-card-decoration--pencil { width: 3rem; right: -.25rem; bottom: -.5rem; }
+  .program-editorial-media .program-photo { object-position: 50% 28%; }
+  .program-photo-label { left: .625rem; bottom: .625rem; padding: .35rem .55rem; font-size: .62rem; }
+  .learning-steps { gap: .5rem; }
+  .learning-steps li { grid-template-columns: 3rem minmax(0, 1fr); border-radius: .6rem; }
+  .learning-step-number { min-height: 4rem; font-size: 1.05rem; }
+  .learning-steps li > div { padding: .625rem .7rem; }
+  .learning-steps strong { font-size: .9rem; }
+  .learning-steps p { margin-top: .15rem; font-size: .72rem; line-height: 1.5; }
+  .aftercare-note { gap: .12rem .4rem; margin-top: .7rem; padding: .625rem .7rem; }
+  .aftercare-note p { font-size: .69rem; }
 }
 
 @media (max-width: 560px) {
