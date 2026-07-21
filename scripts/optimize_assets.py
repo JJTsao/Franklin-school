@@ -7,9 +7,11 @@ ROOT = Path(__file__).resolve().parent.parent
 BRAND_SOURCE = ROOT / "source-assets" / "brand"
 BRANCH_SOURCE = ROOT / "source-assets" / "branch"
 TEACHER_SOURCE = ROOT / "source-assets" / "teachers"
+LEARNING_ICON_SOURCE = ROOT / "source-assets" / "generated" / "learning-icons"
 OUTPUT = ROOT / "public" / "images" / "optimized" / "brand"
 BRANCH_OUTPUT = ROOT / "public" / "images" / "optimized" / "branch"
 TEACHER_OUTPUT = ROOT / "public" / "images" / "optimized" / "teachers"
+LEARNING_ICON_OUTPUT = ROOT / "public" / "images" / "generated" / "learning-icons"
 
 
 def resize_to_width(image: Image.Image, width: int) -> Image.Image:
@@ -82,7 +84,16 @@ def optimize_teacher_assets() -> None:
             save_webp(photo, f"{source.stem}.webp", quality=84, output=TEACHER_OUTPUT)
 
 
+def optimize_learning_icons() -> None:
+    # 生圖素材保留透明背景，縮至實際顯示所需尺寸，避免三張原始 PNG 增加頁面負擔。
+    for source in sorted(LEARNING_ICON_SOURCE.glob("*.png")):
+        with Image.open(source) as image:
+            icon = image.convert("RGBA").resize((256, 256), Image.Resampling.LANCZOS)
+            save_webp(icon, f"{source.stem}.webp", quality=88, output=LEARNING_ICON_OUTPUT)
+
+
 if __name__ == "__main__":
     optimize_brand_assets()
     optimize_branch_assets()
     optimize_teacher_assets()
+    optimize_learning_icons()
