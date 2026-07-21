@@ -55,7 +55,7 @@ def optimize_branch_assets() -> None:
     # 400px 足以覆蓋手機雙欄與平板側欄；720px 保留高密度桌機螢幕的清晰度。
     sources = {
         "branch-douliu.jpg": "branch-douliu",
-        "branch-dounan.jpg": "branch-dounan",
+        "branch-dounan-neighbor-blur-v2.png": "branch-dounan",
     }
     for src_name, output_stem in sources.items():
         with Image.open(BRANCH_SOURCE / src_name) as image:

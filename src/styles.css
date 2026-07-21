@@ -119,8 +119,8 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
 .hero-actions .button { min-height: 2.75rem; padding: .625rem 1.25rem; }
 .qa-font-noto .program-ribbon h3, .qa-font-noto .cta-highlight, .qa-font-noto .display-font, .qa-font-noto .section-heading h2, .qa-font-noto .contact-inner h2 { font-family: "Noto Sans TC Local", sans-serif; font-weight: 900; }
 .hero-campus { position: relative; min-width: 0; overflow: hidden; color: #fff; background: var(--green-900); border: .25rem solid #fffaf0; box-shadow: 0 .75rem 1.75rem rgba(73, 53, 13, .2); isolation: isolate; transition: transform .24s ease, box-shadow .24s ease; }
-.hero-campus--douliu { margin-top: 1.5rem; margin-bottom: .25rem; border-radius: 1.75rem .65rem 1.2rem .65rem; transform: rotate(-.45deg); }
-.hero-campus--dounan { margin-top: .4rem; margin-bottom: 1.35rem; border-radius: .65rem 1.75rem .65rem 1.2rem; transform: rotate(.45deg); }
+.hero-campus--dounan { margin-top: 1.5rem; margin-bottom: .25rem; border-radius: 1.75rem .65rem 1.2rem .65rem; transform: rotate(-.45deg); }
+.hero-campus--douliu { margin-top: .4rem; margin-bottom: 1.35rem; border-radius: .65rem 1.75rem .65rem 1.2rem; transform: rotate(.45deg); }
 .hero-campus:hover, .hero-campus:focus-visible { transform: translateY(-.2rem) rotate(0); box-shadow: 0 1rem 2rem rgba(73, 53, 13, .25); }
 .hero-campus::after, .hero-classroom::after { content: ""; position: absolute; z-index: 2; inset: .32rem; border: .0625rem solid rgba(255, 255, 255, .7); border-radius: inherit; pointer-events: none; }
 .hero-campus picture, .hero-campus img { width: 100%; height: 100%; }
@@ -128,9 +128,10 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
 .hero-campus img { object-fit: cover; transition: transform .5s cubic-bezier(.22, 1, .36, 1); }
 .hero-campus:hover img, .hero-campus:focus-visible img { transform: scale(1.025); }
 .hero-campus--douliu img { object-position: 50% 50%; }
-.hero-campus--dounan img { object-position: 78% 50%; transform: translateY(-2.5%) scale(1.05); }
-.hero-campus--dounan:hover img, .hero-campus--dounan:focus-visible img { transform: translateY(-2.5%) scale(1.075); }
+.hero-campus--dounan img { object-position: 50% 50%; transform: translateY(-8%) scale(1.05); }
+.hero-campus--dounan:hover img, .hero-campus--dounan:focus-visible img { transform: translateY(-8%) scale(1.075); }
 .hero-campus-label { position: absolute; z-index: 3; left: .65rem; right: .65rem; bottom: .65rem; display: grid; gap: .05rem; padding: .5rem .55rem .55rem; color: #fffdf5; background: rgba(3, 78, 43, .93); border-radius: .35rem .8rem .35rem .8rem; text-align: center; box-shadow: 0 .35rem .8rem rgba(0, 0, 0, .17); }
+.hero-campus--dounan .hero-campus-label { bottom: .25rem; }
 .hero-campus-label strong { font-size: .92rem; letter-spacing: .08em; }
 .hero-campus-label small { font-size: .57rem; font-weight: 700; letter-spacing: .03em; opacity: .9; }
 .hero-classroom { position: relative; min-width: 0; min-height: 0; aspect-ratio: 16 / 9; overflow: hidden; border: .25rem solid #fffaf0; border-radius: .75rem 1.75rem .75rem 1.75rem; background: #e9eee4; box-shadow: 0 .7rem 1.6rem rgba(73, 53, 13, .18); isolation: isolate; }
@@ -138,18 +139,18 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
 .hero-photo { width: 100%; height: 100%; object-fit: cover; object-position: 50% 48%; }
 .hero-classroom-label { position: absolute; z-index: 3; left: .85rem; bottom: .75rem; padding: .35rem .7rem; color: #fffdf5; background: rgba(3, 78, 43, .9); border-radius: 99rem; font-size: .65rem; font-weight: 800; letter-spacing: .07em; }
 .hero-mascot { position: absolute; z-index: 1; width: 7rem; height: auto; right: clamp(13rem, 24vw, 22rem); top: -7.25rem; filter: drop-shadow(0 .4375rem .625rem rgba(0, 0, 0, .13)); }
-.hero-wave { position: absolute; z-index: 4; left: 0; right: 0; bottom: 0; height: 8rem; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 160' preserveAspectRatio='none'%3E%3Cpath d='M0 12 C104 28 166 52 252 68 C364 90 470 78 590 76 C752 72 842 100 1002 120 C1162 140 1304 136 1440 116 L1440 160 L0 160 Z' fill='%2358ad67'/%3E%3Cpath d='M0 48 C128 60 232 78 360 84 C498 92 610 76 730 82 C880 90 968 116 1112 132 C1246 146 1350 140 1440 130 L1440 160 L0 160 Z' fill='%23087a42'/%3E%3C/svg%3E") center bottom / 100% 100% no-repeat; }
+.hero-wave { position: absolute; z-index: 1; left: 0; right: 0; bottom: 0; height: 8rem; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 160' preserveAspectRatio='none'%3E%3Cpath d='M0 12 C104 28 166 52 252 68 C364 90 470 78 590 76 C752 72 842 100 1002 120 C1162 140 1304 136 1440 116 L1440 160 L0 160 Z' fill='%2358ad67'/%3E%3Cpath d='M0 48 C128 60 232 78 360 84 C498 92 610 76 730 82 C880 90 968 116 1112 132 C1246 146 1350 140 1440 130 L1440 160 L0 160 Z' fill='%23087a42'/%3E%3C/svg%3E") center bottom / 100% 100% no-repeat; }
 
 /* 桌機分校照保留較接近原始直幅的視野，避免被整個 hero 高度拉成狹長裁切。 */
 @media (min-width: 1121px) {
   .hero-stage { grid-template-columns: minmax(11rem, 1fr) minmax(30rem, 1.29fr) minmax(11rem, 1fr); }
   .hero-campus { align-self: center; aspect-ratio: 2 / 3; margin-block: 0; }
-  .hero-campus--douliu img { object-position: 50% 50%; }
-  .hero-campus--dounan img { object-position: 78% 50%; }
+  .hero-campus--douliu img,
+  .hero-campus--dounan img { object-position: 50% 50%; }
 }
 
 .benefits { position: relative; z-index: 5; isolation: isolate; margin-top: 0; padding: 1.25rem 0 .875rem; background: #fffdf8; }
-.benefits::after { content: ""; position: absolute; z-index: -1; left: 0; right: 0; top: -2.5rem; height: 2.5625rem; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 72' preserveAspectRatio='none'%3E%3Cpath d='M0 72 C0 31 29 11 78 8 C330 2 529 10 742 7 C978 3 1192 2 1364 11 C1412 14 1440 36 1440 72 L1440 72 L0 72 Z' fill='%23fffdf8'/%3E%3C/svg%3E") center bottom / 100% 100% no-repeat; pointer-events: none; }
+.benefits::after { content: ""; position: absolute; z-index: 0; left: 0; right: 0; top: -2.5rem; height: 2.5625rem; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 72' preserveAspectRatio='none'%3E%3Cpath d='M0 72 C0 31 29 11 78 8 C330 2 529 10 742 7 C978 3 1192 2 1364 11 C1412 14 1440 36 1440 72 L1440 72 L0 72 Z' fill='%23fffdf8'/%3E%3C/svg%3E") center bottom / 100% 100% no-repeat; pointer-events: none; }
 .benefits .container { position: relative; z-index: 2; }
 .benefit-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.125rem; }
 .benefit-card { display: flex; align-items: center; gap: .9375rem; min-height: 7.625rem; padding: 1.125rem 1.25rem; background: #fff; border: .0625rem solid #efe9da; border-radius: 1rem; box-shadow: 0 .375rem 1.125rem rgba(96, 66, 12, .10); }
@@ -537,8 +538,9 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
   .hero-center { display: contents; }
   .hero-copy { grid-column: 1 / -1; grid-row: 1; padding: 0 .25rem .5rem; }
   .hero-campus { grid-row: 2; min-height: 0; margin: 0; }
-  .hero-campus--douliu { grid-column: 1; transform: rotate(-.35deg); }
-  .hero-campus--dounan { grid-column: 3; transform: rotate(.35deg); }
+  .hero-campus--dounan { grid-column: 1; transform: rotate(-.35deg); }
+  .hero-campus--douliu { grid-column: 3; transform: rotate(.35deg); }
+  .hero-campus-label small { display: none; }
   .hero-classroom { grid-column: 2; grid-row: 2; min-height: 0; aspect-ratio: auto; }
   .hero-photo { object-position: 50% 46%; }
   .hero-mascot { width: 5.75rem; right: 22vw; top: -5.75rem; }
@@ -608,10 +610,10 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
   .hero-bonus { margin-block: .4rem .625rem; }
   .hero-classroom { grid-column: 1 / -1; grid-row: 2; border-width: .2rem; border-radius: .7rem 1.4rem .7rem 1.4rem; }
   .hero-campus { grid-row: 3; min-height: 0; aspect-ratio: 3 / 4; align-self: start; border-width: .2rem; transform: none; }
-  .hero-campus--douliu { grid-column: 1; border-radius: 1.25rem .55rem .9rem .55rem; }
-  .hero-campus--dounan { grid-column: 2; border-radius: .55rem 1.25rem .55rem .9rem; }
+  .hero-campus--dounan { grid-column: 1; border-radius: 1.25rem .55rem .9rem .55rem; }
+  .hero-campus--douliu { grid-column: 2; border-radius: .55rem 1.25rem .55rem .9rem; }
   .hero-campus--douliu img { object-position: 50% 50%; }
-  .hero-campus--dounan img { object-position: 78% 50%; }
+  .hero-campus--dounan img { object-position: 50% 50%; }
   .hero-campus-label strong { font-size: .78rem; }
   .hero-classroom-label { font-size: .6rem; }
   .hero-wave { height: 5rem; }
