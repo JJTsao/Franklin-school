@@ -661,7 +661,8 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
   .timeline li:nth-child(2)::after, .timeline li:nth-child(4)::after { display: block; z-index: 0; top: auto; right: auto; bottom: -2.05rem; left: calc(50% - .875rem); width: 1.75rem; height: 1.8rem; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 56' preserveAspectRatio='none'%3E%3Cpath d='M14 3 C9 16 19 28 14 42' fill='none' stroke='%234f9a58' stroke-width='3.5' stroke-linecap='round' stroke-dasharray='6 7'/%3E%3Cpath d='M8 41 L14 51 L20 41' fill='none' stroke='%234f9a58' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 100% 100% no-repeat; transform: none; }
   .timeline li:nth-child(6)::after { display: none; }
   .timeline-icon { position: relative; z-index: 1; width: 5rem; height: 4.625rem; margin: 0 auto .5rem; }
-  .gallery-track { grid-auto-columns: 82%; }
+  .gallery-track { grid-auto-columns: 82%; scroll-snap-type: none; }
+  .gallery-card { scroll-snap-align: none; }
   .gallery-control { display: none; }
   .section-lead { font-size: .9rem; }
   .day-edge { height: 1.75rem; }
