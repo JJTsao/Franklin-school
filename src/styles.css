@@ -136,7 +136,7 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
 .hero-campus-label small { font-size: .57rem; font-weight: 700; letter-spacing: .03em; opacity: .9; }
 .hero-classroom { position: relative; min-width: 0; min-height: 0; aspect-ratio: 16 / 9; overflow: hidden; border: .25rem solid #fffaf0; border-radius: .75rem 1.75rem .75rem 1.75rem; background: #e9eee4; box-shadow: 0 .7rem 1.6rem rgba(73, 53, 13, .18); isolation: isolate; }
 .hero-picture { position: absolute; inset: 0; display: block; width: 100%; height: 100%; overflow: hidden; }
-.hero-photo { width: 100%; height: 100%; object-fit: cover; object-position: 50% 48%; }
+.hero-photo { width: 100%; height: 100%; object-fit: cover; object-position: 38% 48%; }
 .hero-classroom-label { position: absolute; z-index: 3; left: .85rem; bottom: .75rem; padding: .35rem .7rem; color: #fffdf5; background: rgba(3, 78, 43, .9); border-radius: 99rem; font-size: .65rem; font-weight: 800; letter-spacing: .07em; }
 .hero-mascot { position: absolute; z-index: 1; width: 7rem; height: auto; right: clamp(13rem, 24vw, 22rem); top: -7.25rem; filter: drop-shadow(0 .4375rem .625rem rgba(0, 0, 0, .13)); }
 .hero-wave { position: absolute; z-index: 1; left: 0; right: 0; bottom: 0; height: 8rem; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 160' preserveAspectRatio='none'%3E%3Cpath d='M0 12 C104 28 166 52 252 68 C364 90 470 78 590 76 C752 72 842 100 1002 120 C1162 140 1304 136 1440 116 L1440 160 L0 160 Z' fill='%2358ad67'/%3E%3Cpath d='M0 48 C128 60 232 78 360 84 C498 92 610 76 730 82 C880 90 968 116 1112 132 C1246 146 1350 140 1440 130 L1440 160 L0 160 Z' fill='%23087a42'/%3E%3C/svg%3E") center bottom / 100% 100% no-repeat; }
@@ -542,7 +542,7 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
   .hero-campus--douliu { grid-column: 3; transform: rotate(.35deg); }
   .hero-campus-label small { display: none; }
   .hero-classroom { grid-column: 2; grid-row: 2; min-height: 0; aspect-ratio: auto; }
-  .hero-photo { object-position: 50% 46%; }
+  .hero-photo { object-position: 38% 46%; }
   .hero-mascot { width: 5.75rem; right: 22vw; top: -5.75rem; }
   .hero-wave { height: 6rem; }
   .benefits { margin-top: 0; }
