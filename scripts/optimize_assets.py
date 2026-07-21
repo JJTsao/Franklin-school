@@ -51,16 +51,27 @@ def optimize_brand_assets() -> None:
 
 
 def optimize_branch_assets() -> None:
-    # 分校門面照：裁成 3:4 直式（對齊卡片相框 .photo-frame--portrait），寬 800px。
+    # 分校門面照：裁成 3:4 直式，輸出首屏所需的 400px 與 720px 響應式版本。
+    # 400px 足以覆蓋手機雙欄與平板側欄；720px 保留高密度桌機螢幕的清晰度。
     sources = {
-        "branch-douliu.jpg": "branch-douliu.webp",
-        "branch-dounan.jpg": "branch-dounan.webp",
+        "branch-douliu.jpg": "branch-douliu",
+        "branch-dounan.jpg": "branch-dounan",
     }
-    for src_name, out_name in sources.items():
+    for src_name, output_stem in sources.items():
         with Image.open(BRANCH_SOURCE / src_name) as image:
             photo = crop_to_ratio(image.convert("RGB"), 3, 4)
-            photo = resize_to_width(photo, 800)
-            save_webp(photo, out_name, quality=82, output=BRANCH_OUTPUT)
+            save_webp(
+                resize_to_width(photo, 400),
+                f"{output_stem}-400.webp",
+                quality=62,
+                output=BRANCH_OUTPUT,
+            )
+            save_webp(
+                resize_to_width(photo, 720),
+                f"{output_stem}.webp",
+                quality=62,
+                output=BRANCH_OUTPUT,
+            )
 
 
 def optimize_teacher_assets() -> None:
