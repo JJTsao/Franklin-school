@@ -17,7 +17,7 @@
       <defs>
         <symbol id="icon-facebook" viewBox="0 0 64 64"><path d="M38 56V34h8l2-10H38v-5c0-3 2-5 6-5h5V5h-8c-9 0-14 6-14 14v5h-8v10h8v22h11Z" fill="currentColor"/></symbol>
         <symbol id="icon-instagram" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="4"><rect x="8" y="8" width="48" height="48" rx="14"/><circle cx="32" cy="32" r="11"/><circle cx="46" cy="18" r="2" fill="currentColor"/></g></symbol>
-        <symbol id="icon-line" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M55 29c0 12-10 22-23 22-3 0-6-.5-9-1.6L11 55l3.5-11C11 40 9 35 9 29 9 17 19 7 32 7s23 10 23 22Z"/><circle cx="23" cy="29" r="2" fill="currentColor"/><circle cx="32" cy="29" r="2" fill="currentColor"/><circle cx="41" cy="29" r="2" fill="currentColor"/></g></symbol>
+        <symbol id="icon-line" viewBox="0 0 64 64"><path d="M55 29c0 12-10 22-23 22-3 0-6-.5-9-1.6L11 55l3.5-11C11 40 9 35 9 29 9 17 19 7 32 7s23 10 23 22Z" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><text x="32" y="35" fill="currentColor" font-family="Arial, sans-serif" font-size="13" font-weight="900" text-anchor="middle" letter-spacing="-.5">LINE</text></symbol>
         <symbol id="icon-youtube" viewBox="0 0 64 64"><g stroke="currentColor" stroke-width="3" stroke-linejoin="round"><rect x="6" y="15" width="52" height="34" rx="10" fill="none"/><path d="m27 24 14 8-14 8V24Z" fill="currentColor"/></g></symbol>
         <symbol id="icon-avatar-a" viewBox="0 0 64 64"><path d="M11 64c0-12 9.4-17 21-17s21 5 21 17Z" fill="#5bb6a6"/><rect x="28.5" y="37.5" width="7" height="9.5" rx="3.2" fill="#f3c9a2"/><path d="M18 30a14 14 0 0 1 28 0c0 6-2 11-5 14 0-8-2-11-2-11-3 2-6 3-9 3s-6-1-9-3c0 0-2 3-2 11-3-3-5-8-5-14Z" fill="#7c4a2c"/><circle cx="32" cy="29" r="12" fill="#f3c9a2"/><path d="M20 27a13 13 0 0 1 24 0c-1-4-3-6-3-6-3 2-6 3-9 3s-6-1-9-3c0 0-2 2-3 6Z" fill="#7c4a2c"/><circle cx="27.5" cy="29" r="1.5" fill="#4a3527"/><circle cx="36.5" cy="29" r="1.5" fill="#4a3527"/><path d="M29 34c1.6 1.5 4.4 1.5 6 0" fill="none" stroke="#c56a56" stroke-width="1.6" stroke-linecap="round"/></symbol>
         <symbol id="icon-avatar-b" viewBox="0 0 64 64"><path d="M11 64c0-12 9.4-17 21-17s21 5 21 17Z" fill="#ef9aa4"/><rect x="28.5" y="37.5" width="7" height="9.5" rx="3.2" fill="#f3c9a2"/><circle cx="32" cy="12.5" r="5" fill="#6f4327"/><path d="M19 30a13 13 0 0 1 26 0c0 5-2 10-4 12 0-8-2-11-2-11-3 2-6 3-9 3s-6-1-9-3c0 0-2 3-2 11-2-2-4-7-4-12Z" fill="#6f4327"/><circle cx="32" cy="29" r="12" fill="#f3c9a2"/><path d="M20 28a13 13 0 0 1 24 0c-1-5-3-7-3-7-3 2-6 3-9 3s-6-1-9-3c0 0-2 2-3 7Z" fill="#6f4327"/><circle cx="27.5" cy="29" r="1.5" fill="#4a3527"/><circle cx="36.5" cy="29" r="1.5" fill="#4a3527"/><path d="M29 34c1.6 1.5 4.4 1.5 6 0" fill="none" stroke="#c56a56" stroke-width="1.6" stroke-linecap="round"/></symbol>
@@ -41,10 +41,11 @@
         </button>
 
         <nav class="site-nav" id="site-nav" aria-label="主要導覽">
-          <a href="#programs">課程與費用</a>
+          <a href="#programs">美語課程</a>
+          <a href="#tuition">收費方式</a>
+          <a href="#schedule">每日行程</a>
           <a href="#teachers">師資團隊</a>
           <a href="#gallery">學習現場</a>
-          <a href="#branches">分校據點</a>
           <a href="#contact">聯絡我們</a>
           <button class="button button--sun nav-cta display-font" type="button">加 LINE 詢問</button>
         </nav>
@@ -368,19 +369,19 @@
         <address>
           <div class="footer-branch">
             <strong>斗六分校</strong>
-            <p class="footer-info-item footer-info-item--address"><svg aria-hidden="true"><use href="#icon-location"></use></svg><span data-placeholder>雲林縣斗六市XXX路XX號</span></p>
-            <p class="footer-phone-number" data-placeholder>05-XXX-XXXX</p>
+            <a class="footer-info-item footer-info-item--address" href="https://maps.app.goo.gl/j9AvbMegSyCXbRcX7" target="_blank" rel="noopener noreferrer" aria-label="在 Google 地圖開啟斗六分校地址"><svg aria-hidden="true"><use href="#icon-location"></use></svg><span>雲林縣斗六市中堅西路306號</span></a>
+            <p class="footer-phone-number">05-535-3585</p>
           </div>
           <div class="footer-branch">
             <strong>斗南分校</strong>
-            <p class="footer-info-item footer-info-item--address"><svg aria-hidden="true"><use href="#icon-location"></use></svg><span data-placeholder>雲林縣斗南鎮OOO路OO號</span></p>
-            <p class="footer-phone-number" data-placeholder>05-OOO-OOOO</p>
+            <a class="footer-info-item footer-info-item--address" href="https://maps.app.goo.gl/LE9UxTEUGz2PJk4y7" target="_blank" rel="noopener noreferrer" aria-label="在 Google 地圖開啟斗南分校地址"><svg aria-hidden="true"><use href="#icon-location"></use></svg><span>雲林縣斗南鎮中正路362號</span></a>
+            <p class="footer-phone-number">05-595-3585</p>
           </div>
         </address>
         <div class="footer-details">
-          <div class="footer-contact"><p class="footer-info-item"><svg aria-hidden="true"><use href="#icon-clock"></use></svg><span>週一至週五 13:00 – 20:00<br />週六 09:00 – 17:00</span></p></div>
-          <!-- 社群連結待補：拿到網址後補上 href、移除 aria-disabled 與 title 即可 -->
-          <div class="footer-social"><strong>追蹤我們</strong><div><a aria-disabled="true" title="Facebook 連結待補" aria-label="Facebook（連結待補）" data-placeholder><svg><use href="#icon-facebook"></use></svg></a><a aria-disabled="true" title="Instagram 連結待補" aria-label="Instagram（連結待補）" data-placeholder><svg><use href="#icon-instagram"></use></svg></a><a aria-disabled="true" title="LINE 連結待補" aria-label="LINE（連結待補）" data-placeholder><svg><use href="#icon-line"></use></svg></a><a aria-disabled="true" title="YouTube 連結待補" aria-label="YouTube（連結待補）" data-placeholder><svg><use href="#icon-youtube"></use></svg></a></div></div>
+          <div class="footer-contact"><p class="footer-info-item"><svg aria-hidden="true"><use href="#icon-clock"></use></svg><span><span class="sr-only">營業時間：</span>週一～三、五 12:30–21:00<br />週四 13:00 起・週末休息</span></p></div>
+          <!-- LINE 官方帳號網址待補；Facebook 已設定為官方粉絲專頁 -->
+          <div class="footer-social"><strong>追蹤我們</strong><div><a class="footer-social-link footer-social-link--line" aria-disabled="true" title="LINE 官方帳號連結待補" aria-label="LINE（連結待補）" data-placeholder><svg><use href="#icon-line"></use></svg></a><a class="footer-social-link footer-social-link--facebook" href="https://www.facebook.com/sesamestreetTUZ" target="_blank" rel="noopener noreferrer" aria-label="前往 Facebook 粉絲專頁（另開新視窗）"><svg><use href="#icon-facebook"></use></svg></a></div></div>
         </div>
       </div>
       <div class="container copyright">© <span id="copyright-year"></span> 富蘭克林教育機構 版權所有</div>
