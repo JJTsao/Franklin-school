@@ -108,8 +108,9 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
 .hero-eyebrow i { color: var(--orange); font-size: .85rem; font-style: normal; }
 .hero-copy h1 { margin: 0; font-family: "Noto Sans TC Local", sans-serif; font-weight: 900; font-synthesis: none; letter-spacing: .025em; text-wrap: balance; }
 .hero-title-primary, .hero-title-result { display: block; }
-.hero-title-primary { color: var(--green-900); font-size: clamp(1.5rem, 2.3vw, 2.2rem); line-height: 1.28; }
-.hero-title-result { margin-top: -.05em; color: var(--orange); font-size: clamp(1.8rem, 2.9vw, 2.75rem); line-height: 1.22; }
+.hero-title-primary, .hero-title-result { font-size: clamp(1.5rem, 2.3vw, 2.2rem); }
+.hero-title-primary { color: var(--green-900); line-height: 1.28; }
+.hero-title-result { margin-top: -.05em; color: var(--orange); line-height: 1.22; }
 .hero-copy h1 em { position: relative; display: inline-block; margin-right: .08em; color: inherit; font-style: normal; }
 .hero-copy h1 em::after { content: ""; position: absolute; z-index: -1; left: -.14em; right: -.14em; bottom: .04em; height: .42em; border-radius: 50%; background: var(--sun); opacity: .65; transform: rotate(-2deg); }
 .hero-bonus { width: fit-content; margin: .45rem auto .625rem; display: inline-flex; align-items: center; color: #23412f; font-size: .93rem; font-weight: 800; }
@@ -244,7 +245,7 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
 .program-ribbon h3 { position: relative; z-index: 1; margin: 0 0 .08em; font-family: "Noto Sans TC Local", sans-serif; font-size: clamp(1.65rem, 2.45vw, 2.2rem); font-weight: 900; font-synthesis: none; line-height: 1.1; letter-spacing: .055em; text-shadow: 0 .125rem 0 rgba(3, 67, 36, .42); white-space: nowrap; }
 .program-editorial-title { margin: 0; color: var(--green-950); font-family: "Noto Sans TC Local", sans-serif; font-size: clamp(2rem, 2.65vw, 2.45rem); font-weight: 900; line-height: 1.28; letter-spacing: .025em; text-wrap: balance; }
 .program-editorial-title span { display: block; white-space: nowrap; }
-.program-editorial-title-result { color: var(--orange); }
+.program-editorial-title-result { color: var(--orange); font-size: 1em; }
 .program-editorial-lead { max-width: 33rem; margin: 1rem 0 0; color: #4d5c54; font-size: 1rem; font-weight: 600; line-height: 1.8; text-wrap: pretty; }
 .program-editorial-media { grid-column: 2; grid-row: 1 / span 2; min-height: 33rem; overflow: hidden; border: .25rem solid rgba(255, 255, 255, .92); border-radius: 1.25rem; background: #edf3e6; box-shadow: 0 .5rem 1.25rem rgba(68, 52, 10, .14); }
 .program-editorial-media picture { display: block; width: 100%; height: 100%; }
@@ -537,8 +538,7 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
   .container { width: min(calc(100% - 1.875rem), var(--container)); }
   .section { padding: 1.875rem 0; }
   .hero-stage { grid-template-columns: minmax(7rem, 24%) minmax(0, 52%) minmax(7rem, 24%); grid-template-rows: auto 16rem; gap: .75rem; }
-  .hero-title-primary { font-size: clamp(1.45rem, 4.5vw, 2rem); }
-  .hero-title-result { font-size: clamp(1.8rem, 5.5vw, 2.5rem); }
+  .hero-title-primary, .hero-title-result { font-size: clamp(1.45rem, 4.5vw, 2rem); }
   .hero-campus-label { left: .45rem; right: .45rem; bottom: .45rem; padding: .45rem .35rem; }
   .hero-campus-label small { display: none; }
   .hero-classroom-label { left: .65rem; bottom: .6rem; }
@@ -588,8 +588,7 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
   .hero-stage { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: auto minmax(15rem, 19rem) auto; gap: .625rem; }
   .hero-copy { grid-column: 1 / -1; grid-row: 1; padding: 0 0 .5rem; }
   .hero-eyebrow { margin-bottom: .4rem; font-size: .64rem; }
-  .hero-title-primary { font-size: clamp(1.35rem, 6.1vw, 1.8rem); }
-  .hero-title-result { font-size: clamp(1.72rem, 7.6vw, 2.2rem); }
+  .hero-title-primary, .hero-title-result { font-size: clamp(1.35rem, 6.1vw, 1.8rem); }
   .hero-bonus { margin-block: .4rem .625rem; }
   .hero-classroom { grid-column: 1 / -1; grid-row: 2; border-width: .2rem; border-radius: .7rem 1.4rem .7rem 1.4rem; }
   .hero-campus { grid-row: 3; min-height: 0; aspect-ratio: 3 / 4; align-self: start; border-width: .2rem; transform: none; }
