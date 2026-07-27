@@ -129,8 +129,8 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
 .hero-campus img { object-fit: cover; transition: transform .5s cubic-bezier(.22, 1, .36, 1); }
 .hero-campus:hover img, .hero-campus:focus-visible img { transform: scale(1.025); }
 .hero-campus--douliu img { object-position: 50% 50%; }
-.hero-campus--dounan img { object-position: 50% 50%; transform: translateY(-8%) scale(1.05); }
-.hero-campus--dounan:hover img, .hero-campus--dounan:focus-visible img { transform: translateY(-8%) scale(1.075); }
+.hero-campus--dounan img { object-position: 50% 50%; transform: translateX(-3.5%) translateY(-8%) scale(1.05) rotate(0.75deg); }
+.hero-campus--dounan:hover img, .hero-campus--dounan:focus-visible img { transform: translateX(-3.5%) translateY(-8%) scale(1.075) rotate(0.75deg); }
 .hero-campus-label { position: absolute; z-index: 3; left: .65rem; right: .65rem; bottom: .65rem; display: grid; gap: .05rem; padding: .5rem .55rem .55rem; color: #fffdf5; background: rgba(3, 78, 43, .93); border-radius: .35rem .8rem .35rem .8rem; text-align: center; box-shadow: 0 .35rem .8rem rgba(0, 0, 0, .17); }
 .hero-campus--dounan .hero-campus-label { bottom: .25rem; }
 .hero-campus-label strong { font-size: .92rem; letter-spacing: .08em; }
@@ -288,8 +288,9 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
 .tuition-facts dt { color: #66766c; font-size: .7rem; font-weight: 800; letter-spacing: .05em; }
 .tuition-facts dd { margin: 0; color: #285438; font-size: .9rem; font-weight: 800; }
 .tuition-facts dd strong { margin-right: .12rem; font-size: 1.35rem; line-height: 1; }
-.tuition-calculation { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1.25fr); align-items: center; gap: .75rem; margin-top: 1rem; padding: .875rem 1rem; color: #fffdf7; background: var(--green-950); border-radius: 1rem; }
+.tuition-calculation { display: grid; grid-template-columns: auto minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1.25fr); align-items: center; gap: .75rem; margin-top: 1rem; padding: .875rem 1rem; color: #fffdf7; background: var(--green-950); border-radius: 1rem; }
 .tuition-calculation span { display: flex; flex-direction: column; gap: .1rem; min-width: 0; text-align: center; }
+.tuition-calculation-example { align-self: center; padding-right: .75rem; color: var(--sun); font-family: "JF Open Huninn Display", "Noto Sans TC Local", sans-serif; font-size: clamp(1.25rem, 2.5vw, 1.65rem); font-weight: 400; letter-spacing: .05em; line-height: 1; white-space: nowrap; border-right: .0625rem dashed rgba(255, 253, 247, .35); }
 .tuition-calculation small { color: rgba(255, 253, 247, .72); font-size: .65rem; font-weight: 800; letter-spacing: .06em; }
 .tuition-calculation strong { font-size: clamp(1rem, 2vw, 1.3rem); line-height: 1.25; white-space: nowrap; }
 .tuition-calculation i { color: var(--sun); font-size: 1.35rem; font-style: normal; font-weight: 900; }
@@ -353,13 +354,13 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
 /* 拖曳中關掉 snap，否則會與 scrollLeft 打架；放開後恢復，瀏覽器自動吸附 */
 .gallery-track.is-dragging { cursor: grabbing; scroll-snap-type: none; }
 .gallery-track.is-dragging .gallery-card { pointer-events: none; }
-.gallery-card { overflow: hidden; min-width: 0; border-radius: .875rem; background: #fff; border: .0625rem solid #efe7d5; box-shadow: 0 .3125rem 1rem rgba(96, 66, 12, .10); scroll-snap-align: start; transition: transform .25s ease, box-shadow .25s ease; }
+.gallery-card { display: flex; flex-direction: column; overflow: hidden; min-width: 0; border-radius: .875rem; background: #fff; border: .0625rem solid #efe7d5; box-shadow: 0 .3125rem 1rem rgba(96, 66, 12, .10); scroll-snap-align: start; transition: transform .25s ease, box-shadow .25s ease; }
 .gallery-card:nth-child(odd) { transform: rotate(-1deg); }
 .gallery-card:nth-child(even) { transform: rotate(1deg); }
 .gallery-card:hover, .gallery-card:focus-within { transform: rotate(0deg) translateY(-.25rem); box-shadow: 0 .5rem 1.375rem rgba(96, 66, 12, .16); }
 .gallery-photo { width: calc(100% - .875rem); height: auto; aspect-ratio: 4 / 3; margin: .4375rem .4375rem 0; border-radius: .5rem; object-fit: cover; object-position: center; background: #e8efe8; }
 .gallery-card span { margin-top: .4375rem; }
-.gallery-card span { display: block; padding: .75rem .5rem; color: #fff; background: var(--green-800); text-align: center; font-size: .95rem; font-weight: 900; }
+.gallery-card span { display: grid; flex: 1; place-items: center; padding: .75rem .5rem; color: #fff; background: var(--green-800); text-align: center; font-size: .95rem; font-weight: 900; }
 .gallery-control { position: absolute; z-index: 2; top: 50%; width: 2.75rem; height: 2.75rem; display: grid; place-items: center; color: #fff; background: var(--green-800); border: .25rem solid #fff; border-radius: 50%; box-shadow: 0 .3125rem 1rem rgba(6, 76, 41, .22); cursor: pointer; transform: translateY(-50%); }
 .gallery-control svg { width: 1.375rem; height: 1.375rem; fill: none; stroke: currentColor; stroke-width: 2.8; stroke-linecap: round; stroke-linejoin: round; }
 .gallery-control--prev { left: -1.25rem; }.gallery-control--next { right: -1.25rem; }
@@ -681,11 +682,12 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
   .tuition-facts dd { font-size: .72rem; }
   .tuition-facts dd strong { font-size: 1.15rem; }
   .tuition-calculation { grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: .3rem .5rem; padding: .75rem; }
-  .tuition-calculation > span:nth-of-type(1) { grid-column: 1; grid-row: 1; }
-  .tuition-calculation > i:nth-of-type(1) { grid-column: 2; grid-row: 1; }
-  .tuition-calculation > span:nth-of-type(2) { grid-column: 3; grid-row: 1; }
-  .tuition-calculation > i:nth-of-type(2) { grid-column: 1 / -1; grid-row: 2; font-size: 1rem; line-height: .8; text-align: center; }
-  .tuition-calculation-total { grid-column: 1 / -1; grid-row: 3; margin: 0; padding: .55rem .75rem; }
+  .tuition-calculation-example { grid-column: 1 / -1; grid-row: 1; justify-self: start; padding: 0; border: 0; font-size: 1.15rem; }
+  .tuition-calculation-term { grid-column: 1; grid-row: 2; }
+  .tuition-calculation > i:nth-of-type(1) { grid-column: 2; grid-row: 2; }
+  .tuition-calculation-price { grid-column: 3; grid-row: 2; }
+  .tuition-calculation > i:nth-of-type(2) { grid-column: 1 / -1; grid-row: 3; font-size: 1rem; line-height: .8; text-align: center; }
+  .tuition-calculation-total { grid-column: 1 / -1; grid-row: 4; margin: 0; padding: .55rem .75rem; }
   .tuition-included { align-items: flex-start; gap: .6rem; padding-right: 2.25rem; }
   .tuition-included p { font-size: .7rem; }
   .teacher-grid { gap: .75rem; }
