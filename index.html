@@ -306,7 +306,7 @@
       </section>
 
       <!-- 暫時隱藏分校據點：移除下方 section 的 hidden 屬性即可完整恢復 -->
-      <!-- 兩校地址、電話、時間皆為佔位資料，待客戶提供後替換 -->
+      <!-- 分校聯絡資訊由 src/branch-data.js 統一提供 -->
       <section class="branches section" id="branches" aria-labelledby="branches-title" hidden>
         <div class="container">
           <div class="section-heading section-heading--compact">
@@ -315,29 +315,29 @@
             <img class="heading-flourish heading-flourish--right flourish-cluster" src="./public/images/generated/decorations/decor-sparkle-cluster-v1.webp" width="320" height="352" alt="" aria-hidden="true" loading="lazy" decoding="async" />
           </div>
           <div class="branch-grid">
-            <article class="branch-card branch-card--green">
+            <article class="branch-card branch-card--green" data-branch="douliu">
               <div class="branch-ribbon">
                 <img class="branch-ribbon-art" src="./public/images/generated/ribbons/program-ribbon-green-v1.webp" width="1350" height="317" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-                <h3>斗六分校</h3>
+                <h3 data-branch-field="name"></h3>
               </div>
               <div class="photo-frame photo-frame--portrait"><picture><img class="photo-frame-photo" src="./public/images/optimized/branch/branch-douliu.webp" srcset="./public/images/optimized/branch/branch-douliu-400.webp 400w, ./public/images/optimized/branch/branch-douliu.webp 720w" sizes="(max-width: 560px) calc(100vw - 5.5rem), (max-width: 1120px) 42vw, 31rem" width="720" height="960" alt="斗六分校校舍門面" loading="lazy" decoding="async" /></picture></div>
               <address class="branch-info">
-                <p class="branch-info-item"><svg aria-hidden="true"><use href="#icon-location"></use></svg><span data-placeholder>雲林縣斗六市XXX路XX號</span></p>
-                <a class="branch-info-item branch-info-item--phone" href="tel:+88655555555" data-placeholder><svg aria-hidden="true"><use href="#icon-phone"></use></svg><span>05-XXX-XXXX</span></a>
-                <p class="branch-info-item"><svg aria-hidden="true"><use href="#icon-clock"></use></svg><span data-placeholder>週一至週五 13:00 – 20:00<br />週六 09:00 – 17:00</span></p>
+                <a class="branch-info-item" data-branch-link="map" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#icon-location"></use></svg><span data-branch-field="address"></span></a>
+                <p class="branch-info-item"><svg aria-hidden="true"><use href="#icon-phone"></use></svg><span data-branch-field="phone"></span></p>
+                <p class="branch-info-item"><svg aria-hidden="true"><use href="#icon-clock"></use></svg><span>週一至週五 13:00 – 20:00<br />週六 09:00 – 17:00</span></p>
               </address>
             </article>
 
-            <article class="branch-card branch-card--orange">
+            <article class="branch-card branch-card--orange" data-branch="dounan">
               <div class="branch-ribbon">
                 <img class="branch-ribbon-art" src="./public/images/generated/ribbons/program-ribbon-orange-v1.webp" width="1351" height="318" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-                <h3>斗南分校</h3>
+                <h3 data-branch-field="name"></h3>
               </div>
               <div class="photo-frame photo-frame--portrait"><picture><img class="photo-frame-photo" src="./public/images/optimized/branch/branch-dounan.webp" srcset="./public/images/optimized/branch/branch-dounan-400.webp 400w, ./public/images/optimized/branch/branch-dounan.webp 720w" sizes="(max-width: 560px) calc(100vw - 5.5rem), (max-width: 1120px) 42vw, 31rem" width="720" height="960" alt="斗南分校校舍門面" loading="lazy" decoding="async" /></picture></div>
               <address class="branch-info">
-                <p class="branch-info-item"><svg aria-hidden="true"><use href="#icon-location"></use></svg><span data-placeholder>雲林縣斗南鎮OOO路OO號</span></p>
-                <a class="branch-info-item branch-info-item--phone" href="tel:+88655555555" data-placeholder><svg aria-hidden="true"><use href="#icon-phone"></use></svg><span>05-OOO-OOOO</span></a>
-                <p class="branch-info-item"><svg aria-hidden="true"><use href="#icon-clock"></use></svg><span data-placeholder>週一至週五 13:00 – 20:00<br />週六 09:00 – 17:00</span></p>
+                <a class="branch-info-item" data-branch-link="map" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#icon-location"></use></svg><span data-branch-field="address"></span></a>
+                <p class="branch-info-item"><svg aria-hidden="true"><use href="#icon-phone"></use></svg><span data-branch-field="phone"></span></p>
+                <p class="branch-info-item"><svg aria-hidden="true"><use href="#icon-clock"></use></svg><span>週一至週五 13:00 – 20:00<br />週六 09:00 – 17:00</span></p>
               </address>
             </article>
           </div>
@@ -349,8 +349,8 @@
           <img class="contact-mascot" src="./public/images/optimized/brand/mascot-point-240.webp" width="240" height="328" alt="鵜鶘博士為孩子加油" loading="lazy" decoding="async" />
           <div class="contact-message"><h2 id="contact-title">現在就<span class="cta-highlight">預約諮詢</span><img class="contact-decoration" src="./public/images/generated/decorations/decor-outline-star-v1.webp" width="320" height="311" alt="" aria-hidden="true" loading="lazy" decoding="async" /><br />為孩子找到更好的學習環境！</h2></div>
           <div class="contact-actions" aria-label="選擇 LINE 聯絡分校">
-            <a class="button button--sun button--large contact-line-button" href="https://line.me/ti/p/vH8_IWausT" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#icon-line"></use></svg>斗六分校 LINE</a>
-            <a class="button button--sun button--large contact-line-button" href="https://line.me/ti/p/8ajiWmB8hV" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#icon-line"></use></svg>斗南分校 LINE</a>
+            <a class="button button--sun button--large contact-line-button" data-branch="douliu" data-branch-link="line" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#icon-line"></use></svg><span data-branch-field="name"></span> LINE</a>
+            <a class="button button--sun button--large contact-line-button" data-branch="dounan" data-branch-link="line" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#icon-line"></use></svg><span data-branch-field="name"></span> LINE</a>
           </div>
         </div>
         <img class="contact-accent contact-accent--pencil" src="./public/images/generated/decorations/decor-pencil-v1.webp" width="320" height="358" alt="" aria-hidden="true" loading="lazy" decoding="async" />
@@ -361,35 +361,35 @@
     <footer class="site-footer">
       <div class="container footer-grid">
         <div class="footer-brand"><img src="./public/images/optimized/brand/logo-circle.webp" width="192" height="192" alt="" loading="lazy" decoding="async" /><div><strong>富蘭克林芝蔴街美語</strong><span>芝蔴街美語 x 安親中心</span><small>快樂學習・自信成長・成就未來</small></div></div>
-        <section class="footer-branch-panel" aria-labelledby="footer-douliu-title">
-          <div class="footer-branch-heading"><span aria-hidden="true">★</span><h2 id="footer-douliu-title">斗六分校</h2></div>
+        <section class="footer-branch-panel" aria-labelledby="footer-douliu-title" data-branch="douliu">
+          <div class="footer-branch-heading"><span aria-hidden="true">★</span><h2 id="footer-douliu-title" data-branch-field="name"></h2></div>
           <address class="footer-branch-contact">
-            <a class="footer-info-item footer-info-item--address" href="https://maps.app.goo.gl/j9AvbMegSyCXbRcX7" target="_blank" rel="noopener noreferrer" aria-label="在 Google 地圖開啟斗六分校地址"><svg aria-hidden="true"><use href="#icon-location"></use></svg><span>雲林縣斗六市中堅西路306號</span></a>
-            <p class="footer-info-item footer-info-item--phone"><svg aria-hidden="true"><use href="#icon-phone"></use></svg><span>05-535-3585</span></p>
+            <a class="footer-info-item footer-info-item--address" data-branch-link="map" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#icon-location"></use></svg><span data-branch-field="address"></span></a>
+            <p class="footer-info-item footer-info-item--phone"><svg aria-hidden="true"><use href="#icon-phone"></use></svg><span data-branch-field="phone"></span></p>
           </address>
           <div class="footer-qr-links" aria-label="斗六分校社群連結">
-            <a class="footer-qr-link footer-qr-link--line" href="https://line.me/ti/p/vH8_IWausT" target="_blank" rel="noopener noreferrer" aria-label="開啟斗六分校 LINE 加好友頁面（另開新視窗）">
+            <a class="footer-qr-link footer-qr-link--line" data-branch-link="line" target="_blank" rel="noopener noreferrer">
               <span class="footer-qr-frame"><img src="./public/images/social/qr-douliu-line.png" width="384" height="384" alt="" loading="lazy" decoding="async" /></span>
               <span class="footer-qr-label"><svg aria-hidden="true"><use href="#icon-line"></use></svg><span><strong>LINE</strong><small>加入好友</small></span></span>
             </a>
-            <a class="footer-qr-link footer-qr-link--facebook" href="https://www.facebook.com/sesamestreetTUZ/" target="_blank" rel="noopener noreferrer" aria-label="開啟斗六分校 Facebook 粉絲專頁（另開新視窗）">
+            <a class="footer-qr-link footer-qr-link--facebook" data-branch-link="facebook" target="_blank" rel="noopener noreferrer">
               <span class="footer-qr-frame"><img src="./public/images/social/qr-douliu-facebook.png" width="384" height="384" alt="" loading="lazy" decoding="async" /></span>
               <span class="footer-qr-label"><svg aria-hidden="true"><use href="#icon-facebook"></use></svg><span><strong>Facebook</strong><small>前往粉專</small></span></span>
             </a>
           </div>
         </section>
-        <section class="footer-branch-panel" aria-labelledby="footer-dounan-title">
-          <div class="footer-branch-heading"><span aria-hidden="true">★</span><h2 id="footer-dounan-title">斗南分校</h2></div>
+        <section class="footer-branch-panel" aria-labelledby="footer-dounan-title" data-branch="dounan">
+          <div class="footer-branch-heading"><span aria-hidden="true">★</span><h2 id="footer-dounan-title" data-branch-field="name"></h2></div>
           <address class="footer-branch-contact">
-            <a class="footer-info-item footer-info-item--address" href="https://maps.app.goo.gl/LE9UxTEUGz2PJk4y7" target="_blank" rel="noopener noreferrer" aria-label="在 Google 地圖開啟斗南分校地址"><svg aria-hidden="true"><use href="#icon-location"></use></svg><span>雲林縣斗南鎮中正路362號</span></a>
-            <p class="footer-info-item footer-info-item--phone"><svg aria-hidden="true"><use href="#icon-phone"></use></svg><span>05-595-3585</span></p>
+            <a class="footer-info-item footer-info-item--address" data-branch-link="map" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#icon-location"></use></svg><span data-branch-field="address"></span></a>
+            <p class="footer-info-item footer-info-item--phone"><svg aria-hidden="true"><use href="#icon-phone"></use></svg><span data-branch-field="phone"></span></p>
           </address>
           <div class="footer-qr-links" aria-label="斗南分校社群連結">
-            <a class="footer-qr-link footer-qr-link--line" href="https://line.me/ti/p/8ajiWmB8hV" target="_blank" rel="noopener noreferrer" aria-label="開啟斗南分校 LINE 加好友頁面（另開新視窗）">
+            <a class="footer-qr-link footer-qr-link--line" data-branch-link="line" target="_blank" rel="noopener noreferrer">
               <span class="footer-qr-frame"><img src="./public/images/social/qr-dounan-line.png" width="384" height="384" alt="" loading="lazy" decoding="async" /></span>
               <span class="footer-qr-label"><svg aria-hidden="true"><use href="#icon-line"></use></svg><span><strong>LINE</strong><small>加入好友</small></span></span>
             </a>
-            <a class="footer-qr-link footer-qr-link--facebook" href="https://www.facebook.com/profile.php?id=100063597169844" target="_blank" rel="noopener noreferrer" aria-label="開啟斗南分校 Facebook 頁面（另開新視窗）">
+            <a class="footer-qr-link footer-qr-link--facebook" data-branch-link="facebook" target="_blank" rel="noopener noreferrer">
               <span class="footer-qr-frame"><img src="./public/images/social/qr-dounan-facebook.png" width="164" height="164" alt="" loading="lazy" decoding="async" /></span>
               <span class="footer-qr-label"><svg aria-hidden="true"><use href="#icon-facebook"></use></svg><span><strong>Facebook</strong><small>前往粉專</small></span></span>
             </a>
@@ -402,6 +402,7 @@
       </div>
     </footer>
 
+    <script src="./src/branch-data.js"></script>
     <script>
       const header = document.querySelector('.site-header');
       const menuToggle = document.querySelector('.menu-toggle');

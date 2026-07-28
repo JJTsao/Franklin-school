@@ -25,6 +25,7 @@ npm run build
 
 - `index.html`：頁面內容與語意結構
 - `src/styles.css`：完整響應式視覺樣式
+- `src/branch-data.js`：斗六／斗南分校名稱、地址、電話、Google 地圖、LINE 與 Facebook 的單一資料來源
 - `index.html` 內嵌腳本：行動版選單與學習現場輪播互動（含滑鼠拖曳捲動）
 - `public/images/`：Logo、吉祥物及網站照片
 
@@ -48,14 +49,9 @@ npm run build
 
 ## 上線前需確認
 
-所有待替換的佔位內容都標了 `data-placeholder` 屬性，`grep -n 'data-placeholder' index.html` 可一次列出。
-
-- **費用區**：所有數字（每週堂數、一期堂數／時數、一期費用、每堂單價）皆為佔位。
 - **師資區**：四位老師的姓名、畢業學校與照片已填入；未提供的職稱目前不顯示。照片上線前仍須確認每位老師的肖像授權。
-- **分校區與 footer**：斗六／斗南兩校的地址、電話、營業時間為佔位；`tel:` 連結也是假號碼。
+- **分校區與 footer**：地址、電話與對外連結已由 `src/branch-data.js` 統一提供；營業時間內容也已確認。
 - **學習現場輪播**：目前只有課堂互動照，教室環境照到位後直接追加 `.gallery-card` 即可。
-- footer 的四個社群圖示是**停用狀態**（`<a>` 沒有 `href`，帶 `aria-disabled`）。拿到真實網址後補上 `href`、移除 `aria-disabled` 與 `title` 即可。先前它們是 `href="#"`，點下去會跳回頁首。
-- 導覽列右側與 hero、CTA 的三顆「加 LINE 詢問」按鈕**目前點了沒有反應**，等 LINE 官方帳號連結。
-- CTA 區的「加入 LINE 詢問」按鈕暫以 `hidden` 隱藏（`index.html` 內附註解），補上 LINE 官方帳號連結後移除 hidden 並改回連結即可。
+- 導覽列與 hero 的 LINE 按鈕會捲動至聯絡區；聯絡區與頁尾再依分校提供正式 LINE／Facebook 連結。
 
 Hero 標題提供 720／1200／1672px 三種 WebP，瀏覽器會依 viewport 與像素密度選擇；Hero 課堂照的 preload 也必須維持與 `<picture>` 相同的 media 條件，避免手機重複下載桌機圖。
