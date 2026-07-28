@@ -103,6 +103,10 @@ if (fs.existsSync(previewSrc)) {
 }
 copyTree(path.join(rootDir, 'src'), path.join(distDir, 'src'));
 copyTree(path.join(rootDir, 'public'), path.join(distDir, 'public'));
+fs.copyFileSync(
+  path.join(rootDir, 'public', 'google533ba593547f8803.html'),
+  path.join(distDir, 'google533ba593547f8803.html'),
+);
 
 verifySite(rootDir);
 verifySite(distDir);
