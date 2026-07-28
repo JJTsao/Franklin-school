@@ -413,7 +413,8 @@ html.qa-screenshot-root::-webkit-scrollbar { display: none; }
 .display-font { font-family: "JF Open Huninn Display", "Noto Sans TC Local", sans-serif; font-weight: 400; font-synthesis: none; letter-spacing: .035em; }
 .nav-cta.display-font { font-family: "Noto Sans TC Local", sans-serif; font-weight: 900; }
 .contact-actions { width: min(100%, 26rem); display: grid; grid-template-columns: repeat(2, minmax(10.5rem, 1fr)); justify-self: end; justify-content: end; gap: .75rem; }
-.contact-actions .button--line { white-space: nowrap; }
+.contact-line-button { white-space: nowrap; }
+.contact-line-button svg { width: 1.5rem; height: 1.5rem; overflow: visible; color: var(--green-800); stroke-width: 3; }
 .contact-accent { position: absolute; z-index: 0; height: auto; pointer-events: none; user-select: none; filter: drop-shadow(0 .25rem .25rem rgba(0, 52, 27, .18)); }
 .contact-accent--pencil { top: -.65rem; right: clamp(.5rem, 2vw, 1.75rem); width: clamp(3.75rem, 5vw, 5.5rem); transform: rotate(35deg); }
 .contact-accent--sparkles { right: clamp(10.5rem, 18vw, 17rem); bottom: .45rem; width: clamp(2.5rem, 3.25vw, 3.5rem); opacity: .78; transform: rotate(-8deg); }
